@@ -1,0 +1,76 @@
+
+
+
+/*
+Main-colours:
+
+
+
+*/
+.page{
+    -fx-background-color:white;
+   
+}
+.img{
+    -fx-border-color:#cccccc;
+   -fx-border-style:solid;
+   -fx-border-width: 0 5 0 0;
+}
+.login-pane{
+    -fx-background-color: #cccccc;
+
+   -fx-padding: 20;
+   -fx-background-radius:10;
+}
+.btn{
+   
+    -fx-border-color:black;
+}
+.login-btn{
+    -fx-background-color: #333333;
+    -fx-border-width:3;
+    -fx-border-color:#333333;
+    -fx-text-fill:white;
+
+}
+
+.login-btn:pressed{
+     -fx-background-color: white;
+     -fx-border-color:#333333;
+     -fx-border-width:3;
+     -fx-text-fill:#333333;
+}
+
+.login-btn:hover{
+     -fx-background-color: black;
+}
+
+.login-btn:pressed{
+    -fx-background-color: #ffffff; 
+    -fx-text-fill:#333333;
+    -fx-border-color:#333333;
+
+
+}
+
+
+.banner {
+    
+     -fx-background-color:FD9C35;
+     -fx-background-radius:20;
+}
+.textfields:focus-within{
+
+    -fx-border-color:#333;
+    
+}
+
+.textfields:focus-within .floating-text {
+    -fx-text-fill:#333;
+    
+}
+
+.textfields .floating-text {
+    -fx-text-fill:#cccccc;
+    
+}

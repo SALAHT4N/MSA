@@ -1,0 +1,29 @@
+.labels {
+
+
+
+}
+.white-color{
+       -fx-background-color:-fx-primaryColor;
+}
+.grid{
+ -fx-border-color:-fx-BoxesColor;
+    
+}
+
+.card{
+    -fx-background-color:#FEFEFE;
+    -fx-background-radius:4;
+    -fx-border-color : #666;
+    -fx-border-radius:3;
+}
+
+    .cashier-textfields:focus-within{
+
+    -fx-border-color:-fx-borderColor;
+    
+}
+.grid .thumb {
+    -fx-background-color : #666;
+}
+
