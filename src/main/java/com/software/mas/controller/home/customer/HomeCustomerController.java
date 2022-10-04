@@ -17,10 +17,7 @@ public class HomeCustomerController implements Initializable {
 
     public void setCenterView(String url) throws IOException {
         //Loading the view that the navigator gives it.
-        //container.setCenter(Loader.parentLoader(url));
-
-        System.out.println(url);
-
+        container.setCenter(Loader.parentLoader(url));
     }
 
     @Override
