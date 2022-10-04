@@ -1,5 +1,6 @@
 package com.software.mas.controller.home.customer;
 
+import com.software.mas.controller.home.NavbarController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -15,44 +16,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NavbarCustomerController {
-
-    private HomeCustomerController viewController;
-
-    public void setHomeCustomerController(HomeCustomerController t){
-        //This Method to assign the controller to the navbar customer to allow it to navigate through the pages
-        viewController = t;
+public class NavbarCustomerController extends NavbarController<HomeCustomerController> {
+    /*   --SMART NAVBAR--
+    This method used for :
+    *Determine the route.
+    *Update to a new view according to the corresponding view to the icon that you have clicked.
+    *You must follow the rules in naming the icons.
+    *You can start it and see the result and try to figure it out.
+    *The parent class is abstract to re-use the methods in the next navbar (USER-NAVBAR).
+     */
+    @Override
+    protected void setRoute(String FXMLViewName) throws IOException {
+        String route= "/com/software/mas/UI/home/customer/sub-panes/"+FXMLViewName+".fxml";
+        viewController.setCenterView(route);
     }
-
-    @FXML
-    void navigate(MouseEvent event) throws IOException {
-        Pane iconTapped = ((Pane)event.getSource());
-        ImageView img = null;
-
-        //Finding what image has selected/pressed
-        for(Object temp : iconTapped.getChildren()){
-            if(temp instanceof ImageView)
-                img = (ImageView) temp;
-
-
-        }
-
-
-    if(img != null){
-    viewController.setCenterView(img.getImage().getUrl());
-
-        VBox cont =  (VBox) ((Pane)event.getSource()).getParent();
-
-        for(Node temp :  cont.getChildren()){
-            ((Pane)temp).setStyle("");
-        }
-
-        ((Pane)event.getSource()).setStyle("-fx-background-color: linear-gradient(to right, #cccccc,#ffffff)");
-    }
-
-    }
-
-
-
-
 }
