@@ -1,0 +1,32 @@
+
+
+.table {
+  -fx-border-radius:7 7 0 0;
+   -fx-border-color:#333; 
+}
+
+    
+    .table .column-header-background{
+    -fx-background-color: linear-gradient(to bottom,#333 , #555);
+    -fx-background-radius: 7px 7px 0px 0px;
+    
+  
+}
+.table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color : #9999;
+    -fx-border-width: 0.5;
+}
+.table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/*--!! RECEIPT PART HERE !!--*/
+.bd-table{
+-fx-border-color:-fx-borderColor;
+-fx-border-radius:3 3 0 0;    
+
+}
+
+

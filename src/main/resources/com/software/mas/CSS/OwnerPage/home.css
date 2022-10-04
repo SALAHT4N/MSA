@@ -1,0 +1,5 @@
+.piechart {
+    -fx-border-color:-fx-labelColor; 
+    -fx-border-width: 0.5;
+}
+

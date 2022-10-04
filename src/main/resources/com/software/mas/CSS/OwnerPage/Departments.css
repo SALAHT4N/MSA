@@ -1,0 +1,14 @@
+.AddDepartment{
+    -fx-background-color: -fx-buttonColor;
+    -fx-text-fill: white;
+}
+.AddDepartment:hover{
+    -fx-background-color: -fx-btnHover;
+}
+.addDepartment:pressed{
+     -fx-background-color: -fx-pressedColor;
+     -fx-text-fill: primaryColor;
+}
+.mfx-text-field:focus-within {
+	-fx-border-color: #333;
+}

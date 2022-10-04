@@ -1,0 +1,26 @@
+.Boxes{
+    -fx-border-width:2;
+    -fx-border-color: -fx-BoxesColor;
+    -fx-border-radius:8;
+}
+.Headers{
+   -fx-border-width:2;
+    -fx-border-color: -fx-BoxesColor;
+    -fx-border-radius:8;
+}
+.Table{
+    -fx-border-color: -fx-BoxesColor;
+    -fx-border-radius: 8;
+    -fx-border-width:2;  
+    -fx-background-radius:8;
+   
+}
+.Search:focused{
+    -fx-border-color: black;
+}
+.Search{
+    -fx-background-width:5;
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-border-color: BoxesColor;
+}

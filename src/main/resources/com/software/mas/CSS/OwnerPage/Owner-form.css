@@ -1,0 +1,40 @@
+.Slide{
+    -fx-background-color: -fx-primaryColor;
+}
+.labels{
+    -fx-text-fill: -fx-labelColor;
+}
+.labels:hover{
+    -fx-background-color: -fx-hoverColor;
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: -fx-subColor;
+}
+.labels:pressed{
+    -fx-background-color: -fx-pressedColor;
+}
+.Table{
+      -fx-background-color: -fx-primaryColor;
+}
+.Search{
+    -fx-background-radius:5;
+    -fx-border-radius:5;
+}
+.devs{
+     -fx-background-color: transparent;
+     -fx-text-fill: -fx-labelColor;
+}
+.devs:hover{
+    -fx-text-fill: -fx-subColor;
+    -fx-underline: true;
+}
+.icons{
+    -fx-text-fill: -fx-labelColor;
+}
+.icons:hover {
+    -fx-background-color: -fx-hoverColor;
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: -fx-subColor;
+}
+.icons:pressed{
+    
+}

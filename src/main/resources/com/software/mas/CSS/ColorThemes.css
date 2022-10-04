@@ -1,0 +1,129 @@
+*{
+    -fx-primaryColor: white;
+    -fx-labelColor: #333;
+    -fx-subColor:#F8A918;
+    -fx-hoverColor: #EAEBED;
+    -fx-btnHover: #141415;
+    -fx-pressedColor: #6666;
+    -fx-BoxesColor: #E6E6E6;
+    -fx-buttonColor: #333333;
+    -fx-borderColor:#333;
+    -fx-textColor:#333;
+   
+    -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFUALT HAVE RADIUS "0" */
+}
+.root{
+    
+}
+
+.underline{
+    -fx-border-color:-fx-labelColor;
+    -fx-border-width: 0 0 1 0;
+}
+.textfields:focused{
+    -fx-border-color:-fx-borderColor;
+    -fx-accent:-fx-subColor;
+  
+}
+.textfields:focus-within  {
+    -fx-text-fill:-fx-borderColor;
+    -fx-border-color:-fx-borderColor;
+}
+.textfields:focus-within .floating-text{
+    -fx-text-fill:-fx-subColor;
+}
+.textfields .floating-text{
+    -fx-font-family:"Berlin Sans FB";
+    -fx-text-fill:-fx-textColor;
+}
+.delete-btns .mfx-ripple-generator{-mfx-ripple-color: rgba(248,0,0,0.6);}
+.delete-btns{
+    -fx-border-color : #333;
+    
+}
+.date-box:focus-within {
+    
+    -fx-border-color : -fx-borderColor;
+}
+.date-box .floating-text{
+    -fx-font-family:"Berlin Sans FB";
+}
+.date-box:focus-within .floating-text{
+    -fx-text-fill:-fx-subColor;
+   
+}
+.date-box:focus-within .icon {
+	-mfx-color: -fx-subColor;
+}
+.mfx-date-picker .mfx-icon-wrapper .mfx-ripple-generator {
+	-mfx-ripple-radius: 24;
+	-mfx-ripple-color: rgba(248,169,24,0.2);
+}
+.date-box .date-picker-popup .left-arrow .mfx-ripple-generator,
+.date-box .date-picker-popup .right-arrow .mfx-ripple-generator,
+.date-box .date-picker-popup .months-combo .mfx-icon-wrapper .mfx-ripple-generator,
+.date-box .date-picker-popup .years-combo .mfx-icon-wrapper .mfx-ripple-generator
+{
+	-mfx-ripple-color: -fx-subColor;
+}
+.date-box .date-picker-popup .months-combo:focus-within,
+.date-box .date-picker-popup .years-combo:focus-within {
+	-fx-background-color: #f8f7fa;
+	-fx-text-fill: -fx-subColor;
+}
+.date-box:focus-within .caret .mfx-font-icon {
+	-mfx-color: -fx-subColor;
+}
+
+.date-box .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:hover,
+.date-box .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:hover {
+	-fx-background-color: rgba(248,169,24,0.3);
+}
+.date-box .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected,
+.date-box .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected {
+	-fx-background-color: rgba(248,169,24,0.6);
+}
+.date-box .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected .label,
+.date-box .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected .label {
+	-fx-text-fill: black;
+}
+
+.datebox .date-picker-popup .week-day {
+	
+	-fx-text-fill: green;
+	
+}
+
+
+.btns{
+   
+    -fx-font-size : 15;
+    -fx-background-color: -fx-buttonColor;
+    -fx-text-fill:-fx-primaryColor;
+    -fx-font-family:"Berlin Sans FB";
+}
+.btns:hover{
+    -fx-background-color:#444;
+    -fx-font-family:"Berlin Sans FB";
+}
+
+
+/* Useless cuz MFXButton has already pressed effect
+.btns:pressed{
+    -fx-background-color:-fx-pressedColor;
+    
+}*/
+
+
+
+/*.mfx-combo-box:focus-within {
+    -fx-text-fill:-fx-borderColor;
+    -fx-border-color:-fx-borderColor;
+}
+.mfx-combo-box .floating-text, .mfx-combo-box .caret{
+      -fx-text-fill:-fx-textColor;
+      -fx-fill:#333;
+}
+ .mfx-combo-box:focus-within .caret{
+   -fx-text-fill:#333;     
+}*/
