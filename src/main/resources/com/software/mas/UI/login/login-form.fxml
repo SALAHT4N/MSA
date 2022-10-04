@@ -7,8 +7,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.BoxBlur?>
-<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginKey" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.garage.controllers.login.LoginController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginKey" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.LoginController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -31,13 +29,10 @@
    <children>
       <Pane prefWidth="700.0" styleClass="img" stylesheets="@../../CSS/login/login-form.css">
          <children>
-            <ImageView blendMode="SRC_ATOP" fitHeight="619.0" fitWidth="411.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView blendMode="SRC_ATOP" fitHeight="514.0" fitWidth="411.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" y="50.0">
                <image>
                   <Image url="@../../IMG/login/Background.png" />
                </image>
-               <effect>
-                  <BoxBlur iterations="3" />
-               </effect>
             </ImageView>
             <Pane layoutX="98.0" layoutY="215.0" prefHeight="99.0" prefWidth="205.0" style="-fx-border-color: black; -fx-border-width: 0 0 1.5 0;">
                <children>
@@ -61,7 +56,7 @@
             </Pane>
          </children>
       </Pane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">
+      <AnchorPane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">
          <children>
             <Button fx:id="loginBtn" layoutX="59.0" layoutY="340.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="36.0" prefWidth="290.0" styleClass="login-btn" stylesheets="@../../CSS/login/login-form.css" text="Login" textFill="WHITE">
                <font>
@@ -100,24 +95,6 @@
                   <Image url="@../../ICONS/login/password.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="111.0" fitWidth="240.0" layoutX="76.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../ICONS/login/low.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../ICONS/login/output-onlinegiftools.gif" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="-0.45" contrast="-0.92" hue="0.45" saturation="1.0" />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../ICONS/login/pablita-449.gif" />
-               </image>
-            </ImageView>
             <Label fx:id="invalidUser" alignment="CENTER" layoutX="107.0" layoutY="183.0" prefHeight="24.0" prefWidth="194.0" style="-fx-border-color: red; -fx-background-color: #FFECE8;" text="Wrong username!" visible="false">
                <font>
                   <Font name="Berlin Sans FB" size="14.0" />
@@ -128,6 +105,17 @@
                   <Font name="Berlin Sans FB" size="14.0" />
                </font>
             </Label>
+            <Label layoutX="132.0" layoutY="66.0" text="Appointy">
+               <font>
+                  <Font name="Mistral" size="46.0" />
+               </font>
+            </Label>
+            <Label layoutX="116.0" layoutY="125.0" text="Your Best Appointment Manager">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="60.0" layoutY="387.0" onAction="#signUp" stylesheets="@../../CSS/login/login-form.css" text="Account? Sign up" />
          </children>
       </AnchorPane>
    </children>
