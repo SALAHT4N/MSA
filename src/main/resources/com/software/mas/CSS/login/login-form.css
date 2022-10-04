@@ -4,13 +4,15 @@ Main-colours:
 
 
 */
+
 .page {
   -fx-background-color: white;
 }
 .img {
+  -fx-background-color: -fx-whitespace-color;
   -fx-border-color: #777777;
   -fx-border-style: solid;
-  -fx-border-width: 0 2 0 0;
+  -fx-border-width: 0 0.5 0 0;
 }
 .login-pane {
   -fx-background-color: #cccccc;
@@ -23,8 +25,9 @@ Main-colours:
 }
 .login-btn {
   -fx-background-color: -fx-buttonColor;
-  -fx-border-radius:0;
 
+  -fx-background-radius: 9;
+  -fx-border-radius: 9;
   -fx-text-fill: white;
 }
 
@@ -36,7 +39,7 @@ Main-colours:
 }
 
 .login-btn:hover {
-  -fx-background-color: black;
+  -fx-background-color: -fx-button-hover-color;
 }
 
 .login-btn:pressed {
