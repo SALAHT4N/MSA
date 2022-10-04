@@ -1,6 +1,7 @@
 package com.software.mas;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.IOException;
@@ -17,6 +18,12 @@ public class Loader {
         return new Scene(getLoader(url).load());
 
     }
+
+    public static Parent parentLoader(String url) throws IOException {
+        Parent loaded = getLoader(url).load();
+        return loaded;
+    }
+
 
 
 }

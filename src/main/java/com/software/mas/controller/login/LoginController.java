@@ -20,6 +20,8 @@ import java.io.IOException;
 // <CONTROLLER VIEW>
 public class LoginController {
 
+
+    //MODEL INIT HERE
     @FXML
     private Text firstLabel;
 
@@ -48,7 +50,7 @@ public class LoginController {
 
     @FXML
     void loginPressed(ActionEvent event) {
-
+        //MODEL
     }
 
     @FXML
@@ -60,5 +62,6 @@ public class LoginController {
         secondaryStage.setTitle("Sign Up");
         secondaryStage.initModality(Modality.APPLICATION_MODAL);
         secondaryStage.show();
+
     }
 }
