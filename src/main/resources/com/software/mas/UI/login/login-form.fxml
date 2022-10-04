@@ -2,6 +2,7 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -27,9 +28,9 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Pane prefWidth="700.0" styleClass="img" stylesheets="@../../CSS/login/login-form.css">
+      <Pane prefWidth="700.0" style="-fx-background-color: white;" styleClass="img" stylesheets="@../../CSS/login/login-form.css">
          <children>
-            <ImageView blendMode="SRC_ATOP" fitHeight="514.0" fitWidth="411.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" y="50.0">
+            <ImageView blendMode="SRC_ATOP" fitHeight="387.0" fitWidth="375.0" layoutX="13.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" y="50.0">
                <image>
                   <Image url="@../../IMG/login/Background.png" />
                </image>
@@ -58,13 +59,17 @@
       </Pane>
       <AnchorPane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">
          <children>
-            <Button fx:id="loginBtn" layoutX="59.0" layoutY="340.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="36.0" prefWidth="290.0" styleClass="login-btn" stylesheets="@../../CSS/login/login-form.css" text="Login" textFill="WHITE">
+            <Button fx:id="loginBtn" layoutX="97.0" layoutY="351.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="36.0" prefWidth="205.0" styleClass="login-btn" text="Login" textFill="WHITE">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <stylesheets>
+                  <URL value="@../../CSS/login/login-form.css" />
+                  <URL value="@../../CSS/ColorThemes.css" />
+               </stylesheets>
             </Button>
             <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="65.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -89,7 +94,7 @@
                <padding>
                   <Insets left="40.0" />
                </padding></MFXPasswordField>
-            <Hyperlink layoutX="248.0" layoutY="387.0" stylesheets="@../../CSS/login/login-form.css" text="Forgot password?" />
+            <Hyperlink layoutX="250.0" layoutY="313.0" stylesheets="@../../CSS/login/login-form.css" text="Forgot password?" />
             <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="66.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../ICONS/login/password.png" />
@@ -110,12 +115,12 @@
                   <Font name="Mistral" size="46.0" />
                </font>
             </Label>
-            <Label layoutX="116.0" layoutY="125.0" text="Your Best Appointment Manager">
+            <Label layoutX="90.0" layoutY="125.0" text="Your Best Appointment Manager">
                <font>
-                  <Font name="Segoe UI Light" size="12.0" />
+                  <Font name="Segoe UI Light Italic" size="16.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="60.0" layoutY="387.0" onAction="#signUp" stylesheets="@../../CSS/login/login-form.css" text="Account? Sign up" />
+            <Hyperlink layoutX="153.0" layoutY="499.0" onAction="#signUp" stylesheets="@../../CSS/login/login-form.css" text="Account? Sign up" />
          </children>
       </AnchorPane>
    </children>

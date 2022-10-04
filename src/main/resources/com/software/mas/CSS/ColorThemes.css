@@ -2,14 +2,19 @@
     -fx-primaryColor: white;
     -fx-labelColor: #333;
     -fx-subColor:#F8A918;
-    -fx-hoverColor: #EAEBED;
+
     -fx-btnHover: #141415;
     -fx-pressedColor: #6666;
     -fx-BoxesColor: #E6E6E6;
     -fx-buttonColor: #333333;
+    -fx-button-hover-color: #444444;
+    -fx-button-border-radius: 30;
+
     -fx-borderColor:#333;
     -fx-textColor:#333;
-   
+
+    -fx-whitespace-color: #f7f7f7;
+
     -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFUALT HAVE RADIUS "0" */
 }
 .root{
@@ -19,6 +24,13 @@
 .underline{
     -fx-border-color:-fx-labelColor;
     -fx-border-width: 0 0 1 0;
+}
+
+.textfields {
+    -fx-background-radius: 9;
+    -fx-border-radius: 9;
+    -fx-border-width: 0.5;
+    /*-fx-padding: 0 0 0 0;*/
 }
 .textfields:focused{
     -fx-border-color:-fx-borderColor;
@@ -33,7 +45,7 @@
     -fx-text-fill:-fx-subColor;
 }
 .textfields .floating-text{
-    -fx-font-family:"Berlin Sans FB";
+    /*-fx-font-family:"Berlin Sans FB";*/
     -fx-text-fill:-fx-textColor;
 }
 .delete-btns .mfx-ripple-generator{-mfx-ripple-color: rgba(248,0,0,0.6);}
