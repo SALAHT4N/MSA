@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -54,7 +56,12 @@ public class LoginController {
     @FXML
     void signUp(ActionEvent event) throws IOException {
         //Navigate to The Sign Up View
-        App.setStage(Loader.sceneLoader("/com/software/mas/UI/login/sign-up.fxml"));
+        //App.setStage(Loader.sceneLoader("/com/software/mas/UI/login/sign-up.fxml"));
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/sign-up.fxml"));
+        secondaryStage.setTitle("Sign Up");
+        secondaryStage.initModality(Modality.APPLICATION_MODAL);
+        secondaryStage.show();
 
     }
 }

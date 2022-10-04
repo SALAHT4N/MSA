@@ -1,0 +1,39 @@
+/*
+Main Color: #333
+Accent Color: #0c8599
+
+Font Color:
+Default #555 <--- Light mode , #ddd <--- Dark mode
+
+Headings #333 <--- Light mode , #eee <--- Dark mode
+
+
+
+*/
+.main-pane{
+    -fx-background-color: -fx-whitespace-color;
+    -fx-border-color: #0c8599;
+    -fx-border-width: 0 0 12 0;
+
+}
+
+.card-label{
+ -fx-text-fill: #333;
+}
+.card-text {
+    -fx-text-fill: #555;
+}
+.heading-label {
+    -fx-text-fill: #333;
+}
+
+.card {
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.15), 20, 0.09 , 0 , 8.5);
+    -fx-background-color: #fff;
+    -fx-border-radius: 11;
+    -fx-background-radius: 11;
+    -fx-text-fill: #333;
+
+    /*-fx-border-width: 10 0 0 0;*/
+    /*-fx-border-color: #0c8599 ;*/
+}

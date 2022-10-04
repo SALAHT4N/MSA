@@ -42,6 +42,10 @@ Main-colours:
   -fx-background-color: -fx-button-hover-color;
 }
 
+.links {
+  -fx-text-fill: #0c8599;
+}
+
 .login-btn:pressed {
   -fx-background-color: #ffffff;
   -fx-text-fill: #333333;
