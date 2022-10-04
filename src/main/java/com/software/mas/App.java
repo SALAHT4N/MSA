@@ -23,7 +23,7 @@ public class App extends Application {
         stage.close();
         mainStage = new Stage();
         mainStage.setTitle("Appointy");
-        mainStage.setScene(new Scene(Loader.getLoader("UI/login/login-form.fxml").load()));
+        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml"));
         mainStage.setResizable(false);
         mainStage.show();
 

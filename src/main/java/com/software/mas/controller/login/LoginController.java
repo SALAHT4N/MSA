@@ -18,6 +18,8 @@ import java.io.IOException;
 // <CONTROLLER VIEW>
 public class LoginController {
 
+
+    //MODEL INIT HERE
     @FXML
     private Text firstLabel;
 
@@ -46,13 +48,13 @@ public class LoginController {
 
     @FXML
     void loginPressed(ActionEvent event) {
-
+        //MODEL
     }
 
     @FXML
     void signUp(ActionEvent event) throws IOException {
         //Navigate to The Sign Up View
-        App.setStage(Loader.sceneLoader(""));
+        App.setStage(Loader.sceneLoader("/com/software/mas/UI/login/sign-up.fxml"));
 
     }
 }
