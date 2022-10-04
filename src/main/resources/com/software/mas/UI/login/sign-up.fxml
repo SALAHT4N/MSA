@@ -1,16 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.login.SignUpController">
-   <children>
-      <Label layoutX="301.0" layoutY="258.0" text="Sign Up">
-         <font>
-            <Font size="57.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+<BorderPane prefHeight="470.0" prefWidth="762.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.login.SignUpController">
+   <top>
+      <Pane prefHeight="50.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="3.0" prefHeight="44.0" prefWidth="157.0" styleClass="heading-label" text="Sign Up" textAlignment="CENTER" textFill="#333333">
+               <font>
+                  <Font name="SansSerif Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="60.0" layoutX="-1.0" layoutY="-3.0" prefHeight="422.0" prefWidth="762.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox fx:id="providerCard" onMouseClicked="#selectUserType" prefHeight="200.0" prefWidth="100.0" spacing="16.0" styleClass="card">
+                     <children>
+                        <Label styleClass="card-label" text="Provider" textFill="#333333">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Text fill="#555555" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="card-text" text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id mollitia suscipit eligendi? Harum laudantium possimus exercitationem dolorum dolore ullam dignissimos, optio cumque reiciendis voluptates quis soluta excepturi eius repellendus odit!" wrappingWidth="262.9366989135742">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets left="8.0" top="12.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="customerCard" onMouseClicked="#selectUserType" prefHeight="200.0" prefWidth="100.0" spacing="16.0" styleClass="card" GridPane.columnIndex="1">
+                     <children>
+                        <Label styleClass="card-label" text="Customer" textFill="#eeeeee">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Text fill="#555555" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="card-text" text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id mollitia suscipit eligendi? Harum laudantium possimus exercitationem dolorum dolore ullam dignissimos, optio cumque reiciendis voluptates quis soluta excepturi eius repellendus odit!" wrappingWidth="262.9366989135742">
+                           <VBox.margin>
+                              <Insets left="8.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets left="8.0" top="12.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="60.0" right="60.0" top="20.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" styleClass="btns" stylesheets="@../../CSS/ColorThemes.css" text="Next" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="12.0" right="12.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <stylesheets>
+      <URL value="@../../CSS/signup/sign-up.css" />
+      <URL value="@../../CSS/ColorThemes.css" />
+   </stylesheets>
+</BorderPane>

@@ -57,7 +57,7 @@
             </Pane>
          </children>
       </Pane>
-      <AnchorPane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">
+      <AnchorPane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7f;" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">
          <children>
 
             <Button fx:id="loginBtn" layoutX="97.0" layoutY="351.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="36.0" prefWidth="205.0" styleClass="login-btn" text="Login" textFill="WHITE">
@@ -96,7 +96,7 @@
                <padding>
                   <Insets left="40.0" />
                </padding></MFXPasswordField>
-            <Hyperlink layoutX="250.0" layoutY="313.0" stylesheets="@../../CSS/login/login-form.css" text="Forgot password?" />
+            <Hyperlink layoutX="250.0" layoutY="313.0" styleClass="links" stylesheets="@../../CSS/login/login-form.css" text="Forgot password?" />
             <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="66.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../ICONS/login/password.png" />
@@ -122,7 +122,7 @@
                   <Font name="Segoe UI Light Italic" size="16.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="153.0" layoutY="499.0" onAction="#signUp" stylesheets="@../../CSS/login/login-form.css" text="Account? Sign up" />
+            <Hyperlink layoutX="153.0" layoutY="499.0" onAction="#signUp" styleClass="links" stylesheets="@../../CSS/login/login-form.css" text="Account? Sign up" />
          </children>
       </AnchorPane>
    </children>
