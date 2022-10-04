@@ -9,9 +9,10 @@
     -fx-buttonColor: #333333;
     -fx-borderColor:#333;
     -fx-textColor:#333;
-   
-    -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFUALT HAVE RADIUS "0" */
+
+
 }
+
 .root{
     
 }

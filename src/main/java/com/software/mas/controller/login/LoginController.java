@@ -1,6 +1,8 @@
-package com.software.mas.controller;
+package com.software.mas.controller.login;
 
 
+import com.software.mas.App;
+import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -9,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
+
+import java.io.IOException;
 
 
 // <CONTROLLER VIEW>
@@ -46,7 +50,9 @@ public class LoginController {
     }
 
     @FXML
-    void signUp(ActionEvent event) {
+    void signUp(ActionEvent event) throws IOException {
+        //Navigate to The Sign Up View
+        App.setStage(Loader.sceneLoader(""));
 
     }
 }

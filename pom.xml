@@ -30,7 +30,6 @@
         <!-- UI LIBRARIES ============================================================================= -->
 
         <!-- https://mvnrepository.com/artifact/io.github.palexdev/materialfx -->
-        <!-- dsfgghjh -->
         <dependency>
             <groupId>io.github.palexdev</groupId>
             <artifactId>materialfx</artifactId>

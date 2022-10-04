@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.login.SignUpController">
+   <children>
+      <Label layoutX="301.0" layoutY="258.0" text="Sign Up">
+         <font>
+            <Font size="57.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

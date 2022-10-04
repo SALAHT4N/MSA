@@ -2,6 +2,7 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -18,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginKey" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.LoginController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginKey" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.login.LoginController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -58,13 +59,17 @@
       </Pane>
       <AnchorPane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">
          <children>
-            <Button fx:id="loginBtn" layoutX="59.0" layoutY="340.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="36.0" prefWidth="290.0" styleClass="login-btn" stylesheets="@../../CSS/login/login-form.css" text="Login" textFill="WHITE">
+            <Button fx:id="loginBtn" layoutX="59.0" layoutY="340.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="36.0" prefWidth="290.0" style="-fx-border-radius: 0;" styleClass="login-btn" text="Login" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <stylesheets>
+                  <URL value="@../../CSS/login/login-form.css" />
+                  <URL value="@../../CSS/ColorThemes.css" />
+               </stylesheets>
             </Button>
             <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="65.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                <image>

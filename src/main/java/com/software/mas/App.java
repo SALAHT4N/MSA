@@ -8,14 +8,24 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
+
+    private static Stage mainStage;
+
+
+    public static void setStage (Scene sc){
+        mainStage.setScene(sc);
+    }
+    public static Stage getStage (){
+        return mainStage;
+    }
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("UI/login/login-form.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Appointy");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
+        stage.close();
+        mainStage = new Stage();
+        mainStage.setTitle("Appointy");
+        mainStage.setScene(new Scene(Loader.getLoader("UI/login/login-form.fxml").load()));
+        mainStage.setResizable(false);
+        mainStage.show();
 
     }
 
