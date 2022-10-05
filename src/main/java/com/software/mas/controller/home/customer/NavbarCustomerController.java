@@ -1,20 +1,9 @@
 package com.software.mas.controller.home.customer;
 
 import com.software.mas.controller.home.NavbarController;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 
-import java.awt.*;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 
 public class NavbarCustomerController extends NavbarController<HomeCustomerController> {
     /*   --SMART NAVBAR--
@@ -27,11 +16,8 @@ public class NavbarCustomerController extends NavbarController<HomeCustomerContr
      */
     @Override
     protected void setRoute(String FXMLViewName) throws IOException {
-        if("calendar-customer".equals(FXMLViewName))
-            viewController.specialCaseCenterCalendar();
-        else{
+
             String route = "/com/software/mas/UI/home/customer/sub-panes/" + FXMLViewName + ".fxml";
             viewController.setCenterView(route);
-        }
     }
 }
