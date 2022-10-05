@@ -27,7 +27,11 @@ public class NavbarCustomerController extends NavbarController<HomeCustomerContr
      */
     @Override
     protected void setRoute(String FXMLViewName) throws IOException {
-        String route= "/com/software/mas/UI/home/customer/sub-panes/"+FXMLViewName+".fxml";
-        viewController.setCenterView(route);
+        if("calendar-customer".equals(FXMLViewName))
+            viewController.specialCaseCenterCalendar();
+        else{
+            String route = "/com/software/mas/UI/home/customer/sub-panes/" + FXMLViewName + ".fxml";
+            viewController.setCenterView(route);
+        }
     }
 }

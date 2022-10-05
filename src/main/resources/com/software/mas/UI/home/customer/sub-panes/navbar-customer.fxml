@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="70.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.NavbarCustomerController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="55.0" styleClass="nav" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.NavbarCustomerController">
    <children>
       <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../ICONS/AppIcon/daraghmeh-logo.png" />
                </image>
@@ -18,7 +18,16 @@
       </Pane>
       <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="7.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ICONS/customer/nav/calendar-customer.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../ICONS/AppIcon/daraghmeh-logo.png" />
                </image>
@@ -27,7 +36,7 @@
       </Pane>
       <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../ICONS/AppIcon/daraghmeh-logo.png" />
                </image>
@@ -36,25 +45,7 @@
       </Pane>
       <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../ICONS/AppIcon/daraghmeh-logo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
-         <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../ICONS/AppIcon/daraghmeh-logo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane onMouseClicked="#navigate" prefHeight="70.0" prefWidth="70.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
-         <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../ICONS/AppIcon/daraghmeh-logo.png" />
                </image>

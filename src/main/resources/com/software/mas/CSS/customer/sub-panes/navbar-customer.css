@@ -2,3 +2,9 @@
 .nav-pane:hover{
     -fx-background-color: rgba(12, 133, 153,0.15);
 }
+.nav{
+    -fx-background-color: white;
+    -fx-border-color: rgba(12, 133, 153,0.55);
+    -fx-border-width:0 0.5 0 0;
+
+}

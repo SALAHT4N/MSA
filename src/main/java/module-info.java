@@ -4,7 +4,7 @@ module com.software.mas {
     requires junit;
     requires io.cucumber.junit;
     requires MaterialFX;
-
+    requires com.calendarfx.view;
 
     opens com.software.mas.controller.login to javafx.fxml;
     opens com.software.mas.controller.home to javafx.fxml;
