@@ -1,7 +1,7 @@
 *{
     -fx-primaryColor: white;
     -fx-labelColor: #333;
-    -fx-subColor:#F8A918;
+    -fx-subColor:#0c8599;
 
     -fx-btnHover: #141415;
     -fx-pressedColor: #6666;
@@ -11,8 +11,8 @@
     -fx-button-border-radius: 30;
 
     -fx-borderColor:#333;
-    -fx-textColor:#333;
-
+    -fx-text-color:#333;
+    -fx-accent-color:  #0c8599;
 
     -fx-whitespace-color: white;
 
@@ -24,16 +24,24 @@
     
 }
 
+.main-pane{
+    -fx-background-color: -fx-whitespace-color;
+    -fx-border-color: -fx-accent-color;
+    -fx-border-width: 0 0 12 0;
+
+}
+
 .underline{
     -fx-border-color:-fx-labelColor;
     -fx-border-width: 0 0 1 0;
 }
 
 .textfields {
-    -fx-background-radius: 9;
-    -fx-border-radius: 9;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
     -fx-border-width: 0.5;
     /*-fx-padding: 0 0 0 0;*/
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.05),20 , 0.01 , 0 , 3);
 }
 .textfields:focused{
     -fx-border-color:-fx-borderColor;
@@ -50,6 +58,8 @@
 .textfields .floating-text{
     /*-fx-font-family:"Berlin Sans FB";*/
     -fx-text-fill:-fx-textColor;
+    -fx-font-weight: 600;
+    -fx-font-size: 14;
 }
 .delete-btns .mfx-ripple-generator{-mfx-ripple-color: rgba(248,0,0,0.6);}
 .delete-btns{
@@ -61,7 +71,7 @@
     -fx-border-color : -fx-borderColor;
 }
 .date-box .floating-text{
-    -fx-font-family:"Berlin Sans FB";
+    /*-fx-font-family:"Berlin Sans FB";*/
 }
 .date-box:focus-within .floating-text{
     -fx-text-fill:-fx-subColor;
@@ -83,7 +93,8 @@
 }
 .date-box .date-picker-popup .months-combo:focus-within,
 .date-box .date-picker-popup .years-combo:focus-within {
-	-fx-background-color: #f8f7fa;
+	/*-fx-background-color: #f8f7fa;*/
+    -fx-background-color: -fx-accent-color;
 	-fx-text-fill: -fx-subColor;
 }
 .date-box:focus-within .caret .mfx-font-icon {
@@ -92,11 +103,13 @@
 
 .date-box .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:hover,
 .date-box .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:hover {
-	-fx-background-color: rgba(248,169,24,0.3);
+	/*-fx-background-color: rgba(248,169,24,0.3);*/
+    -fx-background-color: -fx-accent-color;
 }
 .date-box .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected,
 .date-box .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected {
-	-fx-background-color: rgba(248,169,24,0.6);
+	/*-fx-background-color: rgba(248,169,24,0.6);*/
+    -fx-background-color: -fx-accent-color;
 }
 .date-box .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected .label,
 .date-box .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected .label {
@@ -107,6 +120,11 @@
 	
 	-fx-text-fill: green;
 	
+}
+
+.mfx-radio-button {
+    -mfx-main: -fx-text-color;
+    /*-mfx-secondary: #424242;*/
 }
 
 

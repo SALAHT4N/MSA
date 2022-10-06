@@ -1,7 +1,6 @@
 package com.software.mas;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,8 +11,8 @@ public class App extends Application {
     private static Stage mainStage;
 
 
-    public static void setStage (Scene sc){
-        mainStage.setScene(sc);
+    public static void setStage (Scene scene){
+        mainStage.setScene(scene);
     }
     public static Stage getStage (){
         return mainStage;
@@ -23,7 +22,8 @@ public class App extends Application {
         stage.close();
         mainStage = new Stage();
         mainStage.setTitle("Appointy");
-        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml"));
+//        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml"));
+        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/signup/sign-up.fxml"));
         mainStage.setResizable(false);
         mainStage.show();
 

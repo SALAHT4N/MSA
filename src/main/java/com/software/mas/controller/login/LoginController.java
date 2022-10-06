@@ -1,7 +1,6 @@
 package com.software.mas.controller.login;
 
 
-import com.software.mas.App;
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -58,7 +57,7 @@ public class LoginController {
         //Navigate to The Sign Up View
         //App.setStage(Loader.sceneLoader("/com/software/mas/UI/login/sign-up.fxml"));
         Stage secondaryStage = new Stage();
-        secondaryStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/sign-up.fxml"));
+        secondaryStage.setScene(Loader.sceneLoader("/com/software/mas/UI/signup/sign-up.fxml"));
         secondaryStage.setTitle("Sign Up");
         secondaryStage.initModality(Modality.APPLICATION_MODAL);
         secondaryStage.show();
