@@ -18,7 +18,14 @@ abstract public class NavbarController <T>{
     }
     protected static void clearIconBackground(VBox cont){
         for(Node temp :  cont.getChildren()){
-            ((Pane)temp).setStyle("");
+            //Try&Catch used because of the separator
+           if(temp instanceof Pane)
+               try {
+                   ((Pane) ((Pane) temp).getChildren().get(0)).setStyle("");
+               }catch (Exception e){
+                   e.printStackTrace();
+                   continue;
+               }
         }
 
     }
@@ -62,7 +69,7 @@ abstract public class NavbarController <T>{
          */
 
 
-            VBox cont =  (VBox) ((Pane)event.getSource()).getParent();
+            VBox cont =  (VBox) ((Pane)event.getSource()).getParent().getParent();
             clearIconBackground(cont);
             ((Pane)event.getSource()).setStyle("-fx-background-color: rgba(0,0,0,0.15)");
 
