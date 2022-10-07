@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="324.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MFXTextField floatMode="BORDER" floatingText="Username" prefHeight="50.0" prefWidth="441.0" />
+      <MFXTextField floatMode="BORDER" floatingText="Password" prefHeight="50.0" prefWidth="495.0" />
+      <MFXTextField floatMode="BORDER" floatingText="Confirm Password" prefHeight="50.0" prefWidth="578.0" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1">
+         <VBox.margin>
+            <Insets left="115.0" />
+         </VBox.margin>
+      </MFXButton>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

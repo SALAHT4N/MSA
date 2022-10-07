@@ -13,5 +13,6 @@ module com.software.mas {
     opens com.software.mas to javafx.fxml;
 
     exports com.software.mas;
+    opens com.software.mas.controller.signup to javafx.fxml;
 
 }

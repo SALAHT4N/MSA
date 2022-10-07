@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXRadioButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import java.lang.String?>
@@ -11,11 +12,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="659.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="659.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.signup.SignUpProvider1Controller">
     <top>
         <Pane prefHeight="50.0" prefWidth="800.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="14.0" layoutY="3.0" prefHeight="44.0" prefWidth="332.0" styleClass="heading-label" text="Sign up" textAlignment="CENTER" textFill="#333333">
+                <Label layoutX="14.0" layoutY="3.0" prefHeight="44.0" prefWidth="332.0" styleClass="heading-label" text="Sign Up" textAlignment="CENTER" textFill="#333333">
                     <font>
                         <Font name="SansSerif Bold" size="30.0" />
                     </font>
@@ -24,31 +25,33 @@
         </Pane>
     </top>
    <center>
-      <Pane prefHeight="410.0" prefWidth="348.0" BorderPane.alignment="CENTER">
+      <Pane fx:id="mainPane" prefHeight="410.0" prefWidth="348.0" BorderPane.alignment="CENTER">
          <children>
-            <MFXTextField floatMode="ABOVE" floatingText="Username" layoutX="82.0" layoutY="94.0" prefHeight="32.0" prefWidth="212.0" styleClass="textfields" />
-            <MFXTextField floatMode="ABOVE" floatingText="Email" layoutX="82.0" layoutY="156.0" prefHeight="32.0" prefWidth="211.0" styleClass="textfields" />
-            <MFXTextField floatMode="ABOVE" floatingText="Password" layoutX="81.0" layoutY="219.0" prefHeight="32.0" prefWidth="214.0" styleClass="textfields" />
-            <MFXTextField floatMode="ABOVE" floatingText="Confirm Password" layoutX="79.0" layoutY="282.0" prefHeight="32.0" prefWidth="217.0" styleClass="textfields" />
-            <MFXDatePicker floatMode="BORDER" floatingText="Birth Date" layoutX="377.0" layoutY="94.0">
+            <MFXTextField fx:id="firstNameTxt" floatMode="BORDER" floatingText="First Name" layoutX="61.0" layoutY="140.0" prefHeight="32.0" prefWidth="29.0" styleClass="textfields" />
+            <MFXTextField fx:id="emailTxt" floatMode="BORDER" floatingText="Email" layoutX="62.0" layoutY="82.0" prefHeight="38.0" prefWidth="289.0" styleClass="textfields" />
+            <MFXDatePicker floatMode="BORDER" floatingText="Birth Date" layoutX="398.0" layoutY="83.0">
                <styleClass>
                   <String fx:value="textfields" />
                   <String fx:value="date-picker-popup" />
                </styleClass>
             </MFXDatePicker>
-            <MFXRadioButton layoutX="396.0" layoutY="210.0" text="Female">
+            <MFXRadioButton layoutX="430.0" layoutY="202.0" text="Female">
                <toggleGroup>
                   <ToggleGroup fx:id="genderGroup" />
                </toggleGroup>
             </MFXRadioButton>
-            <MFXRadioButton layoutX="396.0" layoutY="185.0" text="Male" toggleGroup="$genderGroup" />
-            <Label layoutX="377.0" layoutY="151.0" styleClass="sign-up-label-sm" stylesheets="@../../CSS/signup/sign-up.css" text="Gender" />
+            <MFXRadioButton layoutX="430.0" layoutY="177.0" text="Male" toggleGroup="$genderGroup" />
+            <Label layoutX="411.0" layoutY="143.0" styleClass="sign-up-label-sm" stylesheets="@../../CSS/signup/sign-up.css" text="Gender" />
             <Button layoutX="572.0" layoutY="357.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" styleClass="btns" stylesheets="@../../CSS/ColorThemes.css" text="Next" />
-            <Label layoutX="34.0" layoutY="14.0" styleClass="sign-up-heading-2" text="Let's Get Started!">
+            <MFXTextField fx:id="middleNameTxt" floatMode="BORDER" floatingText="Middle Name" layoutX="154.0" layoutY="140.0" prefHeight="32.0" prefWidth="0.0" styleClass="textfields" />
+            <MFXTextField fx:id="lastNameTxt" floatMode="BORDER" floatingText="Last Name" layoutX="267.0" layoutY="140.0" prefHeight="32.0" prefWidth="64.0" styleClass="textfields" />
+            <Label layoutX="48.0" layoutY="14.0" styleClass="sign-up-heading-2" text="Let's Get Started!">
                <font>
                   <Font size="32.0" />
                </font>
             </Label>
+            <MFXPasswordField floatMode="BORDER" floatingText="Password" layoutX="62.0" layoutY="192.0" prefHeight="38.0" prefWidth="212.0" styleClass="textfields" />
+            <MFXPasswordField floatMode="BORDER" floatingText="Confirm Password" layoutX="64.0" layoutY="245.0" prefHeight="38.0" prefWidth="212.0" styleClass="textfields" />
          </children>
       </Pane>
    </center>

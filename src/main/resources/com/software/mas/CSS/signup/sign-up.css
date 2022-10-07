@@ -44,4 +44,5 @@ Headings #333 <--- Light mode , #eee <--- Dark mode
 
 .sign-up-label-sm {
     -fx-font-size: 16;
+    -fx-font-weight: 800;
 }

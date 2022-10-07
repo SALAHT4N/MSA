@@ -32,7 +32,7 @@
          <children>
             <ImageView blendMode="SRC_ATOP" fitHeight="387.0" fitWidth="375.0" layoutX="13.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" y="50.0">
                <image>
-                  <Image url="@../../IMG/login/Background.png" />
+                  <Image url="@../../IMG/login/Colored_Background.png" />
                </image>
             </ImageView>
             <Pane layoutX="98.0" layoutY="215.0" prefHeight="99.0" prefWidth="205.0" style="-fx-border-color: black; -fx-border-width: 0 0 1.5 0;">

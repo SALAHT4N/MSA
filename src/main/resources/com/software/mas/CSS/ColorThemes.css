@@ -1,3 +1,4 @@
+/*Variables for COLORS*/
 *{
     -fx-primaryColor: white;
     -fx-labelColor: #333;
@@ -12,13 +13,66 @@
 
     -fx-borderColor:#333;
     -fx-text-color:#333;
+    -fx-text-light-color: #666;
     -fx-accent-color:  #0c8599;
+    -fx-accent-shade-1: #0b7285;
+    -fx-accent-tint-1: #e3fafc;
 
     -fx-whitespace-color: white;
 
     -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFUALT HAVE RADIUS "0" */
 
 }
+/* MFX TEXT FIELD STYLES*/
+.mfx-text-field {
+    -mfx-main: -fx-accent-color;
+}
+
+.mfx-text-field .text-field {
+    -fx-highlight-fill: -fx-accent-tint-1; /* Selected text highlight */
+    -fx-prompt-text-fill: -mfx-text-me; /* Prompt text color */
+}
+
+/* COMBO BOX STYLES*/
+.mfx-combo-box .caret .mfx-ripple-generator {
+    -mfx-ripple-color: -fx-accent-shade-1;
+}
+
+.mfx-combo-box-cell {
+    -mfx-main: -fx-accent-color;
+    -mfx-hover: rgba(12, 133, 153, 0.1); /*MAIN COLOR BUT TRANSPARENT*/
+    -mfx-selected: rgba(12, 133, 153, 0.2);
+}
+
+
+/*DATE PICKER CUSTOMIZATION*/
+
+.mfx-date-cell:current {
+    -fx-text-fill: -fx-accent-color;
+
+}
+
+.mfx-date-cell:selected {
+    -fx-background-color: -fx-accent-color;
+}
+
+
+.mfx-date-picker:focus-within .icon {
+    -mfx-color: -fx-accent-color;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo:focus-within,
+.mfx-date-picker .date-picker-popup .years-combo:focus-within {
+
+    -fx-text-fill: -fx-accent-color;
+}
+
+.mfx-date-picker .date-picker-popup .months-combo .virtual-flow .mfx-combo-box-cell:selected .label,
+.mfx-date-picker .date-picker-popup .years-combo .virtual-flow .mfx-combo-box-cell:selected .label {
+    -fx-text-fill: -fx-accent-color;
+}
+
+/* LAYOUT STYLES*/
 
 .root{
     
@@ -28,13 +82,14 @@
     -fx-background-color: -fx-whitespace-color;
     -fx-border-color: -fx-accent-color;
     -fx-border-width: 0 0 12 0;
-
 }
 
 .underline{
     -fx-border-color:-fx-labelColor;
     -fx-border-width: 0 0 1 0;
 }
+
+/*TEXT FIELDS STYLES*/
 
 .textfields {
     -fx-background-radius: 7;
@@ -57,15 +112,13 @@
 }
 .textfields .floating-text{
     /*-fx-font-family:"Berlin Sans FB";*/
-    -fx-text-fill:-fx-textColor;
+    -fx-text-fill:-fx-text-light-color;
     -fx-font-weight: 600;
     -fx-font-size: 14;
 }
-.delete-btns .mfx-ripple-generator{-mfx-ripple-color: rgba(248,0,0,0.6);}
-.delete-btns{
-    -fx-border-color : #333;
-    
-}
+
+/* DATE BOX STYLES*/
+
 .date-box:focus-within {
     
     -fx-border-color : -fx-borderColor;
@@ -80,10 +133,7 @@
 .date-box:focus-within .icon {
 	-mfx-color: -fx-subColor;
 }
-.mfx-date-picker .mfx-icon-wrapper .mfx-ripple-generator {
-	-mfx-ripple-radius: 24;
-	-mfx-ripple-color: rgba(248,169,24,0.2);
-}
+
 .date-box .date-picker-popup .left-arrow .mfx-ripple-generator,
 .date-box .date-picker-popup .right-arrow .mfx-ripple-generator,
 .date-box .date-picker-popup .months-combo .mfx-icon-wrapper .mfx-ripple-generator,
@@ -117,15 +167,21 @@
 }
 
 .datebox .date-picker-popup .week-day {
-	
+
 	-fx-text-fill: green;
-	
+
 }
+/* RADIO BUTTON STYLES*/
 
 .mfx-radio-button {
     -mfx-main: -fx-text-color;
-    /*-mfx-secondary: #424242;*/
 }
+
+.mfx-radio-button .mfx-ripple-generator {
+    -mfx-ripple-color: -fx-accent-color;
+}
+
+/* BUTTON STYLES */
 
 
 .btns{
@@ -141,6 +197,16 @@
 .btns:hover{
     -fx-background-color:#444;
     -fx-font-family:"Berlin Sans FB";
+}
+
+.delete-btns .mfx-ripple-generator
+{
+    -mfx-ripple-color: rgba(248,0,0,0.6);
+}
+
+.delete-btns{
+    -fx-border-color : #333;
+
 }
 
 

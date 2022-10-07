@@ -1,11 +1,11 @@
-package com.software.mas.controller.login;
+package com.software.mas.controller.signup;
 
 import com.software.mas.App;
 import com.software.mas.Loader;
-import javafx.css.Stylesheet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -37,17 +37,18 @@ public class SignUpController implements Initializable {
         state = ((VBox)(event.getSource()) == providerCard) ? PROVIDER_SELECTED : CUSTOMER_SELECTED;
 
         if (state == 1) {
-            providerCard.getStylesheets().add(App.class.getResource("/com/software/mas/CSS/signup/sign-ip--selected.css").toString());
+            providerCard.getStylesheets().add(App.class.getResource("/com/software/mas/CSS/signup/sign-up--selected.css").toString());
         }
         else {
-            customerCard.getStylesheets().add(App.class.getResource("/com/software/mas/CSS/signup/sign-ip--selected.css").toString());
+            customerCard.getStylesheets().add(App.class.getResource("/com/software/mas/CSS/signup/sign-up--selected.css").toString());
         }
 
     }
     @FXML
     void nextPage(ActionEvent event) throws IOException
     {
-        Scene nextScene = Loader.sceneLoader("/com/software/mas/UI/signup/sign-up-2.fxml");
+        Scene nextScene = Loader.sceneLoader("/com/software/mas/UI/signup/sign-up-provider.fxml");
+//        (Node)(event.getSource())
         App.getStage().setScene(nextScene);
     }
 
