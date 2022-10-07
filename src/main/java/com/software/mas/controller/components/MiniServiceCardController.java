@@ -32,6 +32,7 @@ public class MiniServiceCardController {
     * */
 
     //getters
+
     public String getStringHeader(){
         return txtHeader.getText();
     }

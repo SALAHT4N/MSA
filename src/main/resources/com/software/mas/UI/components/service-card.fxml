@@ -20,7 +20,7 @@
             <Font name="Wingdings" size="12.0" />
          </font>
       </Label>
-      <ImageView fx:id="img" fitHeight="174.0" fitWidth="165.0" layoutX="471.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.599999999999994" />
+      <ImageView fx:id="img" fitHeight="174.0" fitWidth="165.0" layoutX="471.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.599999999999994" />
       <Text layoutX="325.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maybe Something Here" />
    </children>
 </AnchorPane>

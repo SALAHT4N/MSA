@@ -24,7 +24,7 @@ public class App extends Application {
         mainStage = new Stage();
         mainStage.setTitle("Appointy");
 //        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); M7MD
-        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/signup/stepper-test.fxml")); // SALAHT4N
+        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/signup/sign-up.fxml")); // SALAHT4N
 //        mainStage.setResizable(false);
         mainStage.show();
 
