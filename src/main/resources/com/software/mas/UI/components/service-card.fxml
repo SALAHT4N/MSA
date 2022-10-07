@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,9 +18,11 @@
          <padding>
             <Insets bottom="3.0" />
          </padding>
+
          <font>
-            <Font name="Wingdings" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
+
       </Label>
       <ImageView fx:id="img" fitHeight="175.0" fitWidth="165.0" layoutX="471.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="49.0">
          <image>
@@ -40,5 +43,10 @@
             <Insets top="2.0" />
          </padding>
       </FlowPane>
+
    </children>
+   <stylesheets>
+      <URL value="@../../CSS/components/service-card.css" />
+      <URL value="@../../CSS/ColorThemes.css" />
+   </stylesheets>
 </AnchorPane>

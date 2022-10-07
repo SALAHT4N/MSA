@@ -5,7 +5,6 @@ import com.software.mas.Loader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -47,7 +46,7 @@ public class SignUpController implements Initializable {
     @FXML
     void nextPage(ActionEvent event) throws IOException
     {
-        Scene nextScene = Loader.sceneLoader("/com/software/mas/UI/signup/sign-up-provider.fxml");
+        Scene nextScene = Loader.sceneLoader("/com/software/mas/UI/signup/steps/sign-up-provider-1.fxml");
 //        (Node)(event.getSource())
         App.getStage().setScene(nextScene);
     }

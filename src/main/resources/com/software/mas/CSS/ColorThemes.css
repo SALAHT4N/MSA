@@ -11,6 +11,7 @@
     -fx-button-hover-color: #444444;
     -fx-button-border-radius: 30;
 
+    -fx-main-color: #333;
     -fx-borderColor:#333;
     -fx-text-color:#333;
     -fx-text-light-color: #666;
@@ -22,6 +23,48 @@
 
     -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFUALT HAVE RADIUS "0" */
 
+    -mfx-purple: #333;
+
+}
+
+/* MFX STEPPER STYLES*/
+
+.mfx-stepper .buttons-box .mfx-button:focused {
+    -fx-background-color: -fx-main-color;
+    -fx-border-color: -fx-main-color;
+}
+
+.mfx-stepper .buttons-box .mfx-button {
+
+    -fx-background-color: #333;
+    -fx-border-color: #333;
+    -fx-background-radius: 9;
+    -fx-border-radius: 9;
+
+    -fx-font-size: 14;
+}
+
+
+
+.mfx-stepper {
+    -mfx-base-color: -fx-main-color;
+    -mfx-progress-color: -mfx-base-color;
+}
+
+.mfx-stepper-toggle:selected #circle {
+    -fx-stroke: -fx-main-color;
+    -fx-background-color: -fx-main-color;
+}
+
+.mfx-stepper-toggle:selected .mfx-text-field {
+    -fx-text-fill:-fx-main-color;
+
+}
+
+.mfx-stepper-toggle:completed #circle {
+    -fx-stroke: -fx-main-color;
+    -fx-fill: -fx-main-color;
+    -fx-background-color: -fx-main-color;
 }
 /* MFX TEXT FIELD STYLES*/
 .mfx-text-field {
@@ -72,6 +115,25 @@
     -fx-text-fill: -fx-accent-color;
 }
 
+/* DEFAULT TEXT STYLES*/
+
+.long-text {
+    -fx-fill: #555;
+    -fx-line-spacing: 1.6;
+}
+
+.heading-label {
+    -fx-text-fill: #333;
+    -fx-line-spacing: 1.1;
+}
+
+.small-label {
+    -fx-text-fill: #333;
+    -fx-fill: #333;
+}
+.small-label--bold {
+    -fx-font-weight: 800;
+}
 /* LAYOUT STYLES*/
 
 .root{
@@ -80,6 +142,8 @@
 
 .main-pane{
     -fx-background-color: -fx-whitespace-color;
+}
+.main-pane--with-border {
     -fx-border-color: -fx-accent-color;
     -fx-border-width: 0 0 12 0;
 }
