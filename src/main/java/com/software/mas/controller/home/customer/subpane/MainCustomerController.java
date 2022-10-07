@@ -3,6 +3,7 @@ package com.software.mas.controller.home.customer.subpane;
 import com.software.mas.Loader;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -13,6 +14,11 @@ public class MainCustomerController implements Initializable {
 
     @FXML
     VBox cardContainer;
+
+    @FXML
+    void makeIt(MouseEvent event) {
+        System.out.println("I ENTERED");
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -1,23 +1,32 @@
 package com.software.mas.controller.components;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import org.controlsfx.control.Rating;
 
-public class MiniServiceCardController {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class MiniServiceCardController implements Initializable {
 
     //This id will help us in the future to navigate to the full page
     //This id will be set in the initializing of the main-customer.fxml view --QUERYING--
     private String id;
     @FXML
     private ImageView img;
-
+    @FXML
+    private Label location;
     @FXML
     private Rating rating;
-
+    @FXML
+    private FlowPane tagsContainer;
     @FXML
     private Label txtDesc;
 
@@ -30,9 +39,27 @@ public class MiniServiceCardController {
     *
     *
     * */
+    private Label createTag(String tag){
+        Label lb = new Label();
+        lb.setText(tag);
+        lb.getStyleClass().add("tag");
+        return lb;
+    }
+    //ADD
+    public void addTags(String ...str){
+        List<Label> tags = new ArrayList<>();
+        for(String temp : str){
+        tags.add(createTag(temp));
+        }
+
+        tagsContainer.getChildren().addAll(tags);
+
+    }
 
     //getters
-
+    public String getLocation(){
+        return location.getText();
+    }
     public String getStringHeader(){
         return txtHeader.getText();
     }
@@ -48,6 +75,9 @@ public class MiniServiceCardController {
     }
 
     //Setters
+    public void setLocation(String loc){
+        location.setText(loc);
+    }
     public void setStringHeader(String header){
         txtHeader.setText( header);
     }
@@ -65,5 +95,10 @@ public class MiniServiceCardController {
     void onClicked(MouseEvent event) {
         //todo: Routing to the main service page that have the full Description
         System.out.println("A specific card has been clicked");
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        addTags("ENTERTAINMENT","SPORT","GAMES","ANYTHING");
     }
 }
