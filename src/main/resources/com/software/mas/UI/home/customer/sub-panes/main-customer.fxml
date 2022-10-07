@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1160.0" styleClass="container" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.MainCustomerController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="102.0" stylesheets="@../../../../CSS/components/service-card.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="101.20000000000005">
+         <content>
+            <VBox fx:id="cardContainer" prefHeight="647.0" prefWidth="700.0" spacing="15.0" style="-fx-background-radius: 10;" styleClass="nested-vbox" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css">
+               <padding>
+                  <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+               </padding></VBox>
+         </content>
+         <styleClass>
+            <String fx:value="out" />
+            <String fx:value="scroll-bar" />
+         </styleClass>
+      </ScrollPane>
+   </children>
+</AnchorPane>

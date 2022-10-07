@@ -1,6 +1,7 @@
 package com.software.mas.controller.home.customer;
 
 import com.software.mas.controller.home.NavbarController;
+import org.controlsfx.control.Rating;
 
 import java.io.IOException;
 
@@ -16,7 +17,7 @@ public class NavbarCustomerController extends NavbarController<HomeCustomerContr
      */
     @Override
     protected void setRoute(String FXMLViewName) throws IOException {
-
+            
             String route = "/com/software/mas/UI/home/customer/sub-panes/" + FXMLViewName + ".fxml";
             viewController.setCenterView(route);
     }
