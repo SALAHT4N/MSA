@@ -72,6 +72,22 @@
     -fx-text-fill: -fx-accent-color;
 }
 
+/* DEFAULT TEXT STYLES*/
+
+.long-text {
+    -fx-fill: #555;
+    -fx-line-spacing: 1.6;
+}
+
+.heading-label {
+    -fx-text-fill: #333;
+    -fx-line-spacing: 1.1;
+}
+
+.small-label {
+    -fx-font-weight: #333;
+
+}
 /* LAYOUT STYLES*/
 
 .root{

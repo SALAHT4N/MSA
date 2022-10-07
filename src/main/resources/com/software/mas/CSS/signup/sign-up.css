@@ -21,7 +21,8 @@ Headings #333 <--- Light mode , #eee <--- Dark mode
  -fx-text-fill: #333;
 }
 .card-text {
-    -fx-text-fill: #555;
+    -fx-fill: #555;
+    -fx-line-spacing: 1.6;
 }
 .heading-label {
     -fx-text-fill: #333;

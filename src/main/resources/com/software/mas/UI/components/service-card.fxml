@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,19 +9,36 @@
 <?import javafx.scene.text.Text?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane onMouseClicked="#onClicked" prefHeight="200.0" prefWidth="650.0" styleClass="card" stylesheets="@../../CSS/components/service-card.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.MiniServiceCardController">
+<AnchorPane onMouseClicked="#onClicked" prefHeight="244.0" prefWidth="809.0" styleClass="card" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.MiniServiceCardController">
    <children>
-      <Rating fx:id="rating" layoutX="20.0" layoutY="160.0" mouseTransparent="true" partialRating="true" rating="2.5" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="20.0" />
-      <Label fx:id="txtHeader" layoutX="14.0" layoutY="14.0" styleClass="header" stylesheets="@../../CSS/components/service-card.css" text="Header" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
-      <Label fx:id="txtDesc" alignment="TOP_LEFT" ellipsisString="...." layoutX="21.0" layoutY="49.0" prefHeight="109.0" prefWidth="447.0" styleClass="text-desc" stylesheets="@../../CSS/components/service-card.css" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus, eu egestas diam auctor. Quisque eget gravida felis. Nullam in velit tristique, mollis dolor eu, tincidunt odio. Integer ac cursus augue. Suspendisse in dolor sed nunc elementum mollis sagittis in tortor. Nunc et suscipit tellus. Vestibulum ac fermentum ipsum, vitae facilisis dui. Morbi sed mattis nibh. Nulla in posuere urna. Duis posuere lacinia ante et venenatis." textFill="#333333e5" wrapText="true" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="49.0">
-         <padding>
-            <Insets bottom="3.0" />
-         </padding>
+      <Rating fx:id="rating" layoutX="23.0" layoutY="203.0" mouseTransparent="true" partialRating="true" rating="2.5" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="23.0" />
+      <Label fx:id="txtHeader" layoutX="14.0" layoutY="11.0" stylesheets="@../../CSS/components/service-card.css" text="Header" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="11.0">
+         <styleClass>
+            <String fx:value="header" />
+            <String fx:value="heading-label" />
+         </styleClass></Label>
+      <ImageView fx:id="img" fitHeight="174.0" fitWidth="165.0" layoutX="619.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="25.200000000000045" AnchorPane.topAnchor="35.0" />
+      <Text layoutX="247.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nablus, Asira">
          <font>
-            <Font name="Wingdings" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
-      </Label>
-      <ImageView fx:id="img" fitHeight="174.0" fitWidth="165.0" layoutX="471.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.599999999999994" />
-      <Text layoutX="325.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maybe Something Here" />
+         <styleClass>
+            <String fx:value="small-label" />
+            <String fx:value="location" />
+         </styleClass></Text>
+      <Text fx:id="textDesc" layoutX="23.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus, eu egestas diam auctor. Quisque eget gravida felis. Nullam in velit tristique, mollis dolor eu, tincidunt odio. Integer ac cursus augue. Suspendisse in dolor sed nunc." wrappingWidth="606.6331512928009">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="209.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small-label" text="2.5" wrappingWidth="38.2994384765625">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
    </children>
+   <stylesheets>
+      <URL value="@../../CSS/components/service-card.css" />
+      <URL value="@../../CSS/ColorThemes.css" />
+   </stylesheets>
 </AnchorPane>
