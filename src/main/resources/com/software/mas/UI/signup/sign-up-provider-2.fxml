@@ -48,7 +48,7 @@
          <children>
             <ImageView fitHeight="302.0" fitWidth="311.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@../../IMG.signup/Signup_call.png" />
+                  <Image url="@../../IMG/signup/Signup_call.png" />
                </image>
             </ImageView>
               <Pane prefHeight="410.0" prefWidth="348.0">
