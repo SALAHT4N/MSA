@@ -1,6 +1,7 @@
 package com.software.mas.controller.signup;
 
 import com.software.mas.Loader;
+import com.software.mas.model.ViewFilesGetter;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
 import io.github.palexdev.materialfx.font.MFXFontIcon;
@@ -14,42 +15,36 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class SignUpProviderStepper implements Initializable {
+public class SignUpProviderStepper extends ViewFilesGetter implements Initializable  {
 
-    private Object[] fxmlFiles;
+
     @FXML
     private MFXStepper signUpStepper;
-
+    static private String[] stepsNames = {
+                "Sign Up",
+                "Contact Info",
+                "Billing Info",
+                "Finish"
+        };
     public SignUpProviderStepper()
     {
-        signUpStepper = new MFXStepper();
-        fxmlFiles =  (getFileNames().toArray());
+        super(stepsNames);
+        // super(); // Implicit Call
+//        fileNames =  (getFileNames().toArray()); // This will be done by the super constructor.
+
     }
 
-    private List<String> getFileNames ()
-    {
-        File folder = new File("C:\\Users\\tanbo\\IdeaProjects\\mas\\target\\classes\\com\\software\\mas\\UI\\signup\\provider-steps");
-        File[] listOfFiles = folder.listFiles();
-
-        LinkedList<String> fileNames = new LinkedList<>();
-
-        for (File i : listOfFiles)
-        {
-            if(i.isFile())
-                fileNames.add(i.getName());
-        }
-
-        return fileNames;
+    @Override
+    public void addFileName(File i, LinkedList<String> returnedFiles) {
+        if(i.isFile())
+                returnedFiles.add(i.getName());
     }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        List<MFXStepperToggle> steps = null;
+
         try {
-            steps = createSteps();
-            signUpStepper.getStepperToggles().addAll(steps);
+            signUpStepper.getStepperToggles().addAll(createSteps());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -57,32 +52,32 @@ public class SignUpProviderStepper implements Initializable {
 
     }
 
-    private List<MFXStepperToggle> createSteps() throws IOException {
-        LinkedList<MFXStepperToggle> steps = new LinkedList<>();
-        String[] stepsNames = {
-                "Sign Up",
-                "Contact Info",
-                "Billing Info",
-                "Finish"
-        };
-        int index = 0;
-//        System.out.println(Arrays.toString(fxmlFiles));
-        for (Object i :  fxmlFiles)
-        {
-            steps.add(new MFXStepperToggle(
-                    stepsNames[index++],
-                    new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
-                    ,createStep(i.toString())
-                    )
-            );
-        }
-        System.out.println("Number of Steps: " + steps.size());
-        return steps;
-    }
-
-    private Parent createStep(String fileName) throws IOException {
-        return Loader.parentLoader("/com/software/mas/UI/signup/provider-steps/" + fileName);
-    }
+//    private List<MFXStepperToggle> createSteps() throws IOException {
+//        LinkedList<MFXStepperToggle> steps = new LinkedList<>();
+//        String[] stepsNames = {
+//                "Sign Up",
+//                "Contact Info",
+//                "Billing Info",
+//                "Finish"
+//        };
+//        int index = 0;
+////        System.out.println(Arrays.toString(fxmlFiles));
+//        for (Object i :  fileNames)
+//        {
+//            steps.add(new MFXStepperToggle(
+//                    stepsNames[index++],
+//                    new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
+//                    ,createStep(i.toString())
+//                    )
+//            );
+//        }
+//        System.out.println("Number of Steps: " + steps.size());
+//        return steps;
+//    }
+//
+//    private Parent createStep(String fileName) throws IOException {
+//        return Loader.parentLoader("/com/software/mas/UI/signup/provider-steps/" + fileName);
+//    }
 
 
 }
