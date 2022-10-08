@@ -28,7 +28,7 @@ public class SignUpProviderStepper implements Initializable {
 
     private List<String> getFileNames ()
     {
-        File folder = new File("C:\\Users\\tanbo\\IdeaProjects\\mas\\target\\classes\\com\\software\\mas\\UI\\signup\\steps");
+        File folder = new File("C:\\Users\\tanbo\\IdeaProjects\\mas\\target\\classes\\com\\software\\mas\\UI\\signup\\provider-steps");
         File[] listOfFiles = folder.listFiles();
 
         LinkedList<String> fileNames = new LinkedList<>();

@@ -14,14 +14,15 @@
     -fx-main-color: #333;
     -fx-borderColor:#333;
     -fx-text-color:#333;
-    -fx-text-light-color: #666;
+    -fx-text-light-color: #777;
     -fx-accent-color:  #0c8599;
+    -fx-accent-color-transparent: rgb(12, 133, 153, 0.7);
     -fx-accent-shade-1: #0b7285;
     -fx-accent-tint-1: #e3fafc;
 
     -fx-whitespace-color: white;
 
-    -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFUALT HAVE RADIUS "0" */
+    -fx-border-radius:0;/*THIS CODE MEANS THAT EVERYTHING BY DEFAULT HAVE RADIUS "0" */
 
     -mfx-purple: #333;
 
@@ -29,43 +30,56 @@
 
 /* MFX STEPPER STYLES*/
 
-.mfx-stepper .buttons-box .mfx-button:focused {
+/*main-pane and main-pane--with-border was put to increase specificity*/
+.mfx-stepper {
+    -mfx-base-color: -fx-main-color;
+    /*-mfx-base-color: -fx-accent-color;*/
+    -mfx-progress-color: -fx-accent-color-transparent;
+}
+
+.main-pane.main-pane--with-border .mfx-stepper-toggle:selected #circle {
+    -fx-stroke: -fx-accent-color;
+    -fx-background-color: -fx-accent-color;
+}
+
+.main-pane.main-pane--with-border .mfx-stepper-toggle:selected .mfx-text-field {
+    -fx-text-fill: -fx-text-color;
+
+}
+.main-pane.main-pane--with-border .mfx-stepper-toggle .mfx-text-field {
+    -fx-text-fill:-fx-text-light-color;
+    -fx-font-size: 12;
+    -fx-font-weight: 400;
+}
+
+
+.main-pane.main-pane--with-border .mfx-stepper-toggle:completed #circle {
+    -fx-stroke: -fx-accent-color;
+    -fx-fill: -fx-accent-color;
+    -fx-background-color: -fx-accent-color;
+}
+
+.main-pane.main-pane--with-border .mfx-stepper .buttons-box .mfx-button:focused {
     -fx-background-color: -fx-main-color;
     -fx-border-color: -fx-main-color;
 }
 
-.mfx-stepper .buttons-box .mfx-button {
+.main-pane.main-pane--with-border .mfx-stepper .buttons-box .mfx-button {
 
     -fx-background-color: #333;
     -fx-border-color: #333;
     -fx-background-radius: 9;
     -fx-border-radius: 9;
-
+    -fx-cursor: hand;
     -fx-font-size: 14;
 }
-
-
-
-.mfx-stepper {
-    -mfx-base-color: -fx-main-color;
-    -mfx-progress-color: -mfx-base-color;
+.main-pane.main-pane--with-border .mfx-stepper .buttons-box .mfx-button:hover {
+    -fx-background-color: #555;
+}
+.main-pane.main-pane--with-border .mfx-stepper .buttons-box .mfx-button .text {
+    -fx-fill: #eee;
 }
 
-.mfx-stepper-toggle:selected #circle {
-    -fx-stroke: -fx-main-color;
-    -fx-background-color: -fx-main-color;
-}
-
-.mfx-stepper-toggle:selected .mfx-text-field {
-    -fx-text-fill:-fx-main-color;
-
-}
-
-.mfx-stepper-toggle:completed #circle {
-    -fx-stroke: -fx-main-color;
-    -fx-fill: -fx-main-color;
-    -fx-background-color: -fx-main-color;
-}
 /* MFX TEXT FIELD STYLES*/
 .mfx-text-field {
     -mfx-main: -fx-accent-color;
