@@ -36,9 +36,9 @@
                   <Font size="32.0" />
                </font>
             </Label>
-            <MFXPasswordField floatMode="BORDER" floatingText="Password" layoutX="57.0" layoutY="167.0" prefHeight="38.0" prefWidth="239.0" styleClass="textfields" />
-            <MFXPasswordField floatMode="BORDER" floatingText="Confirm Password" layoutX="57.0" layoutY="227.0" prefHeight="38.0" prefWidth="238.0" styleClass="textfields" />
-            <MFXDatePicker floatMode="BORDER" floatingText="Birth Date" layoutX="57.0" layoutY="281.0" prefHeight="36.0" prefWidth="237.0">
+            <MFXPasswordField fx:id="password" floatMode="BORDER" floatingText="Password" layoutX="57.0" layoutY="167.0" prefHeight="38.0" prefWidth="239.0" styleClass="textfields" />
+            <MFXPasswordField fx:id="confirmPassword" floatMode="BORDER" floatingText="Confirm Password" layoutX="57.0" layoutY="227.0" prefHeight="38.0" prefWidth="238.0" styleClass="textfields" />
+            <MFXDatePicker fx:id="birthDate" floatMode="BORDER" floatingText="Birth Date" layoutX="57.0" layoutY="281.0" prefHeight="36.0" prefWidth="237.0">
                <styleClass>
                   <String fx:value="textfields" />
                   <String fx:value="date-picker-popup" />

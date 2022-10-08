@@ -1,12 +1,10 @@
 package com.software.mas.controller.signup;
 
-import com.software.mas.App;
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
 import io.github.palexdev.materialfx.font.MFXFontIcon;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.paint.Color;
@@ -83,7 +81,7 @@ public class SignUpProviderStepper implements Initializable {
     }
 
     private Parent createStep(String fileName) throws IOException {
-        return Loader.parentLoader("/com/software/mas/UI/signup/steps/" + fileName);
+        return Loader.parentLoader("/com/software/mas/UI/signup/provider-steps/" + fileName);
     }
 
 
