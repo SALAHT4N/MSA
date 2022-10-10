@@ -42,7 +42,7 @@ public class StepperTest implements Initializable {
     MFXTextField login, password;
     private MFXStepperToggle createSteps() throws IOException {
         MFXStepperToggle step1 = new MFXStepperToggle("Step 1", new MFXFontIcon("mfx-lock", 16, Color.web("#f1c40f")));
-        FXMLLoader fxmlWindow = Loader.getLoader("/com/software/mas/UI/signup/steps/sign-up-provider-1.fxml");
+        FXMLLoader fxmlWindow = Loader.getLoader("/com/software/mas/UI/signup/provider-steps/sign-up-provider-1.fxml");
         Parent root = fxmlWindow.load();
         step1.setContent(root); /*This function takes Node as a parameter, so it may take an FXML File*/
 //

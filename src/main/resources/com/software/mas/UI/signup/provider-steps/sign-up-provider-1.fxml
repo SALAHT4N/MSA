@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <GridPane prefHeight="444.0" prefWidth="727.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.signup.SignUpProvider1Controller">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -36,9 +35,9 @@
                   <Font size="32.0" />
                </font>
             </Label>
-            <MFXPasswordField floatMode="BORDER" floatingText="Password" layoutX="57.0" layoutY="167.0" prefHeight="38.0" prefWidth="239.0" styleClass="textfields" />
-            <MFXPasswordField floatMode="BORDER" floatingText="Confirm Password" layoutX="57.0" layoutY="227.0" prefHeight="38.0" prefWidth="238.0" styleClass="textfields" />
-            <MFXDatePicker floatMode="BORDER" floatingText="Birth Date" layoutX="57.0" layoutY="281.0" prefHeight="36.0" prefWidth="237.0">
+            <MFXPasswordField fx:id="password" floatMode="BORDER" floatingText="Password" layoutX="57.0" layoutY="167.0" prefHeight="38.0" prefWidth="239.0" styleClass="textfields" />
+            <MFXPasswordField fx:id="confirmPassword" floatMode="BORDER" floatingText="Confirm Password" layoutX="57.0" layoutY="227.0" prefHeight="38.0" prefWidth="238.0" styleClass="textfields" />
+            <MFXDatePicker fx:id="birthDate" floatMode="BORDER" floatingText="Birth Date" layoutX="57.0" layoutY="281.0" prefHeight="36.0" prefWidth="237.0">
                <styleClass>
                   <String fx:value="textfields" />
                   <String fx:value="date-picker-popup" />
@@ -55,7 +54,7 @@
       </Pane>
       <ImageView fitHeight="316.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
          <image>
-            <Image url="@../../../IMG/signup/Lets_get_started.png" />
+            <Image url="@../../../IMG/signup/Information_black.png" />
          </image>
       </ImageView>
    </children>

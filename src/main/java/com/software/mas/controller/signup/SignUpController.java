@@ -46,7 +46,7 @@ public class SignUpController implements Initializable {
     @FXML
     void nextPage(ActionEvent event) throws IOException
     {
-        Scene nextScene = Loader.sceneLoader("/com/software/mas/UI/signup/steps/sign-up-provider-1.fxml");
+        Scene nextScene = Loader.sceneLoader("/com/software/mas/UI/signup/provider-steps/sign-up-provider-1.fxml");
 //        (Node)(event.getSource())
         App.getStage().setScene(nextScene);
     }

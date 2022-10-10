@@ -45,6 +45,6 @@ Headings #333 <--- Light mode , #eee <--- Dark mode
 .large-heading {
     -fx-font-weight: bold;
     -fx-font-size: 48;
-    -fx-fill: -fx-accent-color;
+    -fx-fill: -fx-main-color;
 }
 
