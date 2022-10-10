@@ -6,6 +6,7 @@ import io.github.palexdev.materialfx.font.MFXFontIcon;
 import javafx.scene.Parent;
 import javafx.scene.paint.Color;
 
+import javax.swing.text.html.ImageView;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -83,7 +84,10 @@ public abstract class ViewFilesGetter {
 
         return returnedFiles;
     }
-
+    private List<ImageView> getIcons()
+    {
+        return null;
+    }
     public List<MFXStepperToggle> createSteps() throws IOException {
         LinkedList<MFXStepperToggle> steps = new LinkedList<>();
         int index = 0;
