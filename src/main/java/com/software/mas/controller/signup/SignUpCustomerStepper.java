@@ -1,11 +1,11 @@
 package com.software.mas.controller.signup;
 
-import com.software.mas.model.ViewFilesGetter;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -22,7 +22,9 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
        *  "this" constructor (before the class object is made), so there isn't anything to pass.
     */
     static private String[] stepsNames = {
-
+            "Sign Up",
+            "Contact Info",
+            "Finished"
     };
 
     public SignUpCustomerStepper() {
@@ -32,7 +34,12 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            signUpStepper.getStepperToggles().addAll(createSteps());
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

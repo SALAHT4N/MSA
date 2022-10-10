@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
-<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -28,26 +28,25 @@
       </ImageView>
       <Pane prefHeight="410.0" prefWidth="348.0" GridPane.columnIndex="1" GridPane.halignment="LEFT">
          <children>
-            <MFXTextField floatMode="BORDER" floatingText="Country" layoutX="54.0" layoutY="311.0" prefHeight="32.0" prefWidth="29.0" styleClass="textfields" />
-            <MFXTextField floatMode="BORDER" floatingText="Card Number" layoutX="41.0" layoutY="101.0" prefHeight="38.0" prefWidth="264.0" styleClass="textfields" />
-            <MFXTextField floatMode="BORDER" floatingText="Card Holder Name" layoutX="43.0" layoutY="152.0" prefHeight="38.0" prefWidth="264.0" styleClass="textfields" />
-            <MFXTextField floatMode="BORDER" floatingText="City" layoutX="147.0" layoutY="311.0" prefHeight="32.0" prefWidth="0.0" styleClass="textfields" />
-            <MFXTextField floatMode="BORDER" floatingText="Street" layoutX="241.0" layoutY="311.0" prefHeight="32.0" prefWidth="64.0" styleClass="textfields" />
+            <MFXTextField floatMode="BORDER" floatingText="Bank Name" layoutX="41.0" layoutY="101.0" prefHeight="38.0" prefWidth="264.0" styleClass="textfields" />
+            <MFXTextField floatMode="BORDER" floatingText="Bank account number" layoutX="43.0" layoutY="158.0" prefHeight="38.0" prefWidth="264.0" styleClass="textfields" />
             <Label layoutX="35.0" layoutY="21.0" styleClass="sign-up-heading-2" text="Billing Info:">
                <font>
                   <Font size="32.0" />
                </font>
             </Label>
-            <Label layoutX="40.0" layoutY="279.0" styleClass="sign-up-label-sm" text="Address :" />
-            <MFXTextField floatMode="BORDER" floatingText="CSV" layoutX="41.0" layoutY="204.0" prefHeight="38.0" prefWidth="90.0" styleClass="textfields" />
-            <Label layoutX="146.0" layoutY="213.0" text="3 digits on the back">
-               <styleClass>
-                  <String fx:value="small-label" />
-                  <String fx:value="small-label--bold" />
-               </styleClass>
-               <font>
-                  <Font size="14.0" />
-               </font>
+            <Pane layoutX="92.0" layoutY="201.0" prefHeight="24.0" prefWidth="24.0" />
+            <Label layoutX="313.0" layoutY="165.0" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../IMG/signup/alert-outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="This is used to transfer earning directly to your account." />
+               </tooltip>
             </Label>
          </children>
       </Pane>

@@ -1,14 +1,8 @@
 package com.software.mas.controller.signup;
 
-import com.software.mas.Loader;
-import com.software.mas.model.ViewFilesGetter;
 import io.github.palexdev.materialfx.controls.MFXStepper;
-import io.github.palexdev.materialfx.controls.MFXStepperToggle;
-import io.github.palexdev.materialfx.font.MFXFontIcon;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.IOException;

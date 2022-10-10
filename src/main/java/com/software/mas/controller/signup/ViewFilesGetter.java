@@ -1,4 +1,4 @@
-package com.software.mas.model;
+package com.software.mas.controller.signup;
 
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
