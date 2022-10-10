@@ -9,6 +9,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import org.controlsfx.control.Rating;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,7 @@ public class MiniServiceCardController implements Initializable {
     //NOTE:
     /*
     * Any recommended setter or getter write it Here:
-    *
+    * HERE COLOURS FUCK YOU
     *
     * */
     private Label createTag(String tag){
@@ -91,6 +93,35 @@ public class MiniServiceCardController implements Initializable {
         this.img.setImage(img);
     }
 
+
+
+    @FXML
+    void addBookMark(MouseEvent event) throws URISyntaxException, IOException {
+        ImageView img = (ImageView) event.getSource();
+
+        String tokens[] = img.getImage().getUrl().split("/");
+        String firstChar = tokens[tokens.length-1];
+
+        if(Character.toString(firstChar.charAt(0)).equals("f")){
+
+            Image unfilled = new Image(String.valueOf(getClass().getResource("/com/software/mas/ICONS/components/bookmark.png")));
+            img.setImage(unfilled);
+
+
+            System.out.println(firstChar);
+        }else{
+
+            Image filled = new Image(String.valueOf(getClass().getResource("/com/software/mas/ICONS/components/f_bookmark.png")));
+            img.setImage(filled);
+
+            System.out.println("HELLO");
+            System.out.println(firstChar);
+
+
+        }
+
+    }
+
     @FXML
     void onClicked(MouseEvent event) {
         //todo: Routing to the main service page that have the full Description
@@ -99,6 +130,6 @@ public class MiniServiceCardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        addTags("ENTERTAINMENT","SPORT","GAMES","ANYTHING");
+        addTags("ENTERTAINMENT", "SPORT", "GAMES", "ANYTHING");
     }
 }

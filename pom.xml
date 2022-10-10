@@ -30,6 +30,12 @@
         <!-- UI LIBRARIES ============================================================================= -->
 
 
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-web -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>18.0.1</version>
+        </dependency>
 
 
 

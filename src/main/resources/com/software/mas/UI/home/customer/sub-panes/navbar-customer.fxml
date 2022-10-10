@@ -63,15 +63,29 @@
                <children>
                   <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../ICONS/customer/nav/settings-customer.png" />
+                        <Image url="@../../../../ICONS/customer/nav/bookmark-customer.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
          </children>
          <VBox.margin>
-            <Insets bottom="475.0" />
+            <Insets bottom="415.0" />
          </VBox.margin>
+      </Pane>
+      <Pane />
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/customer/nav/settings-customer.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
       </Pane>
       <Pane>
          <children>

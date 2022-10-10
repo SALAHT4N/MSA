@@ -1,12 +1,13 @@
 
 .nav-pane:hover{
-    -fx-background-color: rgba(200,200,200,0.2);
+    -fx-background-color: rgba(200,200,200,0.15);
 
 }
+
 .nav-pane{
     -fx-background-color: #ffffff;
     -fx-background-radius: 10;
-    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.15), 12, 0.09 , 0 , 3);
+    /*-fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.15), 12, 0.09 , 0 , 3);*/
 
 }
 

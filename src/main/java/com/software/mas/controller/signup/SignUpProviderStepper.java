@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
@@ -22,15 +23,14 @@ public class SignUpProviderStepper implements Initializable {
     @FXML
     private MFXStepper signUpStepper;
 
-    public SignUpProviderStepper()
-    {
+    public SignUpProviderStepper() throws URISyntaxException {
         signUpStepper = new MFXStepper();
         fxmlFiles =  (getFileNames().toArray());
     }
 
-    private List<String> getFileNames ()
-    {
-        File folder = new File("C:\\Users\\tanbo\\IdeaProjects\\mas\\target\\classes\\com\\software\\mas\\UI\\signup\\steps");
+    private List<String> getFileNames () throws URISyntaxException {
+        //RELATIVE PATH
+        File folder = new File(this.getClass().getResource("/com/software/mas/UI/signup/steps").toURI());
         File[] listOfFiles = folder.listFiles();
 
         LinkedList<String> fileNames = new LinkedList<>();
