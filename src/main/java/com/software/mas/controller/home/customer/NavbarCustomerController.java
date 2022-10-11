@@ -1,6 +1,7 @@
 package com.software.mas.controller.home.customer;
 
 import com.software.mas.controller.home.NavbarController;
+import javafx.scene.Parent;
 import org.controlsfx.control.Rating;
 
 import java.io.IOException;
@@ -15,6 +16,10 @@ public class NavbarCustomerController extends NavbarController<HomeCustomerContr
     *You can start it and see the result and try to figure it out.
     *The parent class is abstract to re-use the methods in the next navbar (USER-NAVBAR).
      */
+    public static void navigateTo (Parent view){
+
+    }
+
     @Override
     protected void setRoute(String FXMLViewName) throws IOException {
             

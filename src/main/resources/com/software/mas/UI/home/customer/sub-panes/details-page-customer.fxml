@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
+   <content>
+      <VBox>
+         <children>
+            <AnchorPane prefHeight="1200.0" prefWidth="1160.0" styleClass="container">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="9.0">
+                     <image>
+                        <Image url="@../../../../ICONS/customer/details-page/back.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label layoutX="64.0" layoutY="15.0" styleClass="display-3" text="Home &gt; Informations page" />
+                  <AnchorPane fx:id="nextPane" layoutX="1160.0" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
+                     <children>
+                        <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fx:id="nextImage" fitHeight="507.0" fitWidth="1161.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../IMG/login/Colored_Background.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="currentPane" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
+                     <children>
+                        <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fx:id="currentImage" fitHeight="510.0" fitWidth="1161.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../IMG/login/Background_Colored.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="69.0" onMouseClicked="#rightArrowPressed" prefHeight="511.0" prefWidth="100.0" styleClass="left-arrow">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                           <image>
+                              <Image url="@../../../../ICONS/customer/details-page/semi-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+                  <AnchorPane layoutX="1050.0" layoutY="70.0" onMouseClicked="#leftArrowPressed" prefHeight="510.0" prefWidth="100.0" styleClass="right-arrow">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                           <image>
+                              <Image url="@../../../../ICONS/customer/details-page/semi-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+   <stylesheets>
+      <URL value="@../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../CSS/customer/details-page.css" />
+      <URL value="@../../../../CSS/customer/sub-panes/main-customer.css" />
+   </stylesheets>
+</ScrollPane>

@@ -1,0 +1,20 @@
+
+.container {
+    -fx-background-color: white;
+}
+
+.display-3{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.left-arrow{
+
+    -fx-background-color: linear-gradient(to left,rgba(0,0,0,0.01) , rgba(0,0,0,0.15));
+}
+
+.right-arrow{
+
+    -fx-background-color: linear-gradient(to right,rgba(0,0,0,0.01) , rgba(0,0,0,0.15));
+}
