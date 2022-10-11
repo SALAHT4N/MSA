@@ -16,5 +16,7 @@ module com.software.mas {
 
     exports com.software.mas;
     opens com.software.mas.controller.signup to javafx.fxml;
+    opens com.software.mas.controller.home.user.subpane to javafx.fxml;
+    opens com.software.mas.controller.home.user to javafx.fxml;
 
 }

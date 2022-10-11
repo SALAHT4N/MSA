@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane fx:id="container" prefHeight="750.0" prefWidth="1230.0" styleClass="container" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.HomeCustomerController">
+   <stylesheets>
+      <URL value="@../../../CSS/customer/sub-panes/navbar-customer.css" />
+      <URL value="@../../../CSS/customer/container-customer.css" />
+   </stylesheets>
+</BorderPane>
