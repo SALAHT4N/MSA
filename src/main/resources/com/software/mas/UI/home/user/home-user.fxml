@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane fx:id="container" prefHeight="750.0" prefWidth="1230.0" styleClass="container" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.HomeCustomerController">
+<BorderPane fx:id="container" prefHeight="750.0" prefWidth="1230.0" styleClass="container" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.HomeUserController">
    <stylesheets>
       <URL value="@../../../CSS/customer/sub-panes/navbar-customer.css" />
       <URL value="@../../../CSS/customer/container-customer.css" />

@@ -29,7 +29,7 @@ public class HomeUserController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         FXMLLoader nav;
         try {
-            nav = Loader.getLoader("/com/software/mas/UI/home/user/sub-panes/navbar-customer.fxml");
+            nav = Loader.getLoader("/com/software/mas/UI/home/user/sub-panes/navbar-user.fxml");
 
             Parent navView = nav.load();
             ((NavbarUserController)nav.getController()).setHomeCustomerController(this);
