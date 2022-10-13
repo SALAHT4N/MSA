@@ -1,12 +1,17 @@
 package com.software.mas.controller.components;
 
+import com.software.mas.FXHelper;
+import com.software.mas.controller.home.customer.HomeCustomerController;
+import com.software.mas.controller.home.customer.subpane.DetailsPageCustomer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import org.controlsfx.control.Rating;
 
 import java.io.IOException;
@@ -30,10 +35,10 @@ public class MiniServiceCardController implements Initializable {
     @FXML
     private FlowPane tagsContainer;
     @FXML
-    private Label txtDesc;
+    private Text txtDesc;
 
     @FXML
-    private Label txtHeader;
+    private Text txtHeader;
 
     //NOTE:
     /*
@@ -43,7 +48,7 @@ public class MiniServiceCardController implements Initializable {
     * */
     private Label createTag(String tag){
         Label lb = new Label();
-        lb.setText(tag);
+        lb.setText(tag.toUpperCase());
         lb.getStyleClass().add("tag");
         return lb;
     }
@@ -123,9 +128,14 @@ public class MiniServiceCardController implements Initializable {
     }
 
     @FXML
-    void onClicked(MouseEvent event) {
-        //todo: Routing to the main service page that have the full Description
-        System.out.println("A specific card has been clicked");
+    void onClicked(MouseEvent event) throws IOException {
+        Parent current = (Parent) event.getSource();
+        Parent parent = FXHelper.findParent(current);
+        if(parent == null)
+            return;
+      DetailsPageCustomer cont = (DetailsPageCustomer)HomeCustomerController.containerSetCenter(parent,"/com/software/mas/UI/home/customer/sub-panes/details-page-customer.fxml");
+        //todo: Passing the id of this <MiniServiceCardController> to <DetailsPageCustomer> by using a connection method.
+
     }
 
     @Override

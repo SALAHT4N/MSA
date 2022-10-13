@@ -3,6 +3,7 @@ package com.software.mas.controller.home;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,6 +15,8 @@ import java.io.IOException;
 
 abstract public class NavbarController <T>{
     protected T viewController;
+
+
     public void setHomeCustomerController(T t){
         //This Method to assign the controller to the navbar customer to allow it to navigate through the pages
         viewController = t;

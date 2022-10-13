@@ -12,6 +12,7 @@
     -fx-button-border-radius: 30;
 
     -fx-main-color: #333;
+    -fx-main-color-tint-1: #999;
     -fx-borderColor:#333;
     -fx-text-color:#333;
     -fx-text-light-color: #777;
@@ -131,6 +132,11 @@
 
 /* DEFAULT TEXT STYLES*/
 
+.page-heading{
+    -fx-font-size: 36;
+    -fx-font-weight: bold;
+}
+
 .long-text {
     -fx-fill: #555;
     -fx-line-spacing: 1.6;
@@ -139,6 +145,7 @@
 .heading-label {
     -fx-text-fill: #333;
     -fx-line-spacing: 1.1;
+
 }
 
 .small-label {

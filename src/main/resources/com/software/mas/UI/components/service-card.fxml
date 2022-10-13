@@ -6,44 +6,37 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane onMouseClicked="#onClicked" prefHeight="258.0" prefWidth="720.0" styleClass="card" stylesheets="@../../CSS/components/service-card.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.MiniServiceCardController">
+<AnchorPane prefHeight="292.0" prefWidth="720.0" styleClass="card" stylesheets="@../../CSS/components/service-card.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.MiniServiceCardController">
    <children>
-      <Rating fx:id="rating" layoutX="20.0" layoutY="160.0" mouseTransparent="true" partialRating="true" rating="2.5" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="20.0" />
-      <Label fx:id="txtHeader" layoutX="14.0" layoutY="14.0" styleClass="header" stylesheets="@../../CSS/components/service-card.css" text="Header" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
-      <Label fx:id="txtDesc" alignment="TOP_LEFT" ellipsisString="...." layoutX="21.0" layoutY="67.0" prefHeight="149.0" prefWidth="447.0" styleClass="text-desc" stylesheets="@../../CSS/components/service-card.css" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus, eu egestas diam auctor. Quisque eget gravida felis. Nullam in velit tristique, mollis dolor eu, tincidunt odio. Integer ac cursus augue. Suspendisse in dolor sed nunc elementum mollis sagittis in tortor. Nunc et suscipit tellus. Vestibulum ac fermentum ipsum, vitae facilisis dui. Morbi sed mattis nibh. Nulla in posuere urna. Duis posuere lacinia ante et venenatis." textFill="#333333e5" wrapText="true" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="67.0">
-
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-
-      </Label>
-      <ImageView fx:id="img" fitHeight="175.0" fitWidth="165.0" layoutX="497.79999999999984" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="17.20000000000016" AnchorPane.topAnchor="60.0">
+      <Rating fx:id="rating" layoutX="32.0" layoutY="233.0" mouseTransparent="true" partialRating="true" prefHeight="18.0" prefWidth="166.0" rating="2.5" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="32.0" />
+      <ImageView fx:id="img" fitHeight="176.0" fitWidth="190.0" layoutX="516.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="63.0">
          <image>
             <Image url="@../../IMG/signup/Signup_call.png" />
-         </image></ImageView>
-      <FlowPane layoutX="264.0" layoutY="222.0" prefHeight="26.0" prefWidth="203.0">
+         </image>
+      </ImageView>
+      <FlowPane alignment="CENTER_LEFT" layoutX="226.0" layoutY="253.0" prefHeight="30.0" prefWidth="214.0">
          <children>
             <ImageView fitHeight="23.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../ICONS/components/location.png" />
                </image>
             </ImageView>
-            <Label fx:id="location" text="Palestine, Nablus, Asira Qiblya" />
+            <Label fx:id="location" styleClass="small-label" text="Palestine, Nablus, Asira Qiblya" />
          </children>
-      </FlowPane>
-      <FlowPane fx:id="tagsContainer" hgap="5.0" layoutX="22.0" layoutY="43.0" prefHeight="26.0" prefWidth="414.0" AnchorPane.leftAnchor="22.0">
-
       </FlowPane>
       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="677.0" layoutY="11.0" onMouseClicked="#addBookMark" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../ICONS/components/bookmark.png" />
          </image>
       </ImageView>
+      <Text fx:id="textDesc" layoutX="47.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  " wrappingWidth="463.20000000000005" />
+      <FlowPane fx:id="tagsContainer" alignment="CENTER_LEFT" hgap="5.0" layoutX="19.0" layoutY="26.0" prefHeight="23.0" prefWidth="414.0" />
+      <Text fx:id="txtHeader" layoutX="32.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Suspendisse tincidunt est eu nulla rhoncus" wrappingWidth="494.40001220703135" />
 
-   </children>
+               </children>
    <stylesheets>
       <URL value="@../../CSS/components/service-card.css" />
       <URL value="@../../CSS/ColorThemes.css" />

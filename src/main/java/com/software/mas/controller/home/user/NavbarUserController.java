@@ -1,13 +1,12 @@
-package com.software.mas.controller.home.customer;
+package com.software.mas.controller.home.user;
 
 import com.software.mas.controller.home.NavbarController;
-import javafx.scene.Parent;
-import org.controlsfx.control.Rating;
+import com.software.mas.controller.home.user.HomeUserController;
 
 import java.io.IOException;
 
 
-public class NavbarCustomerController extends NavbarController<HomeCustomerController> {
+public class NavbarUserController extends NavbarController<HomeUserController> {
     /*   --SMART NAVBAR--
     This method used for :
     *Determine the route.
@@ -16,14 +15,10 @@ public class NavbarCustomerController extends NavbarController<HomeCustomerContr
     *You can start it and see the result and try to figure it out.
     *The parent class is abstract to re-use the methods in the next navbar (USER-NAVBAR).
      */
-    public static void navigateTo (Parent view){
-
-    }
-
     @Override
     protected void setRoute(String FXMLViewName) throws IOException {
             
-            String route = "/com/software/mas/UI/home/customer/sub-panes/" + FXMLViewName + ".fxml";
+            String route = "/com/software/mas/UI/home/user/sub-panes/" + FXMLViewName + ".fxml";
             viewController.setCenterView(route);
     }
 }

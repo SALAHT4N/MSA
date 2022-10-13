@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<FlowPane prefHeight="750.0" prefWidth="1160.0" style="-fx-background-color: white;" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.BookUserController">
+   <children>
+      <AnchorPane maxWidth="920.0" minWidth="750.0" prefHeight="750.0" prefWidth="920.0" styleClass="container" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="102.0" styleClass="scroll-bar" stylesheets="@../../../../CSS/components/service-card.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <VBox fx:id="cardContainer" prefHeight="750.0" prefWidth="917.0" spacing="15.0" style="-fx-background-radius: 10;" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css">
+                     <padding>
+                        <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="nested-vbox" />
+                        <String fx:value="out" />
+                     </styleClass>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="750.0" prefWidth="238.0">
+         <children>
+            <TextField layoutX="15.0" layoutY="104.0" prefHeight="30.0" prefWidth="210.0" styleClass="input-search">
+               <padding>
+                  <Insets left="10.0" right="30.0" />
+               </padding>
+            </TextField>
+            <Text fill="#555555" layoutX="80.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tags" text="FILTERS" />
+            <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="194.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ICONS/customer/search.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Separator layoutX="22.0" layoutY="158.0" prefWidth="200.0">
+               <effect>
+                  <MotionBlur radius="32.38" />
+               </effect>
+            </Separator>
+            <SearchableComboBox layoutX="18.0" layoutY="209.0" prefHeight="32.0" prefWidth="208.0" styleClass="input-combobox" />
+            <Text fill="#555555" layoutX="26.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Country :">
+               <font>
+                  <Font name="Perpetua Titling MT Bold" size="12.0" />
+               </font>
+            </Text>
+            <SearchableComboBox layoutX="18.0" layoutY="282.0" prefHeight="32.0" prefWidth="208.0" styleClass="input-combobox" />
+            <Text fill="#555555" layoutX="26.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="City :">
+               <font>
+                  <Font name="Perpetua Titling MT Bold" size="12.0" />
+               </font>
+            </Text>
+            <SearchableComboBox layoutX="18.0" layoutY="356.0" prefHeight="32.0" prefWidth="208.0" styleClass="input-combobox" />
+            <Text fill="#555555" layoutX="26.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Street :">
+               <font>
+                  <Font name="Perpetua Titling MT Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#555555" layoutX="21.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Search">
+               <font>
+                  <Font name="Perpetua Titling MT Bold" size="12.0" />
+               </font>
+            </Text>
+            <Separator layoutX="20.0" layoutY="419.0" prefWidth="200.0">
+               <effect>
+                  <MotionBlur radius="32.38" />
+               </effect>
+            </Separator>
+            <Label layoutX="54.0" layoutY="647.0" text="Appointy">
+               <font>
+                  <Font name="Mistral" size="46.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="709.0" text="copyright ©2020  - Appointy">
+               <font>
+                  <Font name="Eras Light ITC" size="8.5" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</FlowPane>

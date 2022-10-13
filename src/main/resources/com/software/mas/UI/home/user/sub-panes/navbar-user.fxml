@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="70.0" styleClass="nav" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.NavbarUserController">
+   <children>
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/user/nav/main-user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane>
+         <children>
+            <Separator layoutX="10.0" layoutY="1.0" maxWidth="50.0" prefHeight="3.0" prefWidth="50.0">
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </Separator>
+         </children>
+      </Pane>
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/user/nav/calendar-user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Pane>
+      <Pane>
+         <children>
+            <Separator layoutX="10.0" layoutY="1.0" maxWidth="50.0" prefHeight="3.0" prefWidth="50.0">
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </Separator>
+         </children>
+      </Pane>
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/user/nav/bookmark-user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+         <VBox.margin>
+            <Insets bottom="415.0" />
+         </VBox.margin>
+      </Pane>
+      <Pane />
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/user/nav/settings-user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane>
+         <children>
+            <Separator layoutX="10.0" layoutY="1.0" maxWidth="50.0" prefHeight="3.0" prefWidth="50.0">
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </Separator>
+         </children>
+      </Pane>
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/user/nav/logout.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>
