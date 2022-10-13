@@ -4,11 +4,14 @@ import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
 import io.github.palexdev.materialfx.font.MFXFontIcon;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
-import javax.swing.text.html.ImageView;
+
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,8 +38,7 @@ public abstract class ViewFilesGetter {
 //    {
 //        fileNames = getFileNames().toArray();
 //    }
-    public ViewFilesGetter(String[] stepsNames)
-    {
+    public ViewFilesGetter(String[] stepsNames) throws URISyntaxException {
         /*
         * The only reason a variable should be put in the constructor in this scenario, is when it depends on a value got
         * from the child class.
@@ -70,9 +72,8 @@ public abstract class ViewFilesGetter {
     * No methods are public aside from the ones that are NEEDED TO BE CALLED FROM THE SUBCLASS.
     *
     * */
-    private List<String> getFileNames()
-    {
-        File folder = new File("C:\\Users\\tanbo\\IdeaProjects\\mas\\target\\classes\\com\\software\\mas\\UI\\signup\\provider-steps");
+    private List<String> getFileNames() throws URISyntaxException {
+        File folder = new File(getClass().getResource("/com/software/mas/UI/signup/provider-steps").toURI());
         File[] listOfFiles = folder.listFiles();
 
         LinkedList<String> returnedFiles = new LinkedList<>();
@@ -84,19 +85,36 @@ public abstract class ViewFilesGetter {
 
         return returnedFiles;
     }
-    private List<ImageView> getIcons()
-    {
-        return null;
+    private List<ImageView> getIcons() throws URISyntaxException {
+        File folder = new File(getClass().getResource("/com/software/mas/IMG/signup/steps-icons").toURI());
+        File[] listOfIcons = folder.listFiles();
+        LinkedList<ImageView> returnedIcons = new LinkedList<>();
+
+        for (File icon : listOfIcons)
+        {
+            ImageView imageView = new ImageView(
+                    new Image(
+                            String.valueOf(getClass().getResource("/com/software/mas/IMG/signup/steps-icons/" ).toURI() +  icon.getName())
+                    )
+            );
+            imageView.prefWidth(24);
+            imageView.prefHeight(24);
+            returnedIcons.add(imageView);
+        }
+        return returnedIcons;
     }
-    public List<MFXStepperToggle> createSteps() throws IOException {
+    public List<MFXStepperToggle> createSteps() throws IOException, URISyntaxException {
         LinkedList<MFXStepperToggle> steps = new LinkedList<>();
+        List<ImageView> stepsIcons = getIcons();
+
         int index = 0;
         for (Object i :  fileNames)
         {
             steps.add(new MFXStepperToggle(
-                            stepsNames[index++],
-                            new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
-                            ,createStep(i.toString())
+                            stepsNames[index],
+                            stepsIcons.get(index++),
+                            //new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
+                            createStep(i.toString())
                     )
             );
         }

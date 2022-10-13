@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -27,7 +28,7 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
             "Finished"
     };
 
-    public SignUpCustomerStepper() {
+    public SignUpCustomerStepper() throws URISyntaxException {
         super(stepsNames);
     }
 
@@ -39,6 +40,8 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 

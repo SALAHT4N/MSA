@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
@@ -14,14 +15,14 @@ public class SignUpProviderStepper extends ViewFilesGetter implements Initializa
 
     @FXML
     private MFXStepper signUpStepper;
+
     static private String[] stepsNames = {
                 "Sign Up",
                 "Contact Info",
                 "Billing Info",
                 "Finish"
         };
-    public SignUpProviderStepper()
-    {
+    public SignUpProviderStepper() throws URISyntaxException {
         super(stepsNames);
         // super(); // Implicit Call
 //        fileNames =  (getFileNames().toArray()); // This will be done by the super constructor.
@@ -32,6 +33,7 @@ public class SignUpProviderStepper extends ViewFilesGetter implements Initializa
     public void addFileName(File i, LinkedList<String> returnedFiles) {
         if(i.isFile())
                 returnedFiles.add(i.getName());
+
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -42,6 +44,8 @@ public class SignUpProviderStepper extends ViewFilesGetter implements Initializa
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
 
     }

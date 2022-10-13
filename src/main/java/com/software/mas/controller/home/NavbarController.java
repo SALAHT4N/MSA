@@ -3,6 +3,8 @@ package com.software.mas.controller.home;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -23,9 +25,25 @@ abstract public class NavbarController <T>{
                try {
                    ((Pane) ((Pane) temp).getChildren().get(0)).setStyle("");
                }catch (Exception e){
-                   e.printStackTrace();
-                   continue;
+//                   e.printStackTrace();
+
                }
+        }
+
+    }
+
+    protected static void deleteAllEffects(VBox cont){
+
+        for(Node child : cont.getChildren()){
+            try {
+                Pane temp = (Pane) ((Pane) (child)).getChildren().get(0);
+                ImageView img = (ImageView)temp.getChildren().get(0);
+                img.setEffect(null);
+            }catch(Exception e){
+                //Maybe Separator
+
+            }
+
         }
 
     }
@@ -40,8 +58,7 @@ abstract public class NavbarController <T>{
     }
     protected static String getFXMLViewName(String fullURL){
         String []tokens =fullURL.split("/") ;
-        String iconName=tokens[tokens.length-1].split("\\.")[0];
-        return iconName;
+        return tokens[tokens.length-1].split("\\.")[0];
     }
 
 //    protected abstract void navigate(MouseEvent event) throws IOException
@@ -49,19 +66,35 @@ abstract public class NavbarController <T>{
 
     @FXML
     public void navigate(MouseEvent event) throws IOException {
-
+        VBox cont =  (VBox) ((Pane)event.getSource()).getParent().getParent();
         Pane iconClicked = ((Pane)event.getSource());
         ImageView img = getImageViewOfIcon(iconClicked);
+
         //Check if this icon is pressed or not
-        if(!iconClicked.getStyle().equals(""))
+
+        if(!(img.getEffect() == null))
             return;
 
+
         if(img != null){
+            //delete accentofallphotos
+
+            deleteAllEffects(cont);
+
+            ColorAdjust accentColor = new ColorAdjust(); // creating the instance of the ColorAdjust effect.
+            accentColor.setBrightness(0.32); // setting the brightness of the color.
+            accentColor.setContrast(-1.0); // setting the contrast of the color
+            accentColor.setHue(-1.0); // setting the hue of the color
+            accentColor.setSaturation(1); // setting the hue of the color.
+            img.setEffect(accentColor); //applying effect on the image
+
+            System.out.println(iconClicked.getEffect() == null);
+
             String fullURL = img.getImage().getUrl();
 
             //The Icon name must match the view name
             String fxmlName = getFXMLViewName(fullURL);
-             setRoute(fxmlName);
+            setRoute(fxmlName);
 
         /*
         This Comment Will Execute only and only if we put all the icons and all related views
@@ -69,9 +102,9 @@ abstract public class NavbarController <T>{
          */
 
 
-            VBox cont =  (VBox) ((Pane)event.getSource()).getParent().getParent();
-            clearIconBackground(cont);
-            ((Pane)event.getSource()).setStyle("-fx-background-color: rgba(0,0,0,0.15)");
+
+//            clearIconBackground(cont); //removing the gray-active background(OLD CODE).
+//            ((Pane)event.getSource()).setStyle("-fx-background-color: rgba(0,0,0,0.15)");
 
         }
     }
