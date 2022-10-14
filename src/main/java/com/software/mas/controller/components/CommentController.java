@@ -69,7 +69,6 @@ public class CommentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        Image temp = new Image(String.valueOf(getClass().getResource("/com/software/mas/IMG/download.jpg")));
-
        imgCircle.setFill(new ImagePattern(temp));
 
     }
