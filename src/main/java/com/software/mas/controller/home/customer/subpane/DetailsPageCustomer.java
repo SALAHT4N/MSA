@@ -6,10 +6,12 @@ import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -154,6 +156,21 @@ public class DetailsPageCustomer implements Initializable {
 
         }
     }
+// Slider ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//-----------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------
+         //--------------------------------------------------------------------------
+
+    String id;
+
+    @FXML
+    VBox container;
+    @FXML
+    Label numberComments;
+
+
+    @FXML
+    Label header;
 
     @FXML
     void goBack(MouseEvent event) {
@@ -163,5 +180,13 @@ public class DetailsPageCustomer implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //todo:Initilizing images for the images slider
+        try {
+            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

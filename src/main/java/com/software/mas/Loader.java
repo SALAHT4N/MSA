@@ -10,8 +10,19 @@ import java.util.Stack;
 public class Loader {
 
 
-
     private static final Stack<Parent> parentStack = new Stack<>();
+
+    //Inline Methods:-------------------------------------------------
+    public static FXMLLoader getLoader(String url) throws IOException {
+        return new FXMLLoader(App.class.getResource(url));
+    }
+    public static Scene sceneLoader (String url) throws IOException {
+        return new Scene(getLoader(url).load());
+    }
+    public static Parent parentLoader(String url) throws IOException {
+        return getLoader(url).load();
+    }
+    //Inline Methods:-------------------------------------------------
 
 
     /*This method design to handle return button action
@@ -38,15 +49,6 @@ public class Loader {
     public static void pushView(Parent vw){
         parentStack.push(vw);
     }
-    //Inline Methods:-------------------------------------------------
-    public static FXMLLoader getLoader(String url) throws IOException {
-        return new FXMLLoader(App.class.getResource(url));
-    }
-    public static Scene sceneLoader (String url) throws IOException {
-        return new Scene(getLoader(url).load());
-    }
-    public static Parent parentLoader(String url) throws IOException {
-        return getLoader(url).load();
-    }
+
 
 }

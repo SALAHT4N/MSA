@@ -5,7 +5,7 @@ import javafx.scene.layout.FlowPane;
 
 public class FXHelper {
 
-    public static Parent findParent(Parent child){
+    public static Parent findParent(Parent child ){
         try {
             while (!(child instanceof FlowPane) ) {
                 child = child.getParent();

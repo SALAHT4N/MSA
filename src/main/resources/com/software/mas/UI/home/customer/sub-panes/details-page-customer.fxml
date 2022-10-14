@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <ScrollPane hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
    <content>
-      <VBox>
+      <VBox fx:id="container">
          <children>
-            <AnchorPane prefHeight="1200.0" prefWidth="1160.0" styleClass="container">
+            <AnchorPane prefHeight="922.0" prefWidth="2320.0" styleClass="container">
                <children>
                   <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="9.0">
                      <image>
@@ -68,6 +72,25 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
+                  <Label fx:id="header" layoutX="35.0" layoutY="592.0" styleClass="tags" text="Header" />
+                  <Label fx:id="txtDesc" alignment="TOP_LEFT" ellipsisString="...." layoutX="36.0" layoutY="628.0" prefHeight="150.0" prefWidth="825.0" stylesheets="@../../../../CSS/components/service-card.css" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus, eu egestas diam auctor. Quisque eget gravida felis. Nullam in velit tristique, mollis dolor eu, tincidunt odio. Integer ac cursus augue. Suspendisse in dolor sed nunc elementum mollis sagittis in tortor. Nunc et suscipit tellus. Vestibulum ac fermentum ipsum, vitae facilisis dui. Morbi sed mattis nibh. Nulla in posuere urna. Duis posuere lacinia ante et venenatis." textFill="#333333e5" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <MFXButton layoutX="1049.0" layoutY="725.0" styleClass="btns" text="Eroll Now" />
+                  <Label layoutX="79.0" layoutY="866.0" styleClass="tags" text="COMMENT:" />
+                  <Separator layoutX="42.0" layoutY="905.0" prefHeight="2.0" prefWidth="820.0">
+                     <effect>
+                        <MotionBlur />
+                     </effect>
+                  </Separator>
+                  <Label fx:id="numberComments" layoutX="49.0" layoutY="866.0" styleClass="tags" text="5" />
+                  <Label layoutX="36.0" layoutY="770.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="Telephone/Phone Number:" />
+                  <Label layoutX="193.0" layoutY="771.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210" />
                </children>
             </AnchorPane>
          </children>
