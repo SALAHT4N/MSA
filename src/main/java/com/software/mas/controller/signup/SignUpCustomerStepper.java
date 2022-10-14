@@ -40,6 +40,8 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 

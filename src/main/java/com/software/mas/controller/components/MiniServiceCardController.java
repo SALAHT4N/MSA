@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import org.controlsfx.control.Rating;
 
 import java.io.IOException;
@@ -34,10 +35,10 @@ public class MiniServiceCardController implements Initializable {
     @FXML
     private FlowPane tagsContainer;
     @FXML
-    private Label txtDesc;
+    private Text txtDesc;
 
     @FXML
-    private Label txtHeader;
+    private Text txtHeader;
 
     //NOTE:
     /*
@@ -47,7 +48,7 @@ public class MiniServiceCardController implements Initializable {
     * */
     private Label createTag(String tag){
         Label lb = new Label();
-        lb.setText(tag);
+        lb.setText(tag.toUpperCase());
         lb.getStyleClass().add("tag");
         return lb;
     }

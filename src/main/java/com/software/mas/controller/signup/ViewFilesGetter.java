@@ -4,7 +4,10 @@ import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
 import io.github.palexdev.materialfx.font.MFXFontIcon;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -82,16 +85,36 @@ public abstract class ViewFilesGetter {
 
         return returnedFiles;
     }
+    private List<ImageView> getIcons() throws URISyntaxException {
+        File folder = new File(getClass().getResource("/com/software/mas/IMG/signup/steps-icons").toURI());
+        File[] listOfIcons = folder.listFiles();
+        LinkedList<ImageView> returnedIcons = new LinkedList<>();
 
-    public List<MFXStepperToggle> createSteps() throws IOException {
+        for (File icon : listOfIcons)
+        {
+            ImageView imageView = new ImageView(
+                    new Image(
+                            String.valueOf(getClass().getResource("/com/software/mas/IMG/signup/steps-icons/" ).toURI() +  icon.getName())
+                    )
+            );
+            imageView.prefWidth(24);
+            imageView.prefHeight(24);
+            returnedIcons.add(imageView);
+        }
+        return returnedIcons;
+    }
+    public List<MFXStepperToggle> createSteps() throws IOException, URISyntaxException {
         LinkedList<MFXStepperToggle> steps = new LinkedList<>();
+        List<ImageView> stepsIcons = getIcons();
+
         int index = 0;
         for (Object i :  fileNames)
         {
             steps.add(new MFXStepperToggle(
-                            stepsNames[index++],
-                            new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
-                            ,createStep(i.toString())
+                            stepsNames[index],
+                            stepsIcons.get(index++),
+                            //new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
+                            createStep(i.toString())
                     )
             );
         }
