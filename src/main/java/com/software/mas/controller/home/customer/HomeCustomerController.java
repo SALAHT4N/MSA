@@ -30,6 +30,8 @@ public class HomeCustomerController implements Initializable {
     * */
     public static  Object containerSetCenter(Parent current, String url) throws IOException {
         //Loading the view that the navigator gives it.
+        //this method give you the ability to navigate back to the @param current from @param url.
+
         FXMLLoader loader = Loader.saveParentLoader(current, url);
         pub.setCenter(loader.load());
         return loader.getController();

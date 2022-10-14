@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
+<ScrollPane fx:id="scrollMainContainer" hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
    <content>
       <VBox fx:id="container">
          <children>
@@ -29,7 +29,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <Label layoutX="64.0" layoutY="15.0" styleClass="display-3" text="Home &gt; Informations page" />
                   <AnchorPane fx:id="nextPane" layoutX="1160.0" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
                      <children>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -73,7 +72,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <MFXButton layoutX="1049.0" layoutY="725.0" styleClass="btns" text="Eroll Now" />
+                  <MFXButton layoutX="1049.0" layoutY="725.0" styleClass="btns" text="Book now" />
                   <Label layoutX="79.0" layoutY="866.0" styleClass="tags" text="COMMENT:" />
                   <Separator layoutX="42.0" layoutY="905.0" prefHeight="2.0" prefWidth="820.0">
                      <effect>
@@ -85,8 +84,17 @@
                   <Label fx:id="phone" layoutX="267.0" layoutY="747.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210" />
                   <Text fx:id="header" layoutX="35.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-1" text="Header" />
                   <Text fx:id="description" layoutX="45.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  " wrappingWidth="859.7367553710938" />
-                  <Circle fx:id="imgCircle" fill="#cccccc" layoutX="70.0" layoutY="740.0" onMouseClicked="#goToProfile" radius="30.0" stroke="#aaaaaa" strokeType="INSIDE" />
-                  <Text fx:id="name" layoutX="109.0" layoutY="730.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name ..." />
+                  <Circle fx:id="imgCircle" fill="#cccccc" layoutX="70.0" layoutY="740.0" onMouseClicked="#goToProfile" radius="30.0" stroke="#aaaaaa" strokeType="INSIDE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Circle>
+                  <Text fx:id="name" layoutX="109.0" layoutY="730.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name ...">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="59.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Home &gt; Informations page" />
                </children>
             </AnchorPane>
          </children>

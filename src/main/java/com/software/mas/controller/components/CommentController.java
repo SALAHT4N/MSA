@@ -1,16 +1,25 @@
 package com.software.mas.controller.components;
 
+import com.software.mas.FXHelper;
+import com.software.mas.Loader;
+import com.software.mas.controller.home.customer.HomeCustomerController;
+import com.software.mas.controller.home.customer.subpane.ProfilePageController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import org.controlsfx.control.Rating;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,12 +37,18 @@ public class CommentController implements Initializable {
     @FXML
     Text name;
 
+    //this container used for save it to allow the user to get back to it after routing to Profile-page
+
     @FXML
     Rating rating;
 
     @FXML
-    private void goToProfile(){
+    private void goToProfile(MouseEvent event) throws IOException {
+        Node src = (Node) event.getSource();
+        Parent current = FXHelper.findParentToDetailsPageScrollPane(src);
+        ProfilePageController cont = (ProfilePageController) HomeCustomerController.containerSetCenter(current ,"/com/software/mas/UI/home/customer/sub-panes/profile-page.fxml");
         //todo: quering the profile and display it.
+
 
     }
 

@@ -31,8 +31,8 @@ public class Loader {
     * this method will be used in IN-DEPTH-PAGE.
     * todo:ENHANCE IT
     * */
-    public static FXMLLoader saveParentLoader(Parent current , String nextUrl) throws IOException {
-        pushView(current);
+    public static FXMLLoader saveParentLoader(Parent currentPage , String nextUrl) throws IOException {
+        pushView(currentPage);
 
        return getLoader(nextUrl);
     }

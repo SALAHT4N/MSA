@@ -135,7 +135,7 @@ public class MiniServiceCardController implements Initializable {
         if(parent == null)
             return;
       DetailsPageCustomer cont = (DetailsPageCustomer)HomeCustomerController.containerSetCenter(parent,"/com/software/mas/UI/home/customer/sub-panes/details-page-customer.fxml");
-        //todo: Passing the id of this <MiniServiceCardController> to <DetailsPageCustomer> by using a connection method.
+        //todo: Passing the Data of this <MiniServiceCardController> to <DetailsPageCustomer> by using a connection methods.
 
     }
 

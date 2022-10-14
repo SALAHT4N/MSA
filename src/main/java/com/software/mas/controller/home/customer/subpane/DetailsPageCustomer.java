@@ -7,6 +7,7 @@ import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -167,6 +168,8 @@ public class DetailsPageCustomer implements Initializable {
     private String personId;
 
     @FXML
+    ScrollPane scrollMainContainer;
+    @FXML
     VBox container;
 
     @FXML
@@ -186,14 +189,17 @@ public class DetailsPageCustomer implements Initializable {
     Text name;
 
     @FXML
-    private void goToProfile(){
-        //todo: quering the profile and display it.
+    private void goToProfile() throws IOException {
 
+        ProfilePageController cont = (ProfilePageController) HomeCustomerController.containerSetCenter(scrollMainContainer ,"/com/software/mas/UI/home/customer/sub-panes/profile-page.fxml");
+
+        //todo: quering the profile and display it.
     }
 
     @FXML
     void goBack(MouseEvent event) {
         HomeCustomerController.setCenterView(Loader.popView());
+
     }
 
     @Override
