@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane prefHeight="70.0" prefWidth="1160.0" style="-fx-background-color: white; -fx-border-color: #aaa; -fx-border-width: 0 0 0.2 0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.CommentController">
+<AnchorPane prefHeight="70.0" prefWidth="1160.0" style="-fx-background-color: white; -fx-border-color: #aaa; -fx-border-width: 0 0 0.2 0;" stylesheets="@../../CSS/ColorThemes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.CommentController">
    <children>
-      <Label fx:id="name" layoutX="116.0" layoutY="13.0" style="-fx-font-weight: bold;" text="Name...." />
-      <Label fx:id="comment" layoutX="121.0" layoutY="28.0" prefHeight="38.0" prefWidth="826.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-      <Rating fx:id="rating" layoutX="959.0" layoutY="22.0" prefHeight="13.0" prefWidth="134.0" />
-      <Circle fx:id="imgCircle" fill="#cccccc" layoutX="75.0" layoutY="35.0" radius="30.0" stroke="#aaaaaa" strokeType="INSIDE" />
+      <Rating fx:id="rating" layoutX="959.0" layoutY="22.0" mouseTransparent="true" prefHeight="13.0" prefWidth="134.0" />
+      <Circle fx:id="imgCircle" fill="#cccccc" layoutX="75.0" layoutY="35.0" onMouseClicked="#goToProfile" radius="30.0" stroke="#aaaaaa" strokeType="INSIDE" />
+      <Text layoutX="129.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." wrappingWidth="819.4700164794922" />
+      <Text layoutX="118.0" layoutY="22.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name..." />
    </children>
 </AnchorPane>

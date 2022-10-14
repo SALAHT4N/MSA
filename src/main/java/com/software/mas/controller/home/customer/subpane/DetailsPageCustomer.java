@@ -12,6 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -161,25 +164,47 @@ public class DetailsPageCustomer implements Initializable {
     //-------------------------------------------------------------------------------
          //--------------------------------------------------------------------------
 
-    String id;
+    private String personId;
 
     @FXML
     VBox container;
+
     @FXML
     Label numberComments;
 
+    @FXML
+    Label phone;
+    @FXML
+    Text header;
+    @FXML
+    Text description;
 
     @FXML
-    Label header;
+    Circle imgCircle;
+
+    @FXML
+    Text name;
+
+    @FXML
+    private void goToProfile(){
+        //todo: quering the profile and display it.
+
+    }
 
     @FXML
     void goBack(MouseEvent event) {
-
         HomeCustomerController.setCenterView(Loader.popView());
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //todo:Initilizing images for the images slider
+        //todo:querying the comments to comment section example below.
+
+        Image temp = new Image(String.valueOf(getClass().getResource("/com/software/mas/IMG/download.jpg")));
+
+        imgCircle.setFill(new ImagePattern(temp));
+
         try {
             container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
             container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));

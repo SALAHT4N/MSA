@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -32,9 +33,15 @@
             <Image url="@../../ICONS/components/bookmark.png" />
          </image>
       </ImageView>
-      <Text fx:id="textDesc" layoutX="47.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  " wrappingWidth="463.20000000000005" />
+      <Text fx:id="textDesc" layoutX="47.0" layoutY="119.0" onMouseClicked="#onClicked" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  " wrappingWidth="463.20000000000005">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Text>
       <FlowPane fx:id="tagsContainer" alignment="CENTER_LEFT" hgap="5.0" layoutX="19.0" layoutY="26.0" prefHeight="23.0" prefWidth="414.0" />
-      <Text fx:id="txtHeader" layoutX="32.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Suspendisse tincidunt est eu nulla rhoncus" wrappingWidth="494.40001220703135" />
+      <Text fx:id="txtHeader" layoutX="32.0" layoutY="89.0" onMouseClicked="#onClicked" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="Suspendisse tincidunt est eu nulla rhoncus" wrappingWidth="494.40001220703135">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Text>
 
                </children>
    <stylesheets>

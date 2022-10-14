@@ -148,6 +148,12 @@
     -fx-font-weight: bold;
 
 }
+.heading-3{
+    -fx-font-size: 15;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
+
+}
 .heading-label {
     -fx-text-fill: #333;
     -fx-line-spacing: 1.1;

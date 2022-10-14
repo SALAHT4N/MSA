@@ -12,7 +12,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
 
 <ScrollPane hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
    <content>
@@ -72,15 +73,6 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <Label fx:id="header" layoutX="35.0" layoutY="592.0" styleClass="tags" text="Header" />
-                  <Label fx:id="txtDesc" alignment="TOP_LEFT" ellipsisString="...." layoutX="36.0" layoutY="628.0" prefHeight="150.0" prefWidth="825.0" stylesheets="@../../../../CSS/components/service-card.css" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus, eu egestas diam auctor. Quisque eget gravida felis. Nullam in velit tristique, mollis dolor eu, tincidunt odio. Integer ac cursus augue. Suspendisse in dolor sed nunc elementum mollis sagittis in tortor. Nunc et suscipit tellus. Vestibulum ac fermentum ipsum, vitae facilisis dui. Morbi sed mattis nibh. Nulla in posuere urna. Duis posuere lacinia ante et venenatis." textFill="#333333e5" wrapText="true">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
                   <MFXButton layoutX="1049.0" layoutY="725.0" styleClass="btns" text="Eroll Now" />
                   <Label layoutX="79.0" layoutY="866.0" styleClass="tags" text="COMMENT:" />
                   <Separator layoutX="42.0" layoutY="905.0" prefHeight="2.0" prefWidth="820.0">
@@ -89,8 +81,12 @@
                      </effect>
                   </Separator>
                   <Label fx:id="numberComments" layoutX="49.0" layoutY="866.0" styleClass="tags" text="5" />
-                  <Label layoutX="36.0" layoutY="770.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="Telephone/Phone Number:" />
-                  <Label layoutX="193.0" layoutY="771.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210" />
+                  <Label layoutX="110.0" layoutY="746.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="Telephone/Phone Number:" />
+                  <Label fx:id="phone" layoutX="267.0" layoutY="747.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210" />
+                  <Text fx:id="header" layoutX="35.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-1" text="Header" />
+                  <Text fx:id="description" layoutX="45.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  " wrappingWidth="859.7367553710938" />
+                  <Circle fx:id="imgCircle" fill="#cccccc" layoutX="70.0" layoutY="740.0" onMouseClicked="#goToProfile" radius="30.0" stroke="#aaaaaa" strokeType="INSIDE" />
+                  <Text fx:id="name" layoutX="109.0" layoutY="730.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name ..." />
                </children>
             </AnchorPane>
          </children>

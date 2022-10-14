@@ -7,7 +7,9 @@ import javafx.scene.image.Image;
 
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import org.controlsfx.control.Rating;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,18 +17,25 @@ import java.util.ResourceBundle;
 public class CommentController implements Initializable {
 
 
+    String personId;
 
     @FXML
     Circle imgCircle;
 
     @FXML
-    Label comment;
+    Text comment;
 
     @FXML
-    Label name;
+    Text name;
 
     @FXML
     Rating rating;
+
+    @FXML
+    private void goToProfile(){
+        //todo: quering the profile and display it.
+
+    }
 
     public void setImage (String url){
         Image temp = new Image(String.valueOf(getClass().getResource(url)));
