@@ -1,0 +1,32 @@
+/*
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+.appointment-card {
+    -fx-background-radius: 9 9 9 9;
+    -fx-border-radius: 9 9 0 0;
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.2), 30, 0 , 0 , 5);
+}
+.main-pane--with-border {
+    -fx-border-width: 0 0 8 0;
+}
+.user-text {
+    -fx-font-size: 16;
+    -fx-fill: -fx-text-medium-color;
+    /*-fx-font-weight: bold;*/
+}
+
+.user-image {
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-background-color: #fff;
+}
+
+.appointment-time {
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}

@@ -15,6 +15,7 @@
     -fx-main-color-tint-1: #999;
     -fx-borderColor:#333;
     -fx-text-color:#333;
+    -fx-text-medium-color: #555;
     -fx-text-light-color: #777;
     -fx-accent-color:  #0c8599;
     -fx-accent-color-transparent: rgb(12, 133, 153, 0.7);
@@ -141,7 +142,12 @@
     -fx-fill: #555;
     -fx-line-spacing: 1.6;
 }
+.heading-1{
+    -fx-font-size: 30;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
 
+}
 .heading-label {
     -fx-text-fill: #333;
     -fx-line-spacing: 1.1;
