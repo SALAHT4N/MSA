@@ -12,8 +12,10 @@
     -fx-button-border-radius: 30;
 
     -fx-main-color: #333;
+    -fx-main-color-tint-1: #999;
     -fx-borderColor:#333;
     -fx-text-color:#333;
+    -fx-text-medium-color: #555;
     -fx-text-light-color: #777;
     -fx-accent-color:  #0c8599;
     -fx-accent-color-transparent: rgb(12, 133, 153, 0.7);
@@ -131,11 +133,39 @@
 
 /* DEFAULT TEXT STYLES*/
 
+.page-heading{
+    -fx-font-size: 36;
+    -fx-font-weight: bold;
+}
+
 .long-text {
     -fx-fill: #555;
     -fx-line-spacing: 1.6;
 }
+.sub-heading {
+    -fx-fill: #555;
+    -fx-font-size: 15;
+    -fx-line-spacing: 1.6;
+    -fx-font-weight: bold;
+}
+.heading-1{
+    -fx-font-size: 30;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
 
+}
+.heading-2{
+    -fx-font-size: 20;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
+
+}
+.heading-3{
+    -fx-font-size: 15;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
+
+}
 .heading-label {
     -fx-text-fill: #333;
     -fx-line-spacing: 1.1;
@@ -245,6 +275,11 @@
 	-fx-text-fill: black;
 }
 
+.bottom-border{
+    -fx-border-color: -fx-accent-color;
+    -fx-border-width: 0 0 10 0;
+}
+
 .datebox .date-picker-popup .week-day {
 
 	-fx-text-fill: green;
@@ -262,6 +297,11 @@
 
 /* BUTTON STYLES */
 
+.contact{
+    -fx-font-size: 15;
+    -fx-fill:rgb(95, 162, 255);
+
+}
 
 .btns{
    

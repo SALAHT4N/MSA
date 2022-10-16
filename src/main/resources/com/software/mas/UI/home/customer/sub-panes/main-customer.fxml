@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXFilterComboBox?>
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.MotionBlur?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import org.controlsfx.control.SearchableComboBox?>
 
-<FlowPane prefHeight="750.0" prefWidth="1160.0" style="-fx-background-color: white;" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.MainCustomerController">
+<FlowPane prefHeight="750.0" prefWidth="1160.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.MainCustomerController">
    <children>
       <AnchorPane maxWidth="920.0" minWidth="750.0" prefHeight="750.0" prefWidth="920.0" styleClass="container" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css">
          <children>
-            <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="102.0" styleClass="scroll-bar" stylesheets="@../../../../CSS/components/service-card.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Pane prefHeight="81.0" prefWidth="920.0" styleClass="search-pane">
+               <children>
+                  <TextField layoutX="509.0" layoutY="21.0" prefHeight="42.0" prefWidth="315.0" promptText="Search for anything" styleClass="input-search">
+                     <padding>
+                        <Insets left="10.0" right="30.0" />
+                     </padding>
+                  </TextField>
+                  <MFXButton layoutX="843.0" layoutY="29.0" styleClass="btns" text="Search" />
+                  <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-heading" text="Search results:" />
+               </children>
+            </Pane>
+            <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="102.0" styleClass="scroll-bar" stylesheets="@../../../../CSS/components/service-card.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="80.0">
                <content>
                   <VBox fx:id="cardContainer" prefHeight="750.0" prefWidth="917.0" spacing="15.0" style="-fx-background-radius: 10;" stylesheets="@../../../../CSS/customer/sub-panes/main-customer.css">
                      <padding>
@@ -36,51 +47,25 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="750.0" prefWidth="238.0">
+      <AnchorPane prefHeight="750.0" prefWidth="238.0" styleClass="filter-pane">
          <children>
-            <TextField layoutX="15.0" layoutY="104.0" prefHeight="30.0" prefWidth="210.0" styleClass="input-search">
-               <padding>
-                  <Insets left="10.0" right="30.0" />
-               </padding>
-            </TextField>
             <Text fill="#555555" layoutX="80.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tags" text="FILTERS" />
-            <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="194.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../ICONS/customer/search.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Separator layoutX="22.0" layoutY="158.0" prefWidth="200.0">
-               <effect>
-                  <MotionBlur radius="32.38" />
-               </effect>
-            </Separator>
-            <SearchableComboBox layoutX="18.0" layoutY="209.0" prefHeight="32.0" prefWidth="208.0" styleClass="input-combobox" />
-            <Text fill="#555555" layoutX="26.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Country :">
+            <Text fill="#555555" layoutX="26.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Country :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="12.0" />
                </font>
             </Text>
-            <SearchableComboBox layoutX="18.0" layoutY="282.0" prefHeight="32.0" prefWidth="208.0" styleClass="input-combobox" />
-            <Text fill="#555555" layoutX="26.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="City :">
+            <Text fill="#555555" layoutX="26.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="City :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="12.0" />
                </font>
             </Text>
-            <SearchableComboBox layoutX="18.0" layoutY="356.0" prefHeight="32.0" prefWidth="208.0" styleClass="input-combobox" />
-            <Text fill="#555555" layoutX="26.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Street :">
+            <Text fill="#555555" layoutX="26.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Street :">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="12.0" />
                </font>
             </Text>
-            <Text fill="#555555" layoutX="21.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub" text="Search">
-               <font>
-                  <Font name="Perpetua Titling MT Bold" size="12.0" />
-               </font>
-            </Text>
-            <Separator layoutX="20.0" layoutY="419.0" prefWidth="200.0">
+            <Separator layoutX="20.0" layoutY="307.0" prefWidth="200.0">
                <effect>
                   <MotionBlur radius="32.38" />
                </effect>
@@ -94,7 +79,14 @@
                <font>
                   <Font name="Eras Light ITC" size="8.5" />
                </font></Label>
+            <MFXFilterComboBox floatMode="DISABLED" layoutX="18.0" layoutY="173.0" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
+            <MFXFilterComboBox floatMode="DISABLED" layoutX="18.0" layoutY="99.0" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
+            <MFXFilterComboBox floatMode="DISABLED" layoutX="18.0" layoutY="243.0" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
          </children>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../../../../CSS/customer/sub-panes/main-customer.css" />
+      <URL value="@../../../../CSS/ColorThemes.css" />
+   </stylesheets>
 </FlowPane>

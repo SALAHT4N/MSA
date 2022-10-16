@@ -1,6 +1,7 @@
 package com.software.mas.controller.login;
 
 
+import com.software.mas.App;
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -52,6 +53,10 @@ public class LoginController {
         //MODEL
     }
 
+    @FXML
+    void onGuest(ActionEvent event) throws IOException {
+        App.getStage().setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml"));
+    }
     @FXML
     void signUp(ActionEvent event) throws IOException {
         //Navigate to The Sign Up View

@@ -3,8 +3,14 @@ package com.software.mas.controller.signup;
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
 import io.github.palexdev.materialfx.font.MFXFontIcon;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -82,18 +88,40 @@ public abstract class ViewFilesGetter {
 
         return returnedFiles;
     }
+    private List<Rectangle> getIcons() throws URISyntaxException {
+        File folder = new File(getClass().getResource("/com/software/mas/IMG/signup/steps-icons").toURI());
+        File[] listOfIcons = folder.listFiles();
+        LinkedList<Rectangle> returnedIcons = new LinkedList<>();
 
-    public List<MFXStepperToggle> createSteps() throws IOException {
+        for (File icon : listOfIcons)
+        {
+
+            Image img =
+                    new Image(
+//                            String.valueOf(getClass().getResource("/com/software/mas/IMG/signup/steps-icons/" ).toURI() +  icon.getName())
+                            icon.getPath()
+                    );
+
+            returnedIcons.add(new Rectangle(30,30,new ImagePattern(img)));
+        }
+        return returnedIcons;
+    }
+    public List<MFXStepperToggle> createSteps() throws IOException, URISyntaxException {
         LinkedList<MFXStepperToggle> steps = new LinkedList<>();
+        List<Rectangle> stepsIcons = getIcons();
+
         int index = 0;
         for (Object i :  fileNames)
         {
+
             steps.add(new MFXStepperToggle(
-                            stepsNames[index++],
-                            new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
-                            ,createStep(i.toString())
+                            stepsNames[index],
+                    getIcons().get(index++),
+                            //new MFXFontIcon("mfx-lock", 16, Color.web("#000000"))
+                            createStep(i.toString())
                     )
             );
+
         }
         System.out.println("Number of Steps: " + steps.size());
         return steps;

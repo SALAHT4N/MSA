@@ -1,5 +1,5 @@
 
-.header{
+.heading{
     -fx-font-weight: bold;
     -fx-font-size: 24;
 }
@@ -7,8 +7,9 @@
 .long-text {
     -fx-font-size: 16;
 }
-.small-label {
-    -fx-font-size: 14;
+.card .small-label {
+    -fx-font-size: 12;
+    -fx-text-fill: #666;
 }
 
 .location {
@@ -17,17 +18,19 @@
 }
 .card{
     -fx-background-color: white;
-    -fx-background-radius: 10 ;
-    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.15), 12, 0.09 , 0 , 3);
+    -fx-background-radius: 9 ;
+
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.05), 30, 0 , 0 , 5);
 }
 
 .tag {
-    -fx-background-color:#0c859980;
-    -fx-text-fill:white ;
-    -fx-font-size: 8.5;
+    /*-fx-background-color:#0c859980;*/
+    -fx-background-color: -fx-main-color;
+    -fx-text-fill:#ddd ;
+    -fx-font-size: 10;
     -fx-font-weight: bold;
     -fx-background-radius: 20;
-    -fx-padding: 0 6 0 6;
+    -fx-padding: 2 8 2 8;
 }
 
 .text-desc{

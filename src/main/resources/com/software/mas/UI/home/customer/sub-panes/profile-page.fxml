@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<ScrollPane hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.ProfilePageController">
+   <content>
+      <VBox prefHeight="750.0" prefWidth="1160.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane prefHeight="447.0" prefWidth="1160.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="13.0" layoutY="9.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/customer/details-page/back.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text layoutX="65.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Home &gt; Informations page &gt; Profile page" />
+                  <Rectangle fx:id="profilePicture" arcHeight="5.0" arcWidth="5.0" fill="#666666" height="264.0" layoutX="61.0" layoutY="79.0" stroke="#777777" strokeType="INSIDE" width="269.0" />
+                  <Text fx:id="name" layoutX="370.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-1" text="Rose Eliza" />
+                  <Text fx:id="type" layoutX="519.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-heading" text="(Provider)" />
+                  <Text layoutX="373.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #777; -fx-font-size: 18;" styleClass="long-text" text="RATING">
+                     <font>
+                        <Font name="Tw Cen MT" size="12.0" />
+                     </font>
+                  </Text>
+                  <Rating fx:id="rating" layoutX="370.0" layoutY="177.0" />
+                  <Text layoutX="374.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Phone: " />
+                  <Text layoutX="374.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Mobile Phone:" />
+                  <Text layoutX="375.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Email:" />
+                  <Text layoutX="372.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #777; -fx-font-size: 18;" styleClass="long-text" text="CONTACT">
+                     <font>
+                        <Font name="Tw Cen MT" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="phone" layoutX="430.0" layoutY="267.0" stroke="#61a5ffa4" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="contact" text="0598537145" />
+                  <Text fx:id="mobilePhone" layoutX="483.0" layoutY="294.0" stroke="#61a5ffa4" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="contact" text="0598537145" />
+                  <Text fx:id="email" layoutX="424.0" layoutY="323.0" stroke="#61a5ffa4" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="contact" text="rose.examp@gmail.com" />
+                  <Text layoutX="62.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-1" text="Services" />
+                  <Separator layoutX="187.0" layoutY="383.0" prefHeight="0.0" prefWidth="549.0">
+                     <effect>
+                        <MotionBlur />
+                     </effect>
+                  </Separator>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+   <stylesheets>
+      <URL value="@../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../CSS/customer/sub-panes/main-customer.css" />
+   </stylesheets>
+</ScrollPane>

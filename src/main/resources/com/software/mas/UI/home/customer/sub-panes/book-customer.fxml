@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="519.0" prefWidth="600.0" style="-fx-background-color: white;" styleClass="bottom-border" stylesheets="@../../../../CSS/ColorThemes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.BookController">
+   <children>
+      <Text layoutX="11.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Search for available appointments:" />
+      <MFXDatePicker layoutX="9.0" layoutY="73.0" />
+      <MFXDatePicker layoutX="231.0" layoutY="73.0" />
+      <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-heading" text="From:" />
+      <Text layoutX="231.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-heading" text="To:" />
+      <MFXButton layoutX="496.0" layoutY="73.0" onAction="#search" prefHeight="38.0" prefWidth="96.0" styleClass="btns" text="Search" />
+      <MFXTableView fx:id="table" layoutX="8.0" layoutY="125.0" prefHeight="339.0" prefWidth="584.0" />
+      <MFXButton fx:id="bookBtn" disable="true" layoutX="496.0" layoutY="473.0" onAction="#book" prefHeight="27.0" prefWidth="96.0" styleClass="btns" text="Book" />
+   </children>
+</AnchorPane>
