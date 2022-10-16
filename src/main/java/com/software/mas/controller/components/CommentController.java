@@ -1,15 +1,12 @@
 package com.software.mas.controller.components;
 
 import com.software.mas.FXHelper;
-import com.software.mas.Loader;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import com.software.mas.controller.home.customer.subpane.ProfilePageController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 
 import javafx.scene.input.MouseEvent;
@@ -46,7 +43,7 @@ public class CommentController implements Initializable {
     private void goToProfile(MouseEvent event) throws IOException {
         Node src = (Node) event.getSource();
         Parent current = FXHelper.findParentToDetailsPageScrollPane(src);
-        ProfilePageController cont = (ProfilePageController) HomeCustomerController.containerSetCenter(current ,"/com/software/mas/UI/home/customer/sub-panes/profile-page.fxml");
+        ProfilePageController cont = (ProfilePageController) HomeCustomerController.containerSetCenter(current , "/com/software/mas/UI/home/customer/sub-panes/profile-page.fxml");
         //todo: quering the profile and display it.
 
 

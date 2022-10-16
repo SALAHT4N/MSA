@@ -4,8 +4,10 @@ import com.software.mas.Loader;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -16,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -168,6 +171,8 @@ public class DetailsPageCustomer implements Initializable {
     private String personId;
 
     @FXML
+    Text email;
+    @FXML
     ScrollPane scrollMainContainer;
     @FXML
     VBox container;
@@ -191,9 +196,21 @@ public class DetailsPageCustomer implements Initializable {
     @FXML
     private void goToProfile() throws IOException {
 
-        ProfilePageController cont = (ProfilePageController) HomeCustomerController.containerSetCenter(scrollMainContainer ,"/com/software/mas/UI/home/customer/sub-panes/profile-page.fxml");
+        ProfilePageController cont = (ProfilePageController) HomeCustomerController.containerSetCenter(scrollMainContainer , "/com/software/mas/UI/home/customer/sub-panes/profile-page.fxml");
 
         //todo: quering the profile and display it.
+    }
+
+
+    @FXML
+    void bookNow(ActionEvent e) throws IOException {
+        Stage st = new Stage();
+        Scene sc = Loader.sceneLoader("/com/software/mas/UI/home/customer/sub-panes/book-customer.fxml");
+
+        st.setScene(sc);
+        st.show();
+
+
     }
 
     @FXML

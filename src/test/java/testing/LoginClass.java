@@ -1,6 +1,6 @@
 package testing;
 
-import io.cucumber.java.BeforeAll;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -49,47 +49,47 @@ public class LoginClass {
         throw new io.cucumber.java.PendingException();
     }
     * */
-    @Given("the database has the following users")
-    public void theDatabaseHasTheFollowingUsers(io.cucumber.datatable.DataTable dataTable) {
-
-        database = dataTable.asLists();
-    }
-    @Given("I press login")
-    public void iPressLogin1() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @When("I enter {string} and {string}")
-    public void iEnterAnd1(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        for (List<String> i : database)
-        {
-
-        }
-    }
-    @Then("login is successful.")
-    public void loginIsSuccessful() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-
-
-    @Given("I press login")
-    public void iPressLogin() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("I enter {string} and {string}")
-    public void iEnterAnd(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("login is unsuccessful")
-    public void loginIsUnsuccessful() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//    @Given("the database has the following users")
+//    public void theDatabaseHasTheFollowingUsers(io.cucumber.datatable.DataTable dataTable) {
+//
+//        database = dataTable.asLists();
+//    }
+//    @Given("I press login")
+//    public void iPressLogin1() {
+//        // Write code here that turns the phrase above into concrete actions
+//
+//    }
+//    @When("I enter {string} and {string}")
+//    public void iEnterAnd1(String string, String string2) {
+//        // Write code here that turns the phrase above into concrete actions
+//        for (List<String> i : database)
+//        {
+//
+//        }
+//    }
+//    @Then("login is successful.")
+//    public void loginIsSuccessful() {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
+//
+//
+//
+//    @Given("I press login")
+//    public void iPressLogin() {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
+//    @When("I enter {string} and {string}")
+//    public void iEnterAnd(String string, String string2) {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
+//    @Then("login is unsuccessful")
+//    public void loginIsUnsuccessful() {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new io.cucumber.java.PendingException();
+//    }
 
 
 
