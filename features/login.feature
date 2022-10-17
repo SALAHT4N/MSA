@@ -1,21 +1,12 @@
-Feature: Login
-  Background: initial state
-    Given the database has the following users
-      | salahtan | software |
-      | mhammad  | ahmad    |
 
-  Scenario: Valid username and password
-    Actor: User
-    Given I press login
-    When I enter "salahtan" and "software"
-    Then login is successful.
+Feature: Login
   Scenario Outline: One of the inputs is invalid
     Given I press login
     When I enter "<username>" and "<password>"
-    Then login is unsuccessful
+    Then login is "<output>" and user level is "<level>"
 
     Examples:
-      | username | password |
-      | salahtan | dsfdsgfd |
-      | salah    | software |
-      | amjad    | not here |
+      | username |  | password | output | level       |  |
+      | salahtan |  | 123456   | true   | user        |  |
+      | salah    |  | software | false  | custustomer |  |
+      | amjad    |  | nothere1 | false  | customer    |  |
