@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="1160.0" styleClass="main-pane" stylesheets="@../../../../CSS/ColorThemes.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.software.mas.controller.home.user.subpane.AppointmentsUserController">
+   <content>
+      <VBox fx:id="appointmentsContainer" alignment="TOP_CENTER" prefHeight="618.0" prefWidth="1134.0" spacing="24.0" styleClass="main-pane">
+         <padding>
+            <Insets top="24.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>

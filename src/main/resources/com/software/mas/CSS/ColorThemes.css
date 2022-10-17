@@ -132,10 +132,28 @@
 }
 
 /* DEFAULT TEXT STYLES*/
+/*
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
 
 .page-heading{
-    -fx-font-size: 36;
+    -fx-font-size: 30;
     -fx-font-weight: bold;
+    -fx-fill: -fx-text-color;
+}
+.tab-heading {
+    -fx-font-size: 24;
+    /*-fx-font-weight: bold;*/
+    -fx-fill: -fx-text-medium-color;
+}
+.tab-heading--selected {
+    -fx-fill: -fx-accent-color;
+
 }
 
 .long-text {
@@ -181,8 +199,22 @@
 }
 /* LAYOUT STYLES*/
 
+.tab {
+    /*-fx-border-color: -fx-accent-color;*/
+    /*-fx-border-width: 0 0 3 0;*/
+
+}
+
 .root{
     
+}
+
+.pop-up{
+    -fx-border-color: -fx-main-color;
+    /*-fx-border-width: 0 2 2 2;*/
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 11;
+    -fx-background-radius: 11;
 }
 
 .main-pane{
@@ -328,6 +360,64 @@
 
 }
 
+
+/*SCROLL PANES*/
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color :#f4f4f4;
+    -fx-border-color :transparent;
+    /*-fx-background-radius : 10;*/
+    -fx-border-radius :10;
+}
+
+.scroll-bar:focused {
+    -fx-border-width: 0;
+}
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    /*-fx-background-color :derive(black,90.0%);*/
+    -fx-background-color :-fx-main-color;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
 
 /* Useless cuz MFXButton has already pressed effect
 .btns:pressed{

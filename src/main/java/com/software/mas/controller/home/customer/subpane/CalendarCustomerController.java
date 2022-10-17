@@ -19,12 +19,12 @@ import java.util.ResourceBundle;
 
 public class CalendarCustomerController implements Initializable {
 
-    Calendar appAppoints = new com.calendarfx.model.Calendar<>("Application - Appointy");
+    public Calendar appAppoints = new com.calendarfx.model.Calendar<>("Application - Appointy");
 
     @FXML
-    private BorderPane container;
-    private CalendarView calendarView = new CalendarView();
-    private void printPage(){
+    protected BorderPane container;
+    protected CalendarView calendarView = new CalendarView();
+    protected void printPage(){
         Stage s = new Stage();
         s.setScene(new Scene(calendarView.getPrintView()));
         s.initModality(Modality.APPLICATION_MODAL);
