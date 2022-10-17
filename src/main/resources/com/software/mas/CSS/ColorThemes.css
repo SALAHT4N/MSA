@@ -160,8 +160,26 @@ SPACING SYSTEM (px)
     -fx-fill: #555;
     -fx-line-spacing: 1.6;
 }
+.sub-heading {
+    -fx-fill: #555;
+    -fx-font-size: 15;
+    -fx-line-spacing: 1.6;
+    -fx-font-weight: bold;
+}
 .heading-1{
     -fx-font-size: 30;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
+
+}
+.heading-2{
+    -fx-font-size: 20;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
+
+}
+.heading-3{
+    -fx-font-size: 15;
     -fx-fill: -fx-main-color;
     -fx-font-weight: bold;
 
@@ -289,6 +307,11 @@ SPACING SYSTEM (px)
 	-fx-text-fill: black;
 }
 
+.bottom-border{
+    -fx-border-color: -fx-accent-color;
+    -fx-border-width: 0 0 10 0;
+}
+
 .datebox .date-picker-popup .week-day {
 
 	-fx-text-fill: green;
@@ -306,6 +329,11 @@ SPACING SYSTEM (px)
 
 /* BUTTON STYLES */
 
+.contact{
+    -fx-font-size: 15;
+    -fx-fill:rgb(95, 162, 255);
+
+}
 
 .btns{
    

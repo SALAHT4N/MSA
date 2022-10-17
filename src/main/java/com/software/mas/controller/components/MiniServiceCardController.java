@@ -129,12 +129,13 @@ public class MiniServiceCardController implements Initializable {
 
     @FXML
     void onClicked(MouseEvent event) throws IOException {
-        Parent current = (Parent) event.getSource();
-        Parent parent = FXHelper.findParent(current);
+        Text current = (Text) event.getSource();
+        Parent parent = FXHelper.findParentToDetailsPage(current);
+
         if(parent == null)
             return;
       DetailsPageCustomer cont = (DetailsPageCustomer)HomeCustomerController.containerSetCenter(parent,"/com/software/mas/UI/home/customer/sub-panes/details-page-customer.fxml");
-        //todo: Passing the id of this <MiniServiceCardController> to <DetailsPageCustomer> by using a connection method.
+        //todo: Passing the Data of this <MiniServiceCardController> to <DetailsPageCustomer> by using a connection methods.
 
     }
 
