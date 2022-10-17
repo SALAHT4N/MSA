@@ -15,9 +15,14 @@ SPACING SYSTEM (px)
     -fx-border-width: 0 0 8 0;
 }
 .user-text {
-    -fx-font-size: 16;
+    -fx-font-size: 14;
     -fx-fill: -fx-text-medium-color;
     /*-fx-font-weight: bold;*/
+}
+.user-name {
+    -fx-font-size: 24;
+    -fx-fill: -fx-main-color;
+    -fx-font-weight: bold;
 }
 
 .user-image {
@@ -27,6 +32,6 @@ SPACING SYSTEM (px)
 }
 
 .appointment-time {
-    -fx-font-weight: bold;
-    -fx-font-size: 16;
+    /*-fx-font-weight: bold;*/
+    -fx-font-size: 18;
 }

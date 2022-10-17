@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="hBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeSelection" prefHeight="43.0" prefWidth="300.0" style="-fx-background-radius: 9; -fx-border-radius: 9;" styleClass="not-selected" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.ServiceMenuItemController">
+   <children>
+      <Text onMouseClicked="#changeSelection" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="service-name" text="Service 1" wrappingWidth="290.39996337890625">
+         <HBox.margin>
+            <Insets left="8.0" top="6.0" />
+         </HBox.margin>
+      </Text>
+   </children>
+   <stylesheets>
+      <URL value="@../../CSS/ColorThemes.css" />
+      <URL value="@../../CSS/components/service-menu-item.css" />
+   </stylesheets>
+</HBox>

@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
 
-
-<BorderPane fx:id="container" prefHeight="750.0" prefWidth="1160.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.CalendarUserController" />
+<BorderPane fx:id="container" prefHeight="750.0" prefWidth="1160.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.CalendarUserController">
+   <top>
+      <GridPane hgap="24.0" prefHeight="117.0" prefWidth="1160.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="733.6000366210938" minWidth="10.0" prefWidth="578.4000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="608.0" minWidth="10.0" prefWidth="582.3999755859375" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="71.4" minHeight="10.0" prefHeight="67.4" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="46.60001220703125" minHeight="10.0" prefHeight="35.39999999999999" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane GridPane.columnSpan="2" GridPane.hgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+               <children>
+                  <Text fx:id="pageHeading" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-heading" text="Service Name" wrappingWidth="420.53676986694336" />
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="397.0" layoutY="26.0" onMouseClicked="#chooseService" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../IMG/subpanes/icons8_expand_arrow_50px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-1.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="46.0" prefWidth="431.0" styleClass="tab" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <children>
+                  <Text fx:id="appointmentTab" layoutX="208.0" layoutY="31.0" onMouseClicked="#changeTab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tab-heading" text="Appointments">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane styleClass="tab" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <children>
+                  <Text fx:id="calendarTab" layoutX="233.0" layoutY="32.0" onMouseClicked="#changeTab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tab-heading" text="Calendar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+         <styleClass>
+            <String fx:value="top-bar" />
+            <String fx:value="main-pane" />
+         </styleClass>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="49.13" radius="17.0325" spread="0.06">
+               <color>
+                  <Color opacity="0.1702127456665039" />
+               </color>
+            </DropShadow>
+         </effect>
+      </GridPane>
+   </top>
+   <stylesheets>
+      <URL value="@../../../../CSS/customer/sub-panes/calendar-page.css" />
+      <URL value="@../../../../CSS/ColorThemes.css" />
+   </stylesheets>
+</BorderPane>

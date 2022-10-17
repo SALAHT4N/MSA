@@ -1,0 +1,18 @@
+.selected {
+    -fx-background-color: #333;
+
+}
+.selected .service-name--selected {
+    -fx-fill: #ddd;
+}
+.service-name{
+    -fx-font-size: 20;
+    /*-fx-font-weight: bold;*/
+    -fx-fill: -fx-text-medium-color;
+}
+.not-selected {
+    -fx-background-color: #fff;
+}
+.not-selected:hover {
+    -fx-background-color: rgba(200,200,200,0.15);
+}

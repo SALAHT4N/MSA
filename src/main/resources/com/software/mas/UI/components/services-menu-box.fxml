@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="328.0" stylesheets="@../../CSS/ColorThemes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.ServicesMenuBox">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="367.6000274658203" minHeight="10.0" prefHeight="306.000048828125" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="187.59998168945313" minHeight="10.0" prefHeight="43.59995117187498" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="main-pane">
+         <content>
+            <VBox fx:id="listOfServices" prefHeight="300.0" prefWidth="318.0" styleClass="main-pane">
+               <padding>
+                  <Insets left="12.0" top="12.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Button mnemonicParsing="false" onAction="#onSelect" styleClass="btns" text="Select" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="12.0" />
+         </GridPane.margin>
+      </Button>
+   </children>
+   <styleClass>
+      <String fx:value="main-pane" />
+      <String fx:value="pop-up" />
+   </styleClass>
+</GridPane>
