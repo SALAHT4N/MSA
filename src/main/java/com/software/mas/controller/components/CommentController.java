@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import org.controlsfx.control.Rating;
 
@@ -26,7 +27,7 @@ public class CommentController implements Initializable {
     String personId;
 
     @FXML
-    Circle imgCircle;
+    Rectangle imgCircle;
 
     @FXML
     Text comment;

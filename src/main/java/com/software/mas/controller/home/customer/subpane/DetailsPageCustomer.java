@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -188,10 +189,12 @@ public class DetailsPageCustomer implements Initializable {
     Text description;
 
     @FXML
-    Circle imgCircle;
+    Rectangle imgCircle;
 
     @FXML
     Text name;
+
+
 
     @FXML
     private void goToProfile() throws IOException {
@@ -219,6 +222,9 @@ public class DetailsPageCustomer implements Initializable {
 
     }
 
+
+    @FXML
+    VBox commentSection;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //todo:Initilizing images for the images slider
@@ -229,10 +235,10 @@ public class DetailsPageCustomer implements Initializable {
         imgCircle.setFill(new ImagePattern(temp));
 
         try {
-            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-            container.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
+            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

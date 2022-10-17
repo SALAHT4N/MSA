@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -10,99 +12,136 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
 
-<ScrollPane fx:id="scrollMainContainer" hbarPolicy="NEVER" styleClass="scroll-bar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
-   <content>
-      <VBox fx:id="container">
-         <children>
-            <AnchorPane prefHeight="922.0" prefWidth="2320.0" styleClass="container">
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.DetailsPageCustomer">
+   <center>
+      <ScrollPane fx:id="scrollMainContainer" hbarPolicy="NEVER" prefHeight="1098.0" prefWidth="2322.0" styleClass="scroll-bar">
+         <content>
+            <VBox fx:id="container" prefHeight="1095.0" prefWidth="2324.0">
                <children>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="9.0">
-                     <image>
-                        <Image url="@../../../../ICONS/customer/details-page/back.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <AnchorPane fx:id="nextPane" layoutX="1160.0" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
+                  <AnchorPane prefHeight="922.0" prefWidth="2320.0" styleClass="container">
                      <children>
-                        <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="9.0" layoutY="9.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@../../../../ICONS/customer/details-page/back.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <AnchorPane fx:id="nextPane" layoutX="1160.0" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
                            <children>
-                              <ImageView fx:id="nextImage" fitHeight="507.0" fitWidth="1161.0" pickOnBounds="true" preserveRatio="true">
+                              <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fx:id="nextImage" fitHeight="507.0" fitWidth="1161.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../IMG/login/Colored_Background.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="currentPane" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
+                           <children>
+                              <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fx:id="currentImage" fitHeight="510.0" fitWidth="1161.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../IMG/login/Background_Colored.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="69.0" onMouseClicked="#rightArrowPressed" prefHeight="511.0" prefWidth="100.0" styleClass="left-arrow">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                                  <image>
-                                    <Image url="@../../../../IMG/login/Colored_Background.png" />
+                                    <Image url="@../../../../ICONS/customer/details-page/semi-arrow.png" />
                                  </image>
                               </ImageView>
                            </children>
-                        </FlowPane>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="currentPane" layoutY="70.0" prefHeight="507.0" prefWidth="1160.0">
-                     <children>
-                        <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </AnchorPane>
+                        <AnchorPane layoutX="1050.0" layoutY="70.0" onMouseClicked="#leftArrowPressed" prefHeight="510.0" prefWidth="100.0" styleClass="right-arrow">
                            <children>
-                              <ImageView fx:id="currentImage" fitHeight="510.0" fitWidth="1161.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                                  <image>
-                                    <Image url="@../../../../IMG/login/Background_Colored.png" />
+                                    <Image url="@../../../../ICONS/customer/details-page/semi-arrow.png" />
                                  </image>
                               </ImageView>
                            </children>
-                        </FlowPane>
+                        </AnchorPane>
+                        <Label layoutX="42.0" layoutY="982.0" styleClass="heading-2" text="Comments" />
+                        <Separator layoutX="44.0" layoutY="1010.0" prefHeight="2.0" prefWidth="820.0">
+                           <effect>
+                              <MotionBlur />
+                           </effect>
+                        </Separator>
+                        <Label fx:id="numberComments" layoutX="23.0" layoutY="982.0" styleClass="heading-2" text="5" />
+                        <Text fx:id="header" layoutX="35.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-1" text="Tristique est lobortis suscipit. Proin vulputate " />
+                        <Text fx:id="description" layoutX="49.0" layoutY="680.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate " wrappingWidth="859.7367553710938">
+                           <styleClass>
+                              <String fx:value="long-text" />
+                              <String fx:value="service-desc" />
+                           </styleClass>
+                        </Text>
+                        <Text layoutX="59.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Home &gt; Informations page" />
+                        <Text layoutX="22.0" layoutY="853.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Provider Details" />
+                        <Rating layoutX="962.0" layoutY="619.0" />
+                        <HBox layoutX="53.0" layoutY="869.0" onMouseClicked="#goToProfile" prefHeight="76.0" prefWidth="339.0" spacing="12.0" styleClass="provider-info">
+                           <children>
+                              <Rectangle fx:id="imgCircle" arcHeight="5.0" arcWidth="5.0" fill="#cccccc" height="60.0" onMouseClicked="#goToProfile" stroke="#aaaaaa" strokeType="INSIDE" width="60.0" />
+                              <Pane>
+                                 <children>
+                                    <Label layoutX="1.0" layoutY="31.1865234375" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="Telephone/Phone Number:" />
+                                    <Text fx:id="name" layoutY="20.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name ...">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                              <Label fx:id="phone" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210">
+                                 <HBox.margin>
+                                    <Insets top="31.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </HBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutY="69.0" onMouseClicked="#rightArrowPressed" prefHeight="511.0" prefWidth="100.0" styleClass="left-arrow">
-                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
-                           <image>
-                              <Image url="@../../../../ICONS/customer/details-page/semi-arrow.png" />
-                           </image>
-                        </ImageView>
-                     </children></AnchorPane>
-                  <AnchorPane layoutX="1050.0" layoutY="70.0" onMouseClicked="#leftArrowPressed" prefHeight="510.0" prefWidth="100.0" styleClass="right-arrow">
-                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
-                           <image>
-                              <Image url="@../../../../ICONS/customer/details-page/semi-arrow.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                  <MFXButton layoutX="1049.0" layoutY="725.0" onAction="#bookNow" styleClass="btns" text="Book now" />
-                  <Label layoutX="79.0" layoutY="866.0" styleClass="tags" text="COMMENT:" />
-                  <Separator layoutX="42.0" layoutY="905.0" prefHeight="2.0" prefWidth="820.0">
-                     <effect>
-                        <MotionBlur />
-                     </effect>
-                  </Separator>
-                  <Label fx:id="numberComments" layoutX="49.0" layoutY="866.0" styleClass="tags" text="5" />
-                  <Label layoutX="110.0" layoutY="738.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="Telephone/Phone Number:" />
-                  <Label fx:id="phone" layoutX="267.0" layoutY="739.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210" />
-                  <Text fx:id="header" layoutX="35.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-1" text="Header" />
-                  <Text fx:id="description" layoutX="45.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis purus nec lectus mattis tincidunt. Suspendisse euismod commodo nibh, vitae laoreet ipsum luctus sed. Aliquam erat volutpat. Nullam in nibh tristique est lobortis suscipit. Proin vulputate eleifend mauris non aliquet. Suspendisse tincidunt est eu nulla rhoncus,  " wrappingWidth="859.7367553710938" />
-                  <Circle fx:id="imgCircle" fill="#cccccc" layoutX="70.0" layoutY="740.0" onMouseClicked="#goToProfile" radius="30.0" stroke="#aaaaaa" strokeType="INSIDE">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Circle>
-                  <Text fx:id="name" layoutX="109.0" layoutY="730.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name ...">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Text>
-                  <Text layoutX="59.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Home &gt; Informations page" />
+                  <VBox fx:id="commentSection" alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="2086.0" spacing="30.0" styleClass="comment-section" />
                </children>
-            </AnchorPane>
-         </children>
-      </VBox>
-   </content>
+            </VBox>
+         </content>
+         <stylesheets>
+            <URL value="@../../../../CSS/ColorThemes.css" />
+            <URL value="@../../../../CSS/customer/details-page.css" />
+            <URL value="@../../../../CSS/customer/sub-panes/main-customer.css" />
+         </stylesheets>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <MFXButton onAction="#bookNow" prefHeight="55.0" prefWidth="1161.0" styleClass="reserve-button" text="RESERVE NOW" BorderPane.alignment="CENTER_LEFT" />
+   </bottom>
    <stylesheets>
       <URL value="@../../../../CSS/ColorThemes.css" />
       <URL value="@../../../../CSS/customer/details-page.css" />
-      <URL value="@../../../../CSS/customer/sub-panes/main-customer.css" />
    </stylesheets>
-</ScrollPane>
+</BorderPane>

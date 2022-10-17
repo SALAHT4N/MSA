@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -55,6 +56,22 @@
                   <MotionBlur />
                </effect>
             </Separator>
+         </children>
+      </Pane>
+      <Pane prefHeight="60.0" prefWidth="70.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="43.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/user/nav/services%20(2).png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="0.28" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane prefHeight="60.0" prefWidth="70.0">

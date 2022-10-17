@@ -11,10 +11,40 @@
 
 .left-arrow{
 
-    -fx-background-color: linear-gradient(to left,rgba(0,0,0,0.01) , rgba(0,0,0,0.15));
+    -fx-background-color: linear-gradient(to left,rgba(0,0,0,0.01) , rgba(0,0,0,0.05));
 }
-
+.service-desc {
+    -fx-font-size: 18;
+}
 .right-arrow{
 
-    -fx-background-color: linear-gradient(to right,rgba(0,0,0,0.01) , rgba(0,0,0,0.15));
+    -fx-background-color: linear-gradient(to right,rgba(0,0,0,0.01) , rgba(0,0,0,0.05));
 }
+
+.reserve-button {
+    -fx-border-width: 3;
+    -fx-border-color: -fx-main-color;
+    -fx-background-color: -fx-main-color;
+    -fx-font-size: 20;
+    -fx-text-fill: #eee;
+    /*-fx-font-weight: bold;*/
+}
+
+
+.reserve-button:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: -fx-text-color;
+}
+
+.provider-info {
+    /*-fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.05), 20, 0.09 , 0 , 8.5);*/
+    -fx-background-color: #f7f7f7;
+    /*-fx-background-color: #e3fafc;*/
+    -fx-border-color: -fx-main-color;
+    /*-fx-border-color: -fx-accent-color;*/
+    -fx-border-width: 0 0 0 5;
+}
+
+/*.scroll-bar .comment-section {*/
+/*    -fx-background-color: rgba(227, 250, 252,0.5);*/
+/*}*/
