@@ -3,6 +3,8 @@ package com.software.mas.controller.login;
 
 import com.software.mas.App;
 import com.software.mas.Loader;
+import com.software.mas.model.LoginModel;
+import com.software.mas.model.templates.LoginStatus;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -47,10 +49,51 @@ public class LoginController {
     void loginKey(KeyEvent event) {
 
     }
+    private void incorrect(MFXTextField email, MFXTextField password){
+        email.setStyle("-fx-border-color: rgba(242, 0, 0,0.6)");
+        password.setStyle("-fx-border-color: rgba(242, 0, 0,0.6)");
+    }
 
+    private void loadScene(String url, Stage st) throws Exception {
+
+        st.hide();
+        st.setScene(Loader.sceneLoader(url));
+        st.show();
+
+    }
     @FXML
     void loginPressed(ActionEvent event) {
         //MODEL
+        LoginModel model = new LoginModel();
+        String email = userName.getText();
+        String password = passField.getText();
+        LoginStatus status;
+        try {
+
+            status = model.authenticate(email, password);
+
+            //
+            if(status.isCorrect())
+            {
+                Stage st = App.getStage();
+                if(status.getLvl() == 0){
+                    loadScene("/com/software/mas/UI/home/customer/home-customer.fxml", st);
+
+                    // In this cas lvl will equal to 1 (Provider)
+                }else{
+                    loadScene("/com/software/mas/UI/home/user/home-user.fxml", st);
+                }
+
+            }else
+                incorrect(userName,passField);
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+
     }
 
     @FXML

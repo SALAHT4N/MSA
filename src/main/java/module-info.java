@@ -6,6 +6,8 @@ module com.software.mas {
     requires MaterialFX;
     requires com.calendarfx.view;
     requires javafx.web;
+    requires java.sql;
+
 
     opens com.software.mas.controller.components to javafx.fxml;
     opens com.software.mas.controller.login to javafx.fxml;

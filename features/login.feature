@@ -1,12 +1,13 @@
 
 Feature: Login
   Scenario Outline: One of the inputs is invalid
-    Given I press login
-    When I enter "<username>" and "<password>"
+    Given I enter login page
+    When I enter "<email>" and "<password>"
     Then login is "<output>" and user level is "<level>"
 
     Examples:
-      | username |  | password | output | level       |  |
-      | salahtan |  | 123456   | true   | user        |  |
-      | salah    |  | software | false  | custustomer |  |
-      | amjad    |  | nothere1 | false  | customer    |  |
+      | email              |  | password | output | level |  |
+      | salahtan@gmail.com |  | 123456   | true   | 0     |  |
+      | salahtan@gmail.com |  | 123456   | true   | 0     |  |
+      | amjad@gmail.com    |  | nothere1 | false  | -1    |  |
+      | mhmd@gmail.com     |  | password | false  | -1    |  |
