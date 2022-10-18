@@ -73,10 +73,10 @@ public class LoginController {
             status = model.authenticate(email, password);
 
             //
-            if(status.isCorrect())
+            if(status.correct())
             {
                 Stage st = App.getStage();
-                if(status.getLvl() == 0){
+                if(status.lvl() == 0){
                     loadScene("/com/software/mas/UI/home/customer/home-customer.fxml", st);
 
                     // In this cas lvl will equal to 1 (Provider)
@@ -84,7 +84,9 @@ public class LoginController {
                     loadScene("/com/software/mas/UI/home/user/home-user.fxml", st);
                 }
 
-            }else
+            }
+            //Invalid Email or Password
+            else
                 incorrect(userName,passField);
 
 

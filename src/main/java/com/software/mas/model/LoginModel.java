@@ -6,8 +6,13 @@ import java.sql.*;
 
 public class LoginModel {
 
+
+
     public LoginStatus authenticate(String email, String password) throws SQLException {
-        LoginStatus status = new LoginStatus();
+        //Default values:
+        int lvl=-1;
+        boolean correct = false;
+
 
         Connection con = DBHelper.connect();
 
@@ -20,7 +25,8 @@ public class LoginModel {
         ResultSet rs = preparedStmt.executeQuery();
 
         if(rs.next()){
-            status.setCorrect(true);
+
+            correct =true;
 
             //AUTHORIZATION PROCESS
             preparedStmt = con.prepareStatement("SELECT email " +
@@ -30,13 +36,15 @@ public class LoginModel {
             rs = preparedStmt.executeQuery();
 
             if(rs.next())
-                status.setLvl(1);
+                lvl=1;
             else
-                status.setLvl(0);
+                lvl=0;
+
         }
 
+
         con.close();
-        return  status;
+        return  new LoginStatus(correct, lvl);
     }
 
 

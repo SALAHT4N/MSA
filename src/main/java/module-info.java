@@ -15,10 +15,11 @@ module com.software.mas {
     opens com.software.mas.controller.home.customer to javafx.fxml;
     opens com.software.mas.controller.home.customer.subpane to javafx.fxml;
     opens com.software.mas to javafx.fxml;
-
-    exports com.software.mas;
     opens com.software.mas.controller.signup to javafx.fxml;
     opens com.software.mas.controller.home.user.subpane to javafx.fxml;
     opens com.software.mas.controller.home.user to javafx.fxml;
+
+    exports com.software.mas;
+
 
 }
