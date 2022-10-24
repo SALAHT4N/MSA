@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="700.0" styleClass="main-pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.Stepper3Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="287.79998779296875" minHeight="10.0" prefHeight="216.8" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="343.0000053405762" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Attach Tags" />
+            <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="606.0" spacing="18.0" style="-fx-background-color: #f7f7f7;">
+               <children>
+                  <MFXTextField floatMode="BORDER" floatingText="Tag name" prefHeight="38.0" prefWidth="214.0" styleClass="textfields" />
+                  <MFXComboBox floatMode="BORDER" prefHeight="40.0" prefWidth="83.0" styleClass="textfields" />
+                  <Region prefHeight="66.0" prefWidth="134.0" />
+                  <MFXButton prefHeight="30.0" prefWidth="74.0" styleClass="btns" text="Add">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </MFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets right="24.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="12.0" right="12.0" />
+               </padding>
+            </HBox>
+            <MFXScrollPane prefHeight="52.0" prefWidth="600.0">
+               <content>
+                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="570.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" prefHeight="32.0" prefWidth="74.0" styleClass="tag" text="GAMING" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+               </content>
+            </MFXScrollPane>
+         </children>
+         <GridPane.margin>
+            <Insets left="24.0" top="12.0" />
+         </GridPane.margin>
+      </VBox>
+      <HBox prefHeight="163.0" prefWidth="576.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <children>
+            <VBox prefHeight="244.0" prefWidth="470.0" spacing="12.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Attach Images" />
+                  <HBox prefHeight="188.0" prefWidth="470.0" spacing="24.0">
+                     <children>
+                        <MFXListView prefHeight="166.0" prefWidth="214.0" styleClass="textfields" />
+                        <MFXButton prefHeight="27.0" prefWidth="80.0" styleClass="btns" text="Add" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="166.0" stroke="#aaaaaa" strokeType="INSIDE" width="169.0">
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+            </Rectangle>
+         </children>
+         <GridPane.margin>
+            <Insets left="24.0" top="18.0" />
+         </GridPane.margin>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../../CSS/user/subpanes/service-creation/create-service-3.css" />
+   </stylesheets>
+</GridPane>

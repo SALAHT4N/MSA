@@ -1,13 +1,9 @@
-package com.software.mas.controller.signup;
+package com.software.mas.controller;
 
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
-import io.github.palexdev.materialfx.font.MFXFontIcon;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
@@ -28,8 +24,9 @@ import java.util.List;
 */
 public abstract class ViewFilesGetter {
     public Object[] fileNames;
-    private String[] stepsNames;
-
+    private final String[] stepsNames;
+    private final String stepsFileName;
+    private final String iconsFileName;
 
     /*
         No Arguments constructor was removed to ensure that no subclass can use these methods without specifying
@@ -41,7 +38,7 @@ public abstract class ViewFilesGetter {
 //    {
 //        fileNames = getFileNames().toArray();
 //    }
-    public ViewFilesGetter(String[] stepsNames) throws URISyntaxException {
+    public ViewFilesGetter(String[] stepsNames,String stepsFileName,String iconsFileName) throws URISyntaxException {
         /*
         * The only reason a variable should be put in the constructor in this scenario, is when it depends on a value got
         * from the child class.
@@ -49,8 +46,15 @@ public abstract class ViewFilesGetter {
         * So fileNames doesn't have to be a field of the parent class.
         * it can be simply a local variable declared in the createSteps method.
         * */
-        fileNames = getFileNames().toArray();
+
         this.stepsNames = stepsNames;
+        this.stepsFileName = stepsFileName;
+        this.iconsFileName = iconsFileName;
+//        System.out.println("stepsNames: " + stepsNames + "\n" +
+//                "stepsFileName: " + stepsFileName + "\n" +
+//                "icconFileName: " + iconsFileName);
+
+        fileNames = getFileNames().toArray(); /*This should be done last as it depends on a value got from the parameters*/
     }
 
     /*
@@ -76,7 +80,9 @@ public abstract class ViewFilesGetter {
     *
     * */
     private List<String> getFileNames() throws URISyntaxException {
-        File folder = new File(getClass().getResource("/com/software/mas/UI/signup/provider-steps").toURI());
+//        File folder = new File(getClass().getResource("/com/software/mas/UI/signup/provider-steps").toURI());
+//        System.out.println("This is the folder" + stepsFileName);
+        File folder = new File(getClass().getResource(stepsFileName).toURI());
         File[] listOfFiles = folder.listFiles();
 
         LinkedList<String> returnedFiles = new LinkedList<>();
@@ -89,7 +95,9 @@ public abstract class ViewFilesGetter {
         return returnedFiles;
     }
     private List<Rectangle> getIcons() throws URISyntaxException {
-        File folder = new File(getClass().getResource("/com/software/mas/IMG/signup/steps-icons").toURI());
+//        File folder = new File(getClass().getResource("/com/software/mas/IMG/signup/steps-icons").toURI());
+//        System.out.println("This is the folder" + iconsFileName);
+        File folder = new File(getClass().getResource(iconsFileName).toURI());
         File[] listOfIcons = folder.listFiles();
         LinkedList<Rectangle> returnedIcons = new LinkedList<>();
 
@@ -127,7 +135,7 @@ public abstract class ViewFilesGetter {
         return steps;
     }
     private Parent createStep(String fileName) throws IOException {
-        return Loader.parentLoader("/com/software/mas/UI/signup/provider-steps/" + fileName);
+        return Loader.parentLoader( stepsFileName +"/" + fileName);
     }
 
 

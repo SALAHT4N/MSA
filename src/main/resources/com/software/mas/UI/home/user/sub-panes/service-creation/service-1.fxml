@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="653.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.Stepper1Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="195.59998168945313" minHeight="10.0" prefHeight="91.40001831054687" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="358.39998168945306" minHeight="10.0" prefHeight="358.39998168945306" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MFXTextField fx:id="serviceName" floatMode="BORDER" floatingText="Service name" prefHeight="43.0" prefWidth="349.0" promptText="My Service" styleClass="textfields">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </MFXTextField>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Choose payment Plan:">
+               <VBox.margin>
+                  <Insets left="12.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="356.0" prefWidth="654.0" spacing="60.0">
+               <children>
+                  <GridPane fx:id="perServicePlan" onMouseClicked="#selectPaymentPlan" prefHeight="241.0" prefWidth="244.0" styleClass="card">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="107.99999389648437" minHeight="10.0" prefHeight="55.599999999999994" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="233.19998779296876" minHeight="10.0" prefHeight="232.4" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: normal;" styleClass="payment-label" text="Pay per Service" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="payment-text" text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id mollitia suscipit eligendi? Harum laudantium possimus exercitationem dolorum dolore ullam dignissimos, optio " wrappingWidth="200.9604949951172" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="8.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </GridPane>
+                  <GridPane fx:id="perCustomerPlan" onMouseClicked="#selectPaymentPlan" prefHeight="242.0" prefWidth="244.0" styleClass="card">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="107.99999389648437" minHeight="10.0" prefHeight="55.59998779296875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="244.39999084472657" minHeight="10.0" prefHeight="187.19997863769532" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="232.40001220703124" minHeight="10.0" prefHeight="59.20002136230471" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: normal;" styleClass="payment-label" text="Pay per Customer" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="payment-text" text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id mollitia suscipit eligendi? Harum laudantium possimus exercitationem dolorum dolore ullam dignissimos, optio " wrappingWidth="201.7606201171875" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="8.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <MFXTextField fx:id="capacity" floatMode="BORDER" floatingText="Capacity" prefHeight="38.0" prefWidth="111.0" promptText="11" styleClass="textfields" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="12.0" />
+                           </GridPane.margin>
+                        </MFXTextField>
+                     </children>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="24.0" left="50.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../../CSS/signup/sign-up.css" />
+      <URL value="@../../../../../CSS/user/subpanes/service-creation/create-service-1.css" />
+   </stylesheets>
+</GridPane>

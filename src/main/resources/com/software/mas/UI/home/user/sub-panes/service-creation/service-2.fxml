@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" styleClass="main-pane" stylesheets="@../../../../../CSS/ColorThemes.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.Stepper2Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="370.8" minHeight="10.0" prefHeight="340.5999816894531" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <padding>
+      <Insets bottom="40.0" left="24.0" right="24.0" top="40.0" />
+   </padding>
+   <children>
+      <TextArea fx:id="serviceDesc" prefHeight="200.0" prefWidth="200.0" promptText="Description" styleClass="textfields" wrapText="true" />
+   </children>
+</GridPane>

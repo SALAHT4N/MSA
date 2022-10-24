@@ -1,5 +1,6 @@
 package com.software.mas.controller.signup;
 
+import com.software.mas.controller.ViewFilesGetter;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +23,8 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
        before calling the super constructor, this makes sense because the super constructor is called well before the
        *  "this" constructor (before the class object is made), so there isn't anything to pass.
     */
+    private static String stepsFileName = "/com/software/mas/UI/signup/provider-steps";
+    private static String iconsFileName = "/com/software/mas/IMG/signup/steps-icons";
     static private String[] stepsNames = {
             "Sign Up",
             "Contact Info",
@@ -29,7 +32,7 @@ public class SignUpCustomerStepper extends ViewFilesGetter implements Initializa
     };
 
     public SignUpCustomerStepper() throws URISyntaxException {
-        super(stepsNames);
+        super(stepsNames, stepsFileName, iconsFileName);
     }
 
 

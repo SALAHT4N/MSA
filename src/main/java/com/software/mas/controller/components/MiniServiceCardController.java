@@ -45,6 +45,9 @@ public class MiniServiceCardController implements Initializable {
     * Any recommended setter or getter write it Here:
     * HERE COLOURS FUCK YOU
     *
+    *
+    *
+    *
     * */
     private Label createTag(String tag){
         Label lb = new Label();
