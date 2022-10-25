@@ -126,7 +126,7 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                  <VBox fx:id="commentSection" alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="2086.0" spacing="30.0" styleClass="comment-section" />
+                  <VBox fx:id="commentSection" alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="2086.0" spacing="30.0" style="-fx-background-color: white;" styleClass="comment-section" />
                </children>
             </VBox>
          </content>

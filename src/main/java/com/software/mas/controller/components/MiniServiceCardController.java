@@ -3,6 +3,7 @@ package com.software.mas.controller.components;
 import com.software.mas.FXHelper;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import com.software.mas.controller.home.customer.subpane.DetailsPageCustomer;
+import com.software.mas.model.templates.HomeCard;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -25,7 +26,7 @@ public class MiniServiceCardController implements Initializable {
 
     //This id will help us in the future to navigate to the full page
     //This id will be set in the initializing of the main-customer.fxml view --QUERYING--
-    private String id;
+    private HomeCard source;
     @FXML
     private ImageView img;
     @FXML
@@ -35,7 +36,7 @@ public class MiniServiceCardController implements Initializable {
     @FXML
     private FlowPane tagsContainer;
     @FXML
-    private Text txtDesc;
+    private Text textDesc;
 
     @FXML
     private Text txtHeader;
@@ -63,6 +64,9 @@ public class MiniServiceCardController implements Initializable {
 
     }
 
+
+
+
     //getters
     public String getLocation(){
         return location.getText();
@@ -71,7 +75,7 @@ public class MiniServiceCardController implements Initializable {
         return txtHeader.getText();
     }
     public String getStringDescription(){
-        return txtDesc.getText();
+        return textDesc.getText();
     }
     public double getRating(){
         return rating.getRating();
@@ -89,7 +93,7 @@ public class MiniServiceCardController implements Initializable {
         txtHeader.setText( header);
     }
     public void setStringDescription(String desc){
-        txtDesc.setText(desc);
+        textDesc.setText(desc);
     }
     public void setRating (double rated){
         rating.setRating(rated);
@@ -136,11 +140,14 @@ public class MiniServiceCardController implements Initializable {
             return;
       DetailsPageCustomer cont = (DetailsPageCustomer)HomeCustomerController.containerSetCenter(parent,"/com/software/mas/UI/home/customer/sub-panes/details-page-customer.fxml");
         //todo: Passing the Data of this <MiniServiceCardController> to <DetailsPageCustomer> by using a connection methods.
+        cont.init(source);
 
     }
-
+    public void setDataSource(HomeCard temp){
+        this.source = temp;
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        addTags("ENTERTAINMENT", "SPORT", "GAMES", "ANYTHING");
+
     }
 }

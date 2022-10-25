@@ -23,12 +23,12 @@
          <children>
             <Pane prefHeight="81.0" prefWidth="920.0" styleClass="search-pane">
                <children>
-                  <TextField layoutX="509.0" layoutY="21.0" prefHeight="42.0" prefWidth="315.0" promptText="Search for anything" styleClass="input-search">
+                  <TextField fx:id="searchField" layoutX="509.0" layoutY="21.0" prefHeight="42.0" prefWidth="315.0" promptText="Search for anything" styleClass="input-search">
                      <padding>
                         <Insets left="10.0" right="30.0" />
                      </padding>
                   </TextField>
-                  <MFXButton layoutX="843.0" layoutY="29.0" styleClass="btns" text="Search" />
+                  <MFXButton layoutX="843.0" layoutY="29.0" onAction="#search" styleClass="btns" text="Search" />
                   <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-heading" text="Search results:" />
                </children>
             </Pane>
@@ -79,9 +79,9 @@
                <font>
                   <Font name="Eras Light ITC" size="8.5" />
                </font></Label>
-            <MFXFilterComboBox floatMode="DISABLED" layoutX="18.0" layoutY="173.0" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
-            <MFXFilterComboBox floatMode="DISABLED" layoutX="18.0" layoutY="99.0" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
-            <MFXFilterComboBox floatMode="DISABLED" layoutX="18.0" layoutY="243.0" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
+            <MFXFilterComboBox fx:id="comboCity" floatMode="DISABLED" layoutX="18.0" layoutY="173.0" onAction="#search" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
+            <MFXFilterComboBox fx:id="comboCountry" floatMode="DISABLED" layoutX="18.0" layoutY="99.0" onAction="#search" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
+            <MFXFilterComboBox fx:id="comboStreet" floatMode="DISABLED" layoutX="18.0" layoutY="247.0" onAction="#search" prefHeight="40.0" prefWidth="208.0" styleClass="input-combobox" />
          </children>
       </AnchorPane>
    </children>

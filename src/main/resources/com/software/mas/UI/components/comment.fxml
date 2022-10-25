@@ -9,8 +9,8 @@
 <AnchorPane prefHeight="95.0" prefWidth="1160.0" style="-fx-background-color: white;" stylesheets="@../../CSS/ColorThemes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.components.CommentController">
    <children>
       <Rating fx:id="rating" layoutX="958.0" layoutY="28.0" mouseTransparent="true" prefHeight="13.0" prefWidth="134.0" />
-      <Text layoutX="119.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." wrappingWidth="819.4700164794922" />
-      <Text layoutX="118.0" layoutY="26.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name...">
+      <Text fx:id="comment" layoutX="119.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" styleClass="long-text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." wrappingWidth="819.4700164794922" />
+      <Text fx:id="name" layoutX="118.0" layoutY="26.0" onMouseClicked="#goToProfile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Name...">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
