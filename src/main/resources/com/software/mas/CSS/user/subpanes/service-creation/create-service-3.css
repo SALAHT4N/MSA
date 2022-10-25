@@ -1,0 +1,11 @@
+.main-pane .tag {
+    /*-fx-background-color:#0c859980;*/
+    -fx-background-color: -fx-main-color;
+    -fx-text-fill:#ddd ;
+    /*-fx-font-size: 10;*/
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 2 8 2 8;
+    -fx-font-size: 12;
+    -fx-alignment: center;
+}

@@ -1,5 +1,6 @@
 package com.software.mas.controller.signup;
 
+import com.software.mas.controller.ViewFilesGetter;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +16,8 @@ public class SignUpProviderStepper extends ViewFilesGetter implements Initializa
 
     @FXML
     private MFXStepper signUpStepper;
-
+    private static String stepFileNames = "/com/software/mas/UI/signup/provider-steps";
+    private static String iconsFileName = "/com/software/mas/IMG/signup/steps-icons";
     static private String[] stepsNames = {
                 "Sign Up",
                 "Contact Info",
@@ -23,7 +25,7 @@ public class SignUpProviderStepper extends ViewFilesGetter implements Initializa
                 "Finish"
         };
     public SignUpProviderStepper() throws URISyntaxException {
-        super(stepsNames);
+        super(stepsNames, stepFileNames,iconsFileName );
         // super(); // Implicit Call
 //        fileNames =  (getFileNames().toArray()); // This will be done by the super constructor.
 
@@ -33,7 +35,6 @@ public class SignUpProviderStepper extends ViewFilesGetter implements Initializa
     public void addFileName(File i, LinkedList<String> returnedFiles) {
         if(i.isFile())
                 returnedFiles.add(i.getName());
-
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

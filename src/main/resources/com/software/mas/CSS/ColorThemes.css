@@ -229,6 +229,19 @@ SPACING SYSTEM (px)
     -fx-border-color:-fx-labelColor;
     -fx-border-width: 0 0 1 0;
 }
+/*TAGS*/
+
+.tag {
+    /*-fx-background-color:#0c859980;*/
+    -fx-background-color: -fx-main-color;
+    -fx-text-fill:#ddd ;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 2 8 2 8;
+}
+
+
 
 /*TEXT FIELDS STYLES*/
 
@@ -253,7 +266,7 @@ SPACING SYSTEM (px)
 }
 .textfields .floating-text{
     /*-fx-font-family:"Berlin Sans FB";*/
-    -fx-text-fill:-fx-text-light-color;
+    -fx-text-fill:-fx-text-color;
     -fx-font-weight: 600;
     -fx-font-size: 14;
 }

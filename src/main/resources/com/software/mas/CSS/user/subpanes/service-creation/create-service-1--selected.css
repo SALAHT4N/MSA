@@ -1,0 +1,22 @@
+.payment-label{
+    -fx-text-fill: #eee;
+    -fx-fill: #eee;
+    -fx-font-size: 20;
+}
+
+.payment-text {
+    -fx-fill: #ddd;
+    -fx-font-size: 16;
+    -fx-line-spacing: 1.8;
+}
+
+
+.card {
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.15), 20, 0.09 , 0 , 8.5);
+    -fx-background-color: #333;
+    -fx-border-radius: 11;
+    -fx-background-radius: 11;
+
+    /*-fx-border-width: 10 0 0 0;*/
+    /*-fx-border-color: #0c8599 ;*/
+}

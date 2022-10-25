@@ -26,7 +26,8 @@
 .tag {
     /*-fx-background-color:#0c859980;*/
     -fx-background-color: -fx-main-color;
-    -fx-text-fill:#ddd ;
+    -fx-text-fill:#ddd;
+    -fx-fill: #ddd;
     -fx-font-size: 10;
     -fx-font-weight: bold;
     -fx-background-radius: 20;
