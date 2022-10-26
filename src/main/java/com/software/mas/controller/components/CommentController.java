@@ -51,7 +51,7 @@ public class CommentController implements Initializable {
     }
 
     public void setImage (String url){
-        Image temp = new Image(String.valueOf(getClass().getResource(url)));
+        Image temp = new Image(url);
         imgCircle.setFill(new ImagePattern(temp));
     }
     public void setComment (String str){

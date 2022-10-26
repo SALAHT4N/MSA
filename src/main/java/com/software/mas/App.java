@@ -1,17 +1,24 @@
 package com.software.mas;
 
 
+import com.software.mas.model.DBHelper;
+import com.software.mas.model.HomeModel;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class App extends Application {
 
     private static Stage mainStage;
 
-
+    /*
+    * TODO:Change the price column in mysql_db to double.
+    *
+    *
+    * */
     public static void setStage (Scene scene){
         mainStage.setScene(scene);
     }
@@ -26,6 +33,7 @@ public class App extends Application {
         mainStage.setTitle("Appointy");
 
 
+
 //        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/login-form.fxml")); //M7MD
 //       mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); //M7MD
         mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/user/sub-panes/services.fxml")); // SALAHT4N
@@ -38,6 +46,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+  launch();
     }
 }

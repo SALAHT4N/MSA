@@ -1,12 +1,18 @@
 package com.software.mas.controller.home.customer.subpane;
 
 import com.software.mas.Loader;
+import com.software.mas.controller.components.CommentController;
 import com.software.mas.controller.home.customer.HomeCustomerController;
+import com.software.mas.model.DetailsPageModel;
+import com.software.mas.model.templates.CommentProfileData;
+import com.software.mas.model.templates.HomeCard;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -25,6 +31,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Queue;
 import java.util.ResourceBundle;
 
 public class DetailsPageCustomer implements Initializable {
@@ -225,6 +232,38 @@ public class DetailsPageCustomer implements Initializable {
 
     @FXML
     VBox commentSection;
+    DetailsPageModel model;
+    public void displayAllComments(long serviceId) throws Exception {
+       Queue<CommentProfileData> comments =  model.getAllComments(serviceId);
+        commentSection.getChildren().clear();
+       while(!comments.isEmpty()){
+           CommentProfileData holder = comments.poll();
+
+           FXMLLoader loader = Loader.getLoader("/com/software/mas/UI/components/comment.fxml");
+           Parent view = loader.load();
+
+           CommentController cont = loader.getController();
+           cont.setComment(holder.content());
+           cont.setImage(holder.urlImg());
+           cont.setName(holder.name());
+           cont.setRating((int) holder.rating());
+
+           commentSection.getChildren().add(view);
+       }
+
+    }
+
+    public void init(HomeCard data)  {
+        model = new DetailsPageModel();
+
+        try {
+            displayAllComments(data.id());
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //todo:Initilizing images for the images slider
@@ -234,13 +273,6 @@ public class DetailsPageCustomer implements Initializable {
 
         imgCircle.setFill(new ImagePattern(temp));
 
-        try {
-            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-            commentSection.getChildren().add(Loader.parentLoader("/com/software/mas/UI/components/comment.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 }

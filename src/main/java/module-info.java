@@ -22,5 +22,4 @@ module com.software.mas {
     exports com.software.mas;
     opens com.software.mas.controller to javafx.fxml;
 
-
 }

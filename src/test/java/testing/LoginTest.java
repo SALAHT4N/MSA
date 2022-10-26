@@ -36,8 +36,8 @@ public class LoginTest {
         int lvl = Integer.parseInt(level);
         boolean correct = Boolean.parseBoolean(output);
 
-        Assert.assertEquals(out.getLvl(),lvl);
-        Assert.assertEquals(out.isCorrect(),correct);
+        Assert.assertEquals(out.lvl(),lvl);
+        Assert.assertEquals(out.correct(),correct);
 
     }
 
