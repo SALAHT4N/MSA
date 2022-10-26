@@ -3,11 +3,10 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXComboBox?>
 <?import io.github.palexdev.materialfx.controls.MFXListView?>
-<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -18,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="700.0" styleClass="main-pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.Stepper3Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="700.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.Stepper3Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -32,10 +31,10 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Attach Tags" />
             <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="606.0" spacing="18.0" style="-fx-background-color: #f7f7f7;">
                <children>
-                  <MFXTextField floatMode="BORDER" floatingText="Tag name" prefHeight="38.0" prefWidth="214.0" styleClass="textfields" />
-                  <MFXComboBox floatMode="BORDER" prefHeight="40.0" prefWidth="83.0" styleClass="textfields" />
+                  <MFXTextField fx:id="tagName" floatMode="BORDER" floatingText="Tag name" prefHeight="38.0" prefWidth="214.0" styleClass="textfields" />
+                  <MFXComboBox fx:id="tagColors" floatMode="BORDER" prefHeight="40.0" prefWidth="83.0" styleClass="textfields" />
                   <Region prefHeight="66.0" prefWidth="134.0" />
-                  <MFXButton prefHeight="30.0" prefWidth="74.0" styleClass="btns" text="Add">
+                  <MFXButton onAction="#addTag" prefHeight="30.0" prefWidth="74.0" styleClass="btns" text="Add">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -51,15 +50,14 @@
                   <Insets left="12.0" right="12.0" />
                </padding>
             </HBox>
-            <MFXScrollPane prefHeight="52.0" prefWidth="600.0">
+            <ScrollPane prefHeight="76.0" prefWidth="652.0" style="-fx-background-insets: 0; -fx-background-color: #fff;" styleClass="main-pane">
                <content>
-                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="570.0">
-                     <children>
-                        <Label alignment="TOP_LEFT" prefHeight="32.0" prefWidth="74.0" styleClass="tag" text="GAMING" textAlignment="CENTER" />
-                     </children>
-                  </HBox>
+                  <HBox fx:id="tagsContainer" alignment="CENTER_LEFT" prefHeight="55.0" spacing="10.0" styleClass="main-pane" />
                </content>
-            </MFXScrollPane>
+               <VBox.margin>
+                  <Insets right="24.0" />
+               </VBox.margin>
+            </ScrollPane>
          </children>
          <GridPane.margin>
             <Insets left="24.0" top="12.0" />
@@ -70,18 +68,19 @@
             <VBox prefHeight="244.0" prefWidth="470.0" spacing="12.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Attach Images" />
-                  <HBox prefHeight="188.0" prefWidth="470.0" spacing="24.0">
+                  <HBox prefHeight="188.0" prefWidth="459.0" spacing="24.0">
                      <children>
-                        <MFXListView prefHeight="166.0" prefWidth="214.0" styleClass="textfields" />
-                        <MFXButton prefHeight="27.0" prefWidth="80.0" styleClass="btns" text="Add" />
+                        <MFXListView fx:id="imagesList" onMouseClicked="#selectImage" prefHeight="168.0" prefWidth="283.0" styleClass="image-list" />
+                        <MFXButton onAction="#addImage" prefHeight="27.0" prefWidth="56.0" styleClass="btns" text="Add" />
+                        <MFXButton onAction="#onDelete" prefHeight="27.0" prefWidth="63.0" styleClass="btn--delete" stylesheets="@../../../../../CSS/user/subpanes/service-creation/create-service-3.css" text="Delete" />
                      </children>
                      <padding>
-                        <Insets top="20.0" />
+                        <Insets right="12.0" top="20.0" />
                      </padding>
                   </HBox>
                </children>
             </VBox>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="166.0" stroke="#aaaaaa" strokeType="INSIDE" width="169.0">
+            <Rectangle fx:id="imageBox" arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="166.0" stroke="#aaaaaa" strokeType="INSIDE" width="169.0">
                <HBox.margin>
                   <Insets top="30.0" />
                </HBox.margin>

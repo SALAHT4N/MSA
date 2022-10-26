@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -15,6 +16,7 @@ public class ServiceMenuItemController implements Initializable {
     private String serviceName = "service 1";
     // Mouse Clicked method actually gets called 2 times per a click.
     public static Object containerController;
+//    public static int testVar;
     @FXML
     void changeSelection(MouseEvent event) {
         ((ServicesMenuBox)containerController).clearStyles();
@@ -25,6 +27,7 @@ public class ServiceMenuItemController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         getTextOfService().setText(serviceName);
     }
 

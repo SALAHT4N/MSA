@@ -50,6 +50,10 @@ public class ServicesMenuBox implements Initializable {
             for (int i = 0; i < 5; i++) {
 
                 FXMLLoader tempLoader = Loader.getLoader("/com/software/mas/UI/components/service-menu-item.fxml");
+
+                // This could be used instead of making a static refernce in the child view.
+                //((ServiceMenuItemController)tempLoader.getController()).containerController;
+
                 Parent service = tempLoader.load();
                 ((ServiceMenuItemController)tempLoader.getController()).setServiceName(serviceNames[i]);
 

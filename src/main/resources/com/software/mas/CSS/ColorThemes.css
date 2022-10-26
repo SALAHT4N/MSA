@@ -229,18 +229,48 @@ SPACING SYSTEM (px)
     -fx-border-color:-fx-labelColor;
     -fx-border-width: 0 0 1 0;
 }
+/*LIST VIEW MFX*/
+.mfx-list-view {
+    -mfx-track-color: rgb(230, 230, 230);
+    -mfx-thumb-color: #555;
+    -mfx-thumb-hover-color: #333;
+}
+
+
 /*TAGS*/
 
 .tag {
     /*-fx-background-color:#0c859980;*/
-    -fx-background-color: -fx-main-color;
-    -fx-text-fill:#ddd ;
-    -fx-font-size: 10;
+
+    -fx-text-fill:#fff ;
+    -fx-font-size: 12;
     -fx-font-weight: bold;
     -fx-background-radius: 20;
-    -fx-padding: 2 8 2 8;
+    -fx-padding: 4 8 4 8;
+    -fx-alignment: center;
+    /*-fx-background-color: -fx-main-color;*/
+/*    -fx-font-size: 10;*/
+
+}
+.tag--red {
+    -fx-background-color: #f03e3e;
+}
+.tag--blue {
+    -fx-background-color: #228be6;
 }
 
+.tag--black {
+    -fx-background-color: -fx-main-color;
+}
+.tag--pink {
+    -fx-background-color: #f06595;
+}
+.tag--yellow {
+    -fx-background-color: #fab005;
+}
+.tag--green {
+    -fx-background-color: #40c057;
+}
 
 
 /*TEXT FIELDS STYLES*/
@@ -378,7 +408,7 @@ SPACING SYSTEM (px)
 
 .scroll-bar:horizontal .track,
 .scroll-bar:vertical .track{
-    -fx-background-color :#f4f4f4;
+    -fx-background-color :#fff;
     -fx-border-color :transparent;
     /*-fx-background-radius : 10;*/
     -fx-border-radius :10;

@@ -1,0 +1,45 @@
+.create-service{
+
+    /*-fx-font-size : 15;*/
+    -fx-background-color: -fx-buttonColor;
+    -fx-text-fill:-fx-primaryColor;
+    -fx-font-family:"Berlin Sans FB";
+    -fx-font-size: 40;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+
+}
+.create-service:hover{
+    -fx-background-color:#444;
+    -fx-font-family:"Berlin Sans FB";
+}
+.top-bar {
+    -fx-border-width: 0.5;
+    /*-fx-padding: 0 0 0 0;*/
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.07),20 , 0.01 , 0 , 5);
+}
+.head {
+    /*-fx-border-width: 0 0 0.1 0;*/
+    /*-fx-border-color: #777;*/
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.02),20 , 0.01 , 0 , 5);
+    -fx-background-color: #f8f9fa;
+    /*-fx-background-color: #fff;*/
+    /*-fx-border-radius: 15 15 0 0;*/
+    /*-fx-background-radius: 15 15 0 0;*/
+}
+.card--bottom {
+    -fx-border-radius: 0 0 15 15;
+    -fx-background-radius: 0 0 15 15;
+}
+.card--top {
+    -fx-border-radius:15 15 0 0;
+    -fx-background-radius: 15 15 0 0;
+}
+.containers {
+    -fx-background-color: #f8f9fa;
+}
+
+.main-pane.scroll-bar.block {
+    -fx-border-radius:  15 15 15 15;
+    -fx-background-radius:  15 15 15 15;
+}

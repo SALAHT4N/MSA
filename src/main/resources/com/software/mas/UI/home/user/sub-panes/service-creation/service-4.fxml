@@ -14,10 +14,6 @@
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
-   <stylesheets>
-      <URL value="@../../../CSS/ColorThemes.css" />
-      <URL value="@../../../CSS/signup/sign-up.css" />
-   </stylesheets>
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="large-heading" text="You're Good to Go!" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <font>
@@ -25,4 +21,8 @@
          </font>
       </Text>
    </children>
+   <stylesheets>
+      <URL value="@../../../../../CSS/signup/sign-up.css" />
+      <URL value="@../../../../../CSS/ColorThemes.css" />
+   </stylesheets>
 </GridPane>

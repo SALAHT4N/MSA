@@ -23,16 +23,16 @@
     -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.05), 30, 0 , 0 , 5);
 }
 
-.tag {
-    /*-fx-background-color:#0c859980;*/
-    -fx-background-color: -fx-main-color;
-    -fx-text-fill:#ddd;
-    -fx-fill: #ddd;
-    -fx-font-size: 10;
-    -fx-font-weight: bold;
-    -fx-background-radius: 20;
-    -fx-padding: 2 8 2 8;
-}
+/*.tag {*/
+/*    !*-fx-background-color:#0c859980;*!*/
+/*    -fx-background-color: -fx-main-color;*/
+/*    -fx-text-fill:#ddd;*/
+/*    -fx-fill: #ddd;*/
+/*    -fx-font-size: 10;*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-radius: 20;*/
+/*    -fx-padding: 2 8 2 8;*/
+/*}*/
 
 .text-desc{
     -fx-cursor: hand;
