@@ -1,22 +1,22 @@
 package com.software.mas.model;
 
 import com.software.mas.model.templates.CommentProfileData;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class DetailsPageModel {
-    //todo:Comment Section - Working
+    //todo:Comment Section - DONE
     //todo:Image Slider (Easy I think)
-    //todo:Book Feature
+    //todo:Book Feature - Working
     //      todo:Available Appointments
     //      todo:reservation
+
+
 
     public Queue<CommentProfileData> getAllComments(long id) throws Exception {
 
