@@ -20,7 +20,7 @@ public class App extends Application {
 
     /*
     * TODO:Change the price column in mysql_db to double.
-    *
+    * TODO:Add the location of the service to details_page..
     *
     * */
     public static void setStage (Scene scene){
@@ -39,8 +39,8 @@ public class App extends Application {
 
 
 //        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/login-form.fxml")); //M7MD
-//       mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); //M7MD
-        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/user/sub-panes/service-creation/service-stepper.fxml")); // SALAHT4N
+       mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); //M7MD
+//        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/user/sub-panes/service-creation/service-stepper.fxml")); // SALAHT4N
 //
 
 

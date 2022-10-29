@@ -18,18 +18,18 @@ public class DBHelper {
         return DriverManager.getConnection(ip,username,password);
     }
     private static final OkHttpClient client = new OkHttpClient();
-    private static final MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
+    private static final MediaType MEDIA_TYPE_PNG = MediaType.parse("image");
     private static void uploadImage (String email, String password, String type, File file ){
 
-        String[] arr = file.toString().split("\\.");
-        String imageEnding = arr[arr.length-1];
+        String imageEnding = file.toString().split("\\.")[1];
+
 
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("email", email)
                 .addFormDataPart("password", password)
                 .addFormDataPart("type",type)
-                .addFormDataPart("image", "idk.png", RequestBody.create(MEDIA_TYPE_PNG,file))
+                .addFormDataPart("image", "idk."+imageEnding, RequestBody.create(MEDIA_TYPE_PNG,file))
                 .build();
 
         Request request = new Request.Builder()
