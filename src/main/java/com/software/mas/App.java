@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 
 public class App extends Application {
@@ -50,6 +51,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-       launch();
+        LocalDateTime now = LocalDateTime.now();
+        now = LocalDateTime.parse("2022-10-29T09:10:47");
+        System.out.println();
+//        launch();
     }
 }
