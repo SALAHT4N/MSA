@@ -1,4 +1,6 @@
 package com.software.mas.model.templates;
 
-public record AppointmentsData() {
+import java.time.LocalDateTime;
+
+public record AppointmentsData(LocalDateTime start, LocalDateTime end) {
 }

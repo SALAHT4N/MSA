@@ -222,9 +222,13 @@ public class DetailsPageCustomer implements Initializable {
     @FXML
     void bookNow(ActionEvent e) throws IOException {
         Stage st = new Stage();
-        Scene sc = Loader.sceneLoader("/com/software/mas/UI/home/customer/sub-panes/book-customer.fxml");
+        FXMLLoader loader = Loader.getLoader("/com/software/mas/UI/home/customer/sub-panes/book-customer.fxml");
 
-        st.setScene(sc);
+        Parent view = loader.load();
+        BookController cont = loader.getController();
+        cont.init(String.valueOf(data.id()));
+
+        st.setScene(new Scene(view));
         st.show();
 
 
@@ -280,8 +284,10 @@ public class DetailsPageCustomer implements Initializable {
             imagesSlides.add(new Image(img));
         }
     }
+    private HomeCard data;
     public void init(HomeCard data)  {
         //Init The model to fetch data into this page
+        this.data=data;
         model = new DetailsPageModel();
         DetailsPageData pageData = model.getServiceData(String.valueOf(data.id()));
         List<String> imagesUrl = pageData.imageSlides();

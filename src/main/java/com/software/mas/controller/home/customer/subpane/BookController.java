@@ -1,7 +1,11 @@
 package com.software.mas.controller.home.customer.subpane;
 
-import com.software.mas.controller.home.customer.TestClass;
+import com.software.mas.DateHelper;
+import com.software.mas.controller.home.customer.Appointment;
+import com.software.mas.model.ReserveModel;
+import com.software.mas.model.templates.AppointmentsData;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXTableColumn;
 import io.github.palexdev.materialfx.controls.MFXTableView;
 import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
@@ -12,54 +16,61 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
-import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 
 import java.net.URL;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
-public class BookController implements Initializable {
+public class BookController {
+
 
     @FXML
     private MFXButton bookBtn;
     @FXML
-    MFXTableView <TestClass> table;
+    MFXTableView <Appointment> table;
 
-    ObservableList<TestClass> te = FXCollections.observableArrayList();
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    private MFXDatePicker fromDate;
+
+    private ReserveModel model;
+
+    @FXML
+    private MFXDatePicker toDate;
+
+    List<AppointmentsData> availableDates;
+
+
+    ObservableList<Appointment> te = FXCollections.observableArrayList();
+
+    public void init(String serviceId) {
+        //init model - >
+
+        model = new ReserveModel();
+        availableDates = model.getAllAvailable(serviceId);
+        availableDates = DateHelper.findAppiontmentsBetween(availableDates, LocalDateTime.now(), LocalDateTime.now().plusMonths(2));
+        setTableData(availableDates);
+
         table.getSelectionModel().setAllowsMultipleSelection(false);
-        MFXTableColumn <TestClass> col1 = new MFXTableColumn<>("Start Date",true, Comparator.comparing(TestClass::getName));
-        MFXTableColumn <TestClass> col2 = new MFXTableColumn<>("End Date",true, Comparator.comparing(TestClass::getAge));
+        MFXTableColumn <Appointment> col1 = new MFXTableColumn<>("Start Date",true, Comparator.comparing(Appointment::getStart));
+        MFXTableColumn <Appointment> col2 = new MFXTableColumn<>("End Date",true, Comparator.comparing(Appointment::getEnd));
 
-        col1.setRowCellFactory(person -> new MFXTableRowCell<>(TestClass::getName));
-        col2.setRowCellFactory(person -> new MFXTableRowCell<>(TestClass::getAge));
+        col1.setRowCellFactory(person -> new MFXTableRowCell<>(Appointment::getStart));
+        col2.setRowCellFactory(person -> new MFXTableRowCell<>(Appointment::getEnd));
 
         table.getFilters().addAll(
-                new StringFilter<>("Name", TestClass::getName),
-                new StringFilter<>("Age", TestClass::getAge)
+                new StringFilter<>("Name", Appointment::getStart),
+                new StringFilter<>("Age", Appointment::getEnd)
 
         );
 
         table.getTableColumns().addAll(col1,col2);
 
-        te.add(new TestClass("Ahmad","2"));
-        te.add(new TestClass("asd","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
-        te.add(new TestClass("Abdo","2"));
+//        te.add(new Appointment("Ahmad","2"));
+
         table.setItems(te);
 
         table.getSelectionModel().selectionProperty().addListener((InvalidationListener) e->{
@@ -68,13 +79,22 @@ public class BookController implements Initializable {
 
 
     }
+    public void setTableData(List<AppointmentsData> data){
+        te.clear();
+        System.out.println("gello");
+        for(AppointmentsData temp : data) {
+            te.add(new Appointment(DateHelper.dateToString(temp.start()), DateHelper.dateToString(temp.end())));
+            System.out.println(temp.start());
+        }
+        table.setItems(te);
 
+    }
     @FXML
     void book(ActionEvent event) {
         //todo:get <LocalDate>time ...
 
-     List<TestClass> list = table.getSelectionModel().getSelectedValues();
-        System.out.println(list.get(0).getName());
+     List<Appointment> list = table.getSelectionModel().getSelectedValues();
+        System.out.println(list.get(0).getStart());
 
         //Remove the selected Item
      table.getItems().remove(list.get(0));
@@ -88,6 +108,9 @@ public class BookController implements Initializable {
     @FXML
     void search(ActionEvent event) {
         //todo: Model to get the data
+
+
+
     }
 
 }
