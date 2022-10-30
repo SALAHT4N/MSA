@@ -40,7 +40,8 @@ public class HomeModel {
     }
     //EMPTY EQUALS >> ""
     public Queue<HomeCard> searchFor(String tags, String street,
-                                     String city, String country ){
+                                     String city, String country )
+    {
         try {
 
             Connection con = DBHelper.connect();

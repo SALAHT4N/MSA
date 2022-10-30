@@ -1,6 +1,7 @@
 package com.software.mas.controller.home.user.subpane;
 
 import com.software.mas.Loader;
+import com.software.mas.model.ServicesPageModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,21 +13,27 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ServicesController implements Initializable {
 
+    ServicesPageModel model;
+    public ServicesController()
+    {
+        model = new ServicesPageModel();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-
-            for(int i = 0; i < 5; i++)
+            List<String> services = model.getServicesNames();
+            for(int i = 0; i < services.size(); i++)
             {
 //                Parent card = Loader.parentLoader("/com/software/mas/UI/home/user/sub-panes/service-hcard.fxml");
                 FXMLLoader card = Loader.getLoader("/com/software/mas/UI/home/user/sub-panes/service-hcard.fxml");
                 availabeServicesContainer.getChildren().add(card.load());
-                ((ServiceHCardController)card.getController()).setServiceNameText("hhhh");
+                ((ServiceHCardController)card.getController()).setServiceNameText(services.get(i));
             }
             for(int i = 0; i < 7; i++)
             {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="568.0" spacing="24.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.assets.AppointmentItemController">
+   <children>
+      <Text fx:id="serviceName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appointment-time" text="01:30:00" />
+      <Label styleClass="dash" text="-" textFill="#333333">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Text fx:id="serviceName1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appointment-time" text="02:30:00" />
+      <Region prefHeight="55.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appointment-hours" text="2 Hours" />
+   </children>
+   <padding>
+      <Insets left="18.0" right="18.0" />
+   </padding>
+   <styleClass>
+      <String fx:value="main-pane" />
+      <String fx:value="card" />
+   </styleClass>
+   <stylesheets>
+      <URL value="@../../../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../../../CSS/user/subpanes/service-creation/appointment-item.css" />
+   </stylesheets>
+</HBox>

@@ -19,7 +19,8 @@ public class ServiceStepperController extends ViewFilesGetter implements Initial
     static private String[] stepsNames = {
             "Options",
             "Description",
-            "Add-ons",
+            "Front",
+            "Open Time",
             "Finish"
     };
 

@@ -2,6 +2,7 @@ package com.software.mas.controller.components;
 
 import com.software.mas.Loader;
 import com.software.mas.controller.home.user.subpane.CalendarUserController;
+import com.software.mas.controller.home.user.subpane.ClearStyles;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,7 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-public class ServicesMenuBox implements Initializable {
+public class ServicesMenuBox /*extends ClearStyles*/ implements Initializable {
 
 
     public static Object containerController;
@@ -45,20 +46,22 @@ public class ServicesMenuBox implements Initializable {
                 "shit"
         };
         try {
-            ServiceMenuItemController.containerController = this;
+//            ServiceMenuItemController.containerController = this;
 
             for (int i = 0; i < 5; i++) {
 
                 FXMLLoader tempLoader = Loader.getLoader("/com/software/mas/UI/components/service-menu-item.fxml");
-
-                // This could be used instead of making a static refernce in the child view.
-                //((ServiceMenuItemController)tempLoader.getController()).containerController;
-
-                Parent service = tempLoader.load();
-                ((ServiceMenuItemController)tempLoader.getController()).setServiceName(serviceNames[i]);
-
-                availableServices.add((HBox) service);
-                listOfServices.getChildren().add(service);
+//
+//                // This could be used instead of making a static reference in the child view.
+//                //((ServiceMenuItemController)tempLoader.getController()).containerController;
+//
+//                Parent service = tempLoader.load();
+//                ServiceMenuItemController<? extends ClearStyles> itemController = tempLoader.getController();
+//                itemController.setServiceName(serviceNames[i]);
+//                itemController.containerController = this;
+//
+//                availableServices.add((HBox) service);
+//                listOfServices.getChildren().add(service);
             }
             ServiceMenuItemController.makeItemSelected(availableServices.get(0));
         } catch (IOException e) {
@@ -66,7 +69,7 @@ public class ServicesMenuBox implements Initializable {
         }
     }
 
-    void clearStyles() {
+    public void clearStyles() {
         for (HBox service: availableServices )
         {
             service.getStyleClass().removeAll(service.getStyleClass());
