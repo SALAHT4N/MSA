@@ -63,7 +63,7 @@
                               </FlowPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutY="69.0" onMouseClicked="#rightArrowPressed" prefHeight="511.0" prefWidth="100.0" styleClass="left-arrow">
+                        <AnchorPane layoutY="69.0" onMouseClicked="#leftArrowPressed" prefHeight="511.0" prefWidth="100.0" styleClass="left-arrow">
                            <children>
                               <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                                  <image>
@@ -72,7 +72,7 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="1050.0" layoutY="70.0" onMouseClicked="#leftArrowPressed" prefHeight="510.0" prefWidth="100.0" styleClass="right-arrow">
+                        <AnchorPane layoutX="1050.0" layoutY="70.0" onMouseClicked="#rightArrowPressed" prefHeight="510.0" prefWidth="100.0" styleClass="right-arrow">
                            <children>
                               <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                                  <image>
@@ -97,7 +97,7 @@
                         </Text>
                         <Text layoutX="59.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-3" text="Home &gt; Informations page" />
                         <Text layoutX="22.0" layoutY="853.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Provider Details" />
-                        <Rating layoutX="962.0" layoutY="619.0" />
+                        <Rating fx:id="serviceRating" layoutX="962.0" layoutY="619.0" mouseTransparent="true" partialRating="true" rating="0.0" />
                         <HBox layoutX="53.0" layoutY="869.0" onMouseClicked="#goToProfile" prefHeight="76.0" prefWidth="339.0" spacing="12.0" styleClass="provider-info">
                            <children>
                               <Rectangle fx:id="imgCircle" arcHeight="5.0" arcWidth="5.0" fill="#cccccc" height="60.0" onMouseClicked="#goToProfile" stroke="#aaaaaa" strokeType="INSIDE" width="60.0" />
@@ -111,11 +111,6 @@
                                     </Text>
                                  </children>
                               </Pane>
-                              <Label fx:id="phone" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210">
-                                 <HBox.margin>
-                                    <Insets top="31.0" />
-                                 </HBox.margin>
-                              </Label>
                            </children>
                            <padding>
                               <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
@@ -124,6 +119,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </HBox>
+                        <Label fx:id="phone" layoutX="297.0" layoutY="908.0" prefWidth="92.0" style="-fx-font-weight: bold; -fx-text-fill: #555;" text="05986476210" />
                      </children>
                   </AnchorPane>
                   <VBox fx:id="commentSection" alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="2086.0" spacing="30.0" style="-fx-background-color: white;" styleClass="comment-section" />

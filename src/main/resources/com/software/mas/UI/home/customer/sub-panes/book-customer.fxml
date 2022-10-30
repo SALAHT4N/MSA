@@ -9,8 +9,8 @@
 <AnchorPane prefHeight="519.0" prefWidth="600.0" style="-fx-background-color: white;" styleClass="bottom-border" stylesheets="@../../../../CSS/ColorThemes.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.customer.subpane.BookController">
    <children>
       <Text layoutX="11.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Search for available appointments:" />
-      <MFXDatePicker layoutX="9.0" layoutY="73.0" />
-      <MFXDatePicker layoutX="231.0" layoutY="73.0" />
+      <MFXDatePicker fx:id="fromDate" layoutX="9.0" layoutY="73.0" />
+      <MFXDatePicker fx:id="toDate" layoutX="231.0" layoutY="73.0" />
       <Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-heading" text="From:" />
       <Text layoutX="231.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-heading" text="To:" />
       <MFXButton layoutX="496.0" layoutY="73.0" onAction="#search" prefHeight="38.0" prefWidth="96.0" styleClass="btns" text="Search" />

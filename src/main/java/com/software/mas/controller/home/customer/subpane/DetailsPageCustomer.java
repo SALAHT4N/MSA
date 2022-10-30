@@ -5,6 +5,7 @@ import com.software.mas.controller.components.CommentController;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import com.software.mas.model.DetailsPageModel;
 import com.software.mas.model.templates.CommentProfileData;
+import com.software.mas.model.templates.DetailsPageData;
 import com.software.mas.model.templates.HomeCard;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
@@ -27,10 +28,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.Rating;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 import java.util.ResourceBundle;
 
@@ -50,7 +53,7 @@ public class DetailsPageCustomer implements Initializable {
     private boolean clrFlag = true;
 
 
-    ArrayList<Image> ImagesSlider = new ArrayList<Image>();
+    ArrayList<Image> imagesSlides = new ArrayList<Image>();
 
 //    private void SliderInitialize() throws IOException {
 //
@@ -79,6 +82,7 @@ public class DetailsPageCustomer implements Initializable {
     void leftArrowPressed(MouseEvent event) {
 
         if(animationFlag){
+
 //            if(index == 0){
 ////                nextPane.getChildren().removeAll(nextPane.getChildren());
 //                int lastIndex=ImagesSlider.size()-1;
@@ -133,7 +137,7 @@ public class DetailsPageCustomer implements Initializable {
 
 //            if(index ==size ){
 //            int size=ImagesSlider.size()-1;
-
+//
 //                index = 0;
 //                nextImage.setImage(ImagesSlider.get(index));
 ////                nextPane.getChildren().removeAll(nextPane.getChildren());
@@ -201,6 +205,9 @@ public class DetailsPageCustomer implements Initializable {
     @FXML
     Text name;
 
+    @FXML
+    private Rating serviceRating;
+
 
 
     @FXML
@@ -215,9 +222,13 @@ public class DetailsPageCustomer implements Initializable {
     @FXML
     void bookNow(ActionEvent e) throws IOException {
         Stage st = new Stage();
-        Scene sc = Loader.sceneLoader("/com/software/mas/UI/home/customer/sub-panes/book-customer.fxml");
+        FXMLLoader loader = Loader.getLoader("/com/software/mas/UI/home/customer/sub-panes/book-customer.fxml");
 
-        st.setScene(sc);
+        Parent view = loader.load();
+        BookController cont = loader.getController();
+        cont.init(String.valueOf(data.id()));
+
+        st.setScene(new Scene(view));
         st.show();
 
 
@@ -235,12 +246,21 @@ public class DetailsPageCustomer implements Initializable {
     DetailsPageModel model;
     public void displayAllComments(long serviceId) throws Exception {
        Queue<CommentProfileData> comments =  model.getAllComments(serviceId);
-        commentSection.getChildren().clear();
+
+       //Settings the number of comments. ..
+       int commentsNumber = comments.size();
+       numberComments.setText(String.valueOf(commentsNumber));
+       int ratingSum=0;
+
+       commentSection.getChildren().clear();
        while(!comments.isEmpty()){
            CommentProfileData holder = comments.poll();
 
            FXMLLoader loader = Loader.getLoader("/com/software/mas/UI/components/comment.fxml");
            Parent view = loader.load();
+
+           //Calculate the service rating ..
+           ratingSum+=holder.rating();
 
            CommentController cont = loader.getController();
            cont.setComment(holder.content());
@@ -251,17 +271,45 @@ public class DetailsPageCustomer implements Initializable {
            commentSection.getChildren().add(view);
        }
 
+       double serviceRating =0.0;
+       if(commentsNumber != 0)
+           serviceRating = ratingSum/(double)commentsNumber;
+        System.out.println(serviceRating);
+        this.serviceRating.setRating(serviceRating);
     }
 
+    private void setImageSlides(List<String> imgs) {
+        //TODO : SET IMAGES TO THE SLIDER
+        for(String img : imgs){
+            imagesSlides.add(new Image(img));
+        }
+    }
+    private HomeCard data;
     public void init(HomeCard data)  {
+        //Init The model to fetch data into this page
+        this.data=data;
         model = new DetailsPageModel();
+        DetailsPageData pageData = model.getServiceData(String.valueOf(data.id()));
+        List<String> imagesUrl = pageData.imageSlides();
 
         try {
+            //Id of this service
             displayAllComments(data.id());
+            header.setText(data.name());
+            description.setText(data.description());
+            name.setText(pageData.providerName());
+            phone.setText(pageData.mobileNumber());
+            setProviderProfilePhoto(pageData.providerProfilePhotoUrl());
+            setImageSlides(imagesUrl);
 
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void setProviderProfilePhoto(String url){
+        Image temp = new Image(url);
+        imgCircle.setFill(new ImagePattern(temp));
     }
 
     @Override
@@ -269,9 +317,7 @@ public class DetailsPageCustomer implements Initializable {
         //todo:Initilizing images for the images slider
         //todo:querying the comments to comment section example below.
 
-        Image temp = new Image(String.valueOf(getClass().getResource("/com/software/mas/IMG/download.jpg")));
 
-        imgCircle.setFill(new ImagePattern(temp));
 
 
     }

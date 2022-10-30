@@ -8,6 +8,7 @@ module com.software.mas {
     requires javafx.web;
     requires java.sql;
 
+    requires okhttp3;
 
     opens com.software.mas.controller.components to javafx.fxml;
     opens com.software.mas.controller.login to javafx.fxml;
