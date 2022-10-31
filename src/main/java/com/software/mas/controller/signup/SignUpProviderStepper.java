@@ -1,6 +1,6 @@
 package com.software.mas.controller.signup;
 
-import com.software.mas.controller.ViewFilesGetter;
+import com.software.mas.controller.StepsGenerator;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
-public class SignUpProviderStepper extends ViewFilesGetter implements Initializable  {
+public class SignUpProviderStepper extends StepsGenerator implements Initializable  {
 
 
     @FXML

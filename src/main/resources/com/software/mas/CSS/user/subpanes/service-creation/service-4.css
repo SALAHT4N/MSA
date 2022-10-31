@@ -30,6 +30,12 @@
     -fx-background-radius: 7;
 }
 
+.container .textfields.invalid-text-field {
+    -fx-border-color: red;
+}
+
+
+
 .card--bottom {
     -fx-border-radius: 0 0 15 15;
     -fx-background-radius: 0 0 15 15;

@@ -1,0 +1,31 @@
+* {
+    -fx-invalid-color: red;
+}
+
+
+.textfields {
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-border-width: 0.5;
+    -fx-border-color: red;
+    /*-fx-padding: 0 0 0 0;*/
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.05),20 , 0.01 , 0 , 3);
+}
+.textfields:focused{
+    -fx-border-color:-fx-invalid-color;
+    -fx-accent:-fx-subColor;
+
+}
+.textfields:focus-within  {
+    -fx-text-fill:-fx-borderColor;
+    -fx-border-color:-fx-invalid-color;
+}
+.textfields:focus-within .floating-text{
+    -fx-text-fill:-fx-subColor;
+}
+.textfields .floating-text{
+    /*-fx-font-family:"Berlin Sans FB";*/
+    -fx-text-fill:-fx-text-color;
+    -fx-font-weight: 600;
+    -fx-font-size: 14;
+}

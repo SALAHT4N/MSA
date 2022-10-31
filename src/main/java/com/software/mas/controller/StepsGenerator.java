@@ -22,7 +22,7 @@ import java.util.List;
 * Methods like creating a view should be done only by the model, the controller is responsible for displaying that data
 * without the ability to create or generate any.
 */
-public abstract class ViewFilesGetter {
+public abstract class StepsGenerator {
     public Object[] fileNames;
     private final String[] stepsNames;
     private final String stepsFileName;
@@ -38,7 +38,7 @@ public abstract class ViewFilesGetter {
 //    {
 //        fileNames = getFileNames().toArray();
 //    }
-    public ViewFilesGetter(String[] stepsNames,String stepsFileName,String iconsFileName) throws URISyntaxException {
+    public StepsGenerator(String[] stepsNames, String stepsFileName, String iconsFileName) throws URISyntaxException {
         /*
         * The only reason a variable should be put in the constructor in this scenario, is when it depends on a value got
         * from the child class.

@@ -1,14 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.software.mas.UI.home.user.sub-panes.service-creation.ScheduleTab"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<GridPane prefHeight="451.0" prefWidth="710.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.service_creation.ScheduleTabController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="623.2000366210938" minWidth="10.0" prefWidth="622.3999877929688" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.79996337890623" minWidth="10.0" prefWidth="120.00001220703132" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="222.60001220703126" minHeight="10.0" prefHeight="33.40001106262207" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="222.60001220703126" minHeight="10.0" prefHeight="78.20000000000002" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="360.1999801635742" minHeight="10.0" prefHeight="19.80000000000001" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="360.1999801635742" minHeight="10.0" prefHeight="325.19998626708986" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="683.0" spacing="8.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <children>
+            <MFXTextField fx:id="startTime" floatMode="BORDER" floatingText="Start time" prefHeight="29.0" prefWidth="142.0" promptText="13:30" styleClass="textfields" stylesheets="@../../../../../../CSS/ColorThemes.css" />
+            <Label styleClass="dash" text="-" textFill="#333333">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <MFXTextField fx:id="endTime" floatMode="BORDER" floatingText="Finish time" prefHeight="30.0" prefWidth="142.0" promptText="14:30" styleClass="textfields" stylesheets="@../../../../../../CSS/ColorThemes.css" />
+            <Region prefHeight="55.0" prefWidth="122.0" HBox.hgrow="ALWAYS" />
+            <MFXButton onAction="#addSession" styleClass="btns" text="Add" />
+         </children>
+         <padding>
+            <Insets left="18.0" right="20.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="main-pane" />
+            <String fx:value="container" />
+         </styleClass>
+         <GridPane.margin>
+            <Insets left="12.0" />
+         </GridPane.margin>
+      </HBox>
+      <VBox prefHeight="288.0" prefWidth="506.0" GridPane.rowIndex="3">
+         <styleClass>
+            <String fx:value="appointments-container" />
+            <String fx:value="container" />
+         </styleClass>
+         <children>
+            <HBox prefHeight="48.0" prefWidth="731.0" styleClass="container-head">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="container-head-labels" text="START TIME" />
+                  <Region prefHeight="18.0" prefWidth="67.0" HBox.hgrow="NEVER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="container-head-labels" text="END TIME" />
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="container-head-labels" text="HOURS" />
+               </children>
+            </HBox>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="247.0" prefWidth="506.0" style="-fx-background-color: white;">
+               <content>
+                  <VBox fx:id="sessionsContainer" prefHeight="0.0" prefWidth="551.0" styleClass="container" />
+               </content>
+            </ScrollPane>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+         </GridPane.margin>
+      </VBox>
+      <MFXButton onAction="#deleteSession" text="Delete" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="24.0" />
+         </GridPane.margin>
+         <styleClass>
+            <String fx:value="btn--delete" />
+            <String fx:value="btns" />
+         </styleClass>
+      </MFXButton>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Sessions" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="20.0" top="10.0" />
+         </GridPane.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-2" text="Add a session">
+         <GridPane.margin>
+            <Insets left="20.0" top="10.0" />
+         </GridPane.margin>
+      </Text>
+   </children>
+   <padding>
+      <Insets left="30.0" />
+   </padding>
+   <stylesheets>
+      <URL value="@../../../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../../../CSS/user/subpanes/service-creation/service-4.css" />
+   </stylesheets>
+</GridPane>
