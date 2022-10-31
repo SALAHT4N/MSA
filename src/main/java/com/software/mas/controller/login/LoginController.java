@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.io.IOException;
 
@@ -75,10 +76,11 @@ public class LoginController {
             //
             if(status.correct())
             {
+                App.current_user=new Pair<>(email,status.lvl());
+
                 Stage st = App.getStage();
                 if(status.lvl() == 0){
                     loadScene("/com/software/mas/UI/home/customer/home-customer.fxml", st);
-
                     // In this cas lvl will equal to 1 (Provider)
                 }else{
                     loadScene("/com/software/mas/UI/home/user/home-user.fxml", st);

@@ -8,7 +8,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +16,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginKey" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.login.LoginController">
   <columnConstraints>
@@ -35,26 +33,6 @@
                   <Image url="@../../IMG/login/Colored_Background.png" />
                </image>
             </ImageView>
-            <Pane layoutX="98.0" layoutY="215.0" prefHeight="99.0" prefWidth="205.0" style="-fx-border-color: black; -fx-border-width: 0 0 1.5 0;">
-               <children>
-                  <Text fx:id="firstLabel" fill="WHITE" layoutX="-8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-border-width: 0 0 1.5 0;" text="Daraghmeh">
-                     <font>
-                        <Font name="Corbel" size="47.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="4.62" radius="4.15" width="13.98" />
-                     </effect>
-                  </Text>
-                  <Text fx:id="secLabel" fill="WHITE" layoutX="-11.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-border-width: 0 0 1.5 0;" text="C o m p a n y">
-                     <font>
-                        <Font name="Corbel" size="47.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="4.62" radius="4.15" width="13.98" />
-                     </effect>
-                  </Text>
-               </children>
-            </Pane>
          </children>
       </Pane>
       <AnchorPane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7f;" styleClass="page" stylesheets="@../../CSS/login/login-form.css" GridPane.columnIndex="1">

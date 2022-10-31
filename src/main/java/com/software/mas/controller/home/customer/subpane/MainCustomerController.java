@@ -40,14 +40,16 @@ public class MainCustomerController implements Initializable {
 
     HomeModel model = new HomeModel();
 
-    public void setCards(Queue<HomeCard> cards) throws IOException {
+    public void setCardsWithBookMark(Queue<HomeCard> cards , boolean marked) throws IOException {
         cardContainer.getChildren().removeAll(cardContainer.getChildren());
         while (!cards.isEmpty()){
             HomeCard card = cards.poll();
             FXMLLoader loader = Loader.getLoader("/com/software/mas/UI/components/service-card.fxml");
         Parent view = loader.load();
-        MiniServiceCardController cont = (MiniServiceCardController) loader.getController();
+        MiniServiceCardController cont = loader.getController();
 
+        cont.setServiceId(String.valueOf(card.id()));
+        cont.setBookMark(marked);
         cont.setDataSource(card);
         cont.setImage(new Image("http://localhost/mas/main_img/" + card.img()));
         cont.setLocation(StringHelper.capitalize(card.street())  + " " + StringHelper.capitalize(card.city()) + " " + StringHelper.capitalize(card.country()));
@@ -59,6 +61,9 @@ public class MainCustomerController implements Initializable {
     }
 
     }
+    public void setCards(Queue<HomeCard> cards) throws IOException {
+        setCardsWithBookMark(cards,false);
+    }
 
     @FXML
     private void search() throws IOException {
@@ -68,7 +73,7 @@ public class MainCustomerController implements Initializable {
         String city = comboCity.getSelectedItem()==null  ?"":comboCity.getSelectedItem().toLowerCase();
         String country = comboCountry.getSelectedItem() == null ?"":comboCountry.getSelectedItem().toLowerCase();
 
-        setCards(model.searchFor(tags, street, city, country));
+        setCards(model.searchFor(tags, street, city, country,false));
 
     }
 

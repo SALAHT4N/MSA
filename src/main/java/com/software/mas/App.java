@@ -3,25 +3,20 @@ package com.software.mas;
 
 
 
-import com.software.mas.model.DBHelper;
-import okhttp3.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 
-import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 public class App extends Application {
 
+    //current_user used for determine what is the current user email.
+    public static Pair<String,Integer> current_user ;
     private static Stage mainStage;
 
     /*
@@ -44,8 +39,8 @@ public class App extends Application {
 
 
 
-//        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/login-form.fxml")); //M7MD
-       mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); //M7MD
+        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/login-form.fxml")); //M7MD
+//       mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); //M7MD
 //        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/user/sub-panes/service-creation/service-stepper.fxml")); // SALAHT4N
 //
 

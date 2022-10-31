@@ -20,7 +20,7 @@ public class SearchTest {
     @When("^i search for \"([^\"]*)\", and located in \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$")
     public void i_search_for_and_located_in(String street, String city, String country, String tags) {
         //Getting data from the database
-        data = home.searchFor(street,city,country,tags);
+        data = home.searchFor(street,city,country,tags,false);
 
     }
     @Then("^the output will be \"([^\"]*)\"$")

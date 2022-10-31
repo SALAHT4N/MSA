@@ -1,5 +1,6 @@
 package com.software.mas.model;
 
+import com.software.mas.App;
 import com.software.mas.model.templates.HomeCard;
 
 import java.sql.*;
@@ -12,7 +13,6 @@ public class HomeModel {
         if(flag){
             return " OR tags like '%"+tag+"%' ";
         }else {
-
             return " tags like '%"+tag+"%' ";
         }
     }
@@ -22,7 +22,6 @@ public class HomeModel {
 
         String[] tagsArr = tags.split(" ");
         if(tagsArr.length == 0){
-            System.out.println("HERE");
             qry.append(" tags like '%%' ");
                     return;
         }
@@ -39,14 +38,16 @@ public class HomeModel {
 
     }
     //EMPTY EQUALS >> ""
+    //IMPORTANT userEmail help us dedicate whether the service bookmarked or no
     public Queue<HomeCard> searchFor(String tags, String street,
-                                     String city, String country ){
+                                     String city, String country,boolean bookmarked ){
         try {
 
             Connection con = DBHelper.connect();
 
+            String bookMarkSQL= bookmarked?"":"not";
 
-            StringBuilder qry = new StringBuilder("SELECT * FROM services WHERE");
+            StringBuilder qry = new StringBuilder("SELECT * FROM services WHERE services.id "+bookMarkSQL+" in (SELECT service_id FROM bookmarks where customer_email='"+App.current_user.getKey()+"') AND ");
             Queue<HomeCard> dataContainer = new LinkedList<>();
 
 
@@ -55,7 +56,6 @@ public class HomeModel {
             String locationConditions = " AND street like '%"+street+"%' AND city like " +
                     " '%"+city+"%' AND country like '%"+country+"%'";
             qry.append(locationConditions);
-
 
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(String.valueOf(qry));
@@ -70,12 +70,11 @@ public class HomeModel {
             String cityService = rs.getString(7);
             String countryService = rs.getString(8);
             boolean stat = rs.getBoolean(9);
-            int capacity =rs.getInt(10);
-            int price = rs.getInt(11);
-            String main_img = rs.getString(12);
+            int price = rs.getInt(10);
+            String main_img = rs.getString(11);
 
             dataContainer.add(new HomeCard(providerEmail,id,name,tagsService,desc,streetService,
-                           cityService,countryService,stat,capacity,price,main_img));
+                           cityService,countryService,stat,price,main_img));
 
             }
 
@@ -88,11 +87,26 @@ public class HomeModel {
     }
 
     public Queue<HomeCard> getAll(){
-      return this.searchFor("", "" ,"", "");
+      return this.searchFor("", "" ,"", "",false);
     }
 
+    public HomeCard getServiceData(String serviceId, boolean bookmarked){
+       Queue<HomeCard> data = this.searchFor("", "" ,"", "",bookmarked);
+        for (HomeCard datum : data) {
+            if(String.valueOf(datum.id()).equals(serviceId)) {
+                return datum;
+            }
+        }
+        //executing this line of code is impossible.
+        return null;
+    }
+    public HomeCard getServiceDataWithoutBookmark(String serviceId){
+        return getServiceData(serviceId,false);
+    }
+
+
     public Queue<HomeCard> searchFor(String tags){
-        return this.searchFor(tags, "" ,"", "");
+        return this.searchFor(tags, "" ,"", "",false);
     }
 
 
@@ -120,4 +134,31 @@ public class HomeModel {
         return list;
     }
 
+    public Queue<HomeCard> getAllBookMarked(String userEmail) throws SQLException {
+        Queue<HomeCard> data = new LinkedList<>();
+        Connection con = DBHelper.connect();
+
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("SELECT service_id FROM bookmarks WHERE customer_email ='"+userEmail+"'");
+
+        while(rs.next()) {
+            data.add(this.getServiceData(rs.getString(1),true));
+        }
+        con.close();
+        return data;
+    }
+    public void bookMarkService(String serviceId) throws SQLException {
+        Connection con = DBHelper.connect();
+        Statement st = con.createStatement();
+
+        st.executeUpdate("INSERT INTO bookmarks (customer_email, service_id) values('"+App.current_user.getKey()+"', "+serviceId+")");
+
+        con.close();
+    }
+    public void unBookMarkService(String serviceId) throws SQLException {
+        Connection con = DBHelper.connect();
+        Statement st = con.createStatement();
+        st.executeUpdate("DELETE FROM bookmarks WHERE service_id="+serviceId+" AND customer_email ='"+App.current_user.getKey()+"'");
+        con.close();
+    }
 }

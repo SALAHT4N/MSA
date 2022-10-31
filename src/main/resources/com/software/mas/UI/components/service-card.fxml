@@ -28,7 +28,7 @@
             <Label fx:id="location" styleClass="small-label" text="Palestine, Nablus, Asira Qiblya" />
          </children>
       </FlowPane>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="677.0" layoutY="11.0" onMouseClicked="#addBookMark" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bookMark" fitHeight="30.0" fitWidth="30.0" layoutX="677.0" layoutY="11.0" onMouseClicked="#addBookMark" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../ICONS/components/bookmark.png" />
          </image>
