@@ -1,6 +1,6 @@
 package com.software.mas.controller.home.user.subpane.service_creation;
 
-import com.software.mas.controller.ViewFilesGetter;
+import com.software.mas.controller.StepsGenerator;
 import io.github.palexdev.materialfx.controls.MFXStepper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,14 +12,15 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-public class ServiceStepperController extends ViewFilesGetter implements Initializable {
+public class ServiceStepperController extends StepsGenerator implements Initializable {
 
     private static String stepsFileName = "/com/software/mas/UI/home/user/sub-panes/service-creation";
     private static String iconsFileName = "/com/software/mas/IMG/signup/steps-icons";
     static private String[] stepsNames = {
             "Options",
             "Description",
-            "Add-ons",
+            "Front",
+            "Open Time",
             "Finish"
     };
 

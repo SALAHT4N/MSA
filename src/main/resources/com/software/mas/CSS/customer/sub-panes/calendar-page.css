@@ -9,3 +9,37 @@
 .tab-heading:hover {
     -fx-fill: #333;
 }
+
+/*DROP DOWN MENU STYLES*/
+
+.titled-pane {
+    /*-fx-background-color: red;*/
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    /*-fx-color: -fx-text-color;*/
+
+}
+
+
+.titled-pane > .title {
+    /*-fx-color: white;*/
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-fill: -fx-text-color;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-text-fill: #333;
+}
+
+.titled-pane > *.content
+{
+    -fx-background-insets: 0;
+    -fx-background-color: white;
+}
+.titled-pane:focused > .title > .arrow-button > .arrow {
+    -fx-background-color: -fx-main-color;
+    -fx-background-insets: 0;
+    -fx-effect: none;
+}

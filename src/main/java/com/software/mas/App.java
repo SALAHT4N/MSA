@@ -39,9 +39,10 @@ public class App extends Application {
 
 
 
-        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/login-form.fxml")); //M7MD
+
+//        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/login/login-form.fxml")); //M7MD
 //       mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/customer/home-customer.fxml")); //M7MD
-//        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/user/sub-panes/service-creation/service-stepper.fxml")); // SALAHT4N
+        mainStage.setScene(Loader.sceneLoader("/com/software/mas/UI/home/user/sub-panes/service-creation/service-stepper.fxml")); // SALAHT4N
 //
 
 

@@ -20,7 +20,7 @@
     <RowConstraints maxHeight="358.39998168945306" minHeight="10.0" prefHeight="358.39998168945306" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <MFXTextField fx:id="serviceName" floatMode="BORDER" floatingText="Service name" prefHeight="43.0" prefWidth="349.0" promptText="My Service" styleClass="textfields">
+      <MFXTextField fx:id="serviceName" floatMode="BORDER" floatingText="Service name" prefHeight="43.0" prefWidth="349.0" styleClass="textfields">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
@@ -73,7 +73,7 @@
                               <Insets left="8.0" />
                            </GridPane.margin>
                         </Text>
-                        <MFXTextField fx:id="capacity" floatMode="BORDER" floatingText="Capacity" prefHeight="38.0" prefWidth="111.0" promptText="11" styleClass="textfields" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                        <MFXTextField fx:id="capacity" floatMode="BORDER" floatingText="Capacity" prefHeight="38.0" prefWidth="111.0" styleClass="textfields" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets right="12.0" />
                            </GridPane.margin>

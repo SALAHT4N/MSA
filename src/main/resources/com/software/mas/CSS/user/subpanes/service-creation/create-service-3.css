@@ -1,11 +1,30 @@
-.main-pane .tag {
-    /*-fx-background-color:#0c859980;*/
-    -fx-background-color: -fx-main-color;
-    -fx-text-fill:#ddd ;
-    /*-fx-font-size: 10;*/
-    -fx-font-weight: bold;
-    -fx-background-radius: 20;
-    -fx-padding: 2 8 2 8;
-    -fx-font-size: 12;
-    -fx-alignment: center;
+/*.main-pane .tag {*/
+/*    !*-fx-background-color:#0c859980;*!*/
+/*    -fx-background-color: -fx-main-color;*/
+/*    -fx-text-fill:#ddd ;*/
+/*    !*-fx-font-size: 10;*!*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-radius: 20;*/
+/*    -fx-padding: 2 8 2 8;*/
+/*    -fx-font-size: 12;*/
+/*    -fx-alignment: center;*/
+/*}*/
+
+.image-list {
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-border-width: 0.5;
+    /*-fx-padding: 0 0 0 0;*/
+    -fx-effect: dropshadow(two-pass-box,rgba(0,0,0,0.05),20 , 0.01 , 0 , 3);
 }
+
+.btn--delete {
+    -fx-font-size: 15;
+    -fx-background-color: #c92a2a;
+    -fx-text-fill: -fx-primaryColor;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="640.0" spacing="8.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.software.mas.controller.home.user.subpane.ServiceHCardController">
+   <children>
+      <Text fx:id="serviceName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="service-title" text="Service name" />
+      <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+      <AnchorPane prefHeight="40.0" prefWidth="40.0" styleClass="side-buttons">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="4.0" layoutY="5.0" onMouseClicked="#editService" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ICONS/user/edit.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.42" />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <HBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </HBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="40.0" prefWidth="40.0">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="3.0" layoutY="5.0" onMouseClicked="#deleteService" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.600000000000001" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="5.0">
+               <image>
+                  <Image url="@../../../../ICONS/user/delete.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.42" />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="side-buttons" />
+            <String fx:value="side-buttons--delete" />
+         </styleClass>
+         <HBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </HBox.margin>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets left="18.0" right="8.0" />
+   </padding>
+   <stylesheets>
+      <URL value="@../../../../CSS/ColorThemes.css" />
+      <URL value="@../../../../CSS/user/subpanes/service-hcard.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="main-pane" />
+      <String fx:value="card" />
+   </styleClass>
+</HBox>

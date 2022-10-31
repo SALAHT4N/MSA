@@ -1,0 +1,40 @@
+.side-buttons {
+    /*-fx-font-size : 15;*/
+
+    -fx-text-fill:-fx-primaryColor;
+    -fx-font-family:"Berlin Sans FB";
+    -fx-font-size: 14;
+    -fx-border-radius: 100;
+    -fx-background-radius: 100;
+
+}
+
+/*.side-buttons:hover {*/
+/*    !*-fx-background-color: #e9ecef;*!*/
+/*    -fx-background-color: #fff;*/
+/*}*/
+
+/*.side-buttons--delete {*/
+
+/*}*/
+/*.side-buttons--delete:hover {*/
+/*    !*-fx-background-color: #dc2b2b;*!*/
+/*    -fx-background-color: #fff;*/
+/*}*/
+.card {
+    -fx-border-width: 0 0 0.1 0;
+    -fx-border-color: #777;
+}
+.card:hover {
+    -fx-background-color: #e8e8e8;/*C9C9C9FF*/
+}
+.card:pressed {
+    -fx-background-color: #c5c5c5;
+}
+
+.service-title {
+    -fx-font-size: 20;
+    /*-fx-font-weight: bold;*/
+    -fx-fill: -fx-text-medium-color;
+}
+

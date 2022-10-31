@@ -12,7 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import org.controlsfx.control.Rating;
 
@@ -57,17 +61,18 @@ public class MiniServiceCardController implements Initializable{
     *
     *
     * */
-    private Label createTag(String tag){
+    public static Label createTag(String tag, String color){
         Label lb = new Label();
         lb.setText(tag.toUpperCase());
-        lb.getStyleClass().add("tag");
+        String colorClass = "tag--" + color;
+        lb.getStyleClass().addAll("tag", colorClass );
         return lb;
     }
     //ADD
     public void addTags(String ...str){
         List<Label> tags = new ArrayList<>();
         for(String temp : str){
-        tags.add(createTag(temp));
+        tags.add(createTag(temp,"black"));
         }
 
         tagsContainer.getChildren().addAll(tags);

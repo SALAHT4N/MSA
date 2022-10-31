@@ -1,0 +1,50 @@
+.card {
+    -fx-border-width: 0 0 0.1 0;
+    -fx-border-color: #777;
+}
+.card:hover {
+    -fx-background-color: #e8e8e8;/*C9C9C9FF*/
+}
+.card:pressed {
+    -fx-background-color: #c5c5c5;
+}
+
+.card--selected {
+    -fx-background-color: -fx-main-color;
+
+
+}
+
+
+
+.appointment-time {
+    -fx-font-size: 16;
+    /*-fx-font-weight: bold;*/
+    -fx-fill: -fx-text-medium-color;
+}
+
+.appointment-time--selected,
+.appointment-hours--selected{
+
+    -fx-fill: #ddd;
+}
+
+.dash {
+    -fx-text-fill: #777;
+}
+.dash--selected {
+    -fx-text-fill: #aaa;
+}
+
+.appointment-time--selected {
+    -fx-font-size: 16;
+}
+.appointment-hours--selected {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+.appointment-hours {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-fill: -fx-text-color;
+}

@@ -41,6 +41,7 @@ public class HomeModel {
     //IMPORTANT userEmail help us dedicate whether the service bookmarked or no
     public Queue<HomeCard> searchFor(String tags, String street,
                                      String city, String country,boolean bookmarked ){
+
         try {
 
             Connection con = DBHelper.connect();
