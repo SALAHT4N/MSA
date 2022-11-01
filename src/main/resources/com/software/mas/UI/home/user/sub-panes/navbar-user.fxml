@@ -74,6 +74,15 @@
             </Pane>
          </children>
       </Pane>
+      <Pane>
+         <children>
+            <Separator layoutX="10.0" layoutY="1.0" maxWidth="50.0" prefHeight="3.0" prefWidth="50.0">
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </Separator>
+         </children>
+      </Pane>
       <Pane prefHeight="60.0" prefWidth="70.0">
          <children>
             <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">
@@ -87,10 +96,9 @@
             </Pane>
          </children>
          <VBox.margin>
-            <Insets bottom="415.0" />
+            <Insets bottom="350.0" />
          </VBox.margin>
       </Pane>
-      <Pane />
       <Pane prefHeight="60.0" prefWidth="70.0">
          <children>
             <Pane layoutX="10.0" layoutY="5.0" onMouseClicked="#navigate" prefHeight="50.0" prefWidth="50.0" styleClass="nav-pane" stylesheets="@../../../../CSS/customer/sub-panes/navbar-customer.css">

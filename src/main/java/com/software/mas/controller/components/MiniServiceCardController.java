@@ -3,6 +3,7 @@ package com.software.mas.controller.components;
 import com.software.mas.FXHelper;
 import com.software.mas.controller.home.customer.HomeCustomerController;
 import com.software.mas.controller.home.customer.subpane.DetailsPageCustomer;
+import com.software.mas.model.HomeModel;
 import com.software.mas.model.templates.HomeCard;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,11 +23,12 @@ import org.controlsfx.control.Rating;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class MiniServiceCardController implements Initializable {
+public class MiniServiceCardController implements Initializable{
 
     //This id will help us in the future to navigate to the full page
     //This id will be set in the initializing of the main-customer.fxml view --QUERYING--
@@ -44,6 +46,11 @@ public class MiniServiceCardController implements Initializable {
 
     @FXML
     private Text txtHeader;
+
+
+    @FXML
+    private ImageView bookMark;
+    private String serviceId;
 
     //NOTE:
     /*
@@ -111,28 +118,30 @@ public class MiniServiceCardController implements Initializable {
     }
 
 
+    public void setBookMark(boolean status){
+        if(status){
+            Image filled = new Image(String.valueOf(getClass().getResource("/com/software/mas/ICONS/components/f_bookmark.png")));
+            bookMark.setImage(filled);
+        }else{
+
+            Image unfilled = new Image(String.valueOf(getClass().getResource("/com/software/mas/ICONS/components/bookmark.png")));
+            bookMark.setImage(unfilled);
+        }
+    }
 
     @FXML
-    void addBookMark(MouseEvent event) throws URISyntaxException, IOException {
+    void addBookMark(MouseEvent event) throws Exception {
         ImageView img = (ImageView) event.getSource();
 
         String tokens[] = img.getImage().getUrl().split("/");
         String firstChar = tokens[tokens.length-1];
 
         if(Character.toString(firstChar.charAt(0)).equals("f")){
-
-            Image unfilled = new Image(String.valueOf(getClass().getResource("/com/software/mas/ICONS/components/bookmark.png")));
-            img.setImage(unfilled);
-
-
-            System.out.println(firstChar);
+            setBookMark(false);
+            new HomeModel().unBookMarkService(serviceId);
         }else{
-
-            Image filled = new Image(String.valueOf(getClass().getResource("/com/software/mas/ICONS/components/f_bookmark.png")));
-            img.setImage(filled);
-
-            System.out.println("HELLO");
-            System.out.println(firstChar);
+            setBookMark(true);
+            new HomeModel().bookMarkService(serviceId);
 
 
         }
@@ -154,6 +163,12 @@ public class MiniServiceCardController implements Initializable {
     public void setDataSource(HomeCard temp){
         this.source = temp;
     }
+
+
+    public void setServiceId(String serviceId) {
+        this.serviceId= serviceId;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

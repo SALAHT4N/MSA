@@ -5,7 +5,16 @@ import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 
+import java.util.Arrays;
+
 public class FXHelper {
+
+
+    public static String errorCSS = "-fx-background-color: #FFECE8;";
+
+    public static void resetStyles(Node ...nodes){
+        Arrays.stream(nodes).forEach(e->e.setStyle(""));
+    }
 
     public static Parent findParentToDetailsPage(Node child){
         try {
