@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class SignUpProviderStepper extends StepsGenerator implements Initializable  {
 
@@ -36,12 +37,20 @@ public class SignUpProviderStepper extends StepsGenerator implements Initializab
         if(i.isFile())
                 returnedFiles.add(i.getName());
     }
+    private int state;
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        // AtomicInteger to increment variables in lambda expressions.
 
         try {
             signUpStepper.getStepperToggles().addAll(createSteps());
+            signUpStepper.setOnNext(e -> onNextCallBack());
+            signUpStepper.setOnPrevious(e -> onPrevCallBack());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -50,6 +59,68 @@ public class SignUpProviderStepper extends StepsGenerator implements Initializab
         }
 
     }
+
+    private void onPrevCallBack() {
+        List<Object> controllers = getControllers();
+        stepNumber.getAndDecrement();
+        switch (stepNumber.get())
+        {
+            case 0:
+                ((SignUpProvider1Controller)controllers.get(stepNumber.get())).validate();
+//                stepNumber.getAndDecrement();
+                break;
+            case 1:
+                ((SignUpProvider2Controller)controllers.get(stepNumber.get())).validate();
+//                stepNumber.getAndDecrement();
+                break;
+            case 2:
+                if (state == 1)
+                {
+                    ((SignUpProvider3Controller)controllers.get(stepNumber.get())).validate();
+                } else {
+                    ((SignUpProvider4Controller)controllers.get(stepNumber.get())).validate();
+                }
+//                stepNumber.getAndDecrement();
+                break;
+            case 3:
+                ((SignUpProvider4Controller)controllers.get(stepNumber.get())).validate();
+//                stepNumber.getAndDecrement();
+                break;
+        }
+    }
+
+    AtomicInteger stepNumber = new AtomicInteger(-1);
+    private void onNextCallBack()
+    {
+
+        List<Object> controllers = getControllers();
+        stepNumber.getAndIncrement();
+        switch (stepNumber.get())
+        {
+            case 0:
+                ((SignUpProvider1Controller)controllers.get(stepNumber.get())).validate();
+//                stepNumber.getAndIncrement();
+                break;
+            case 1:
+                ((SignUpProvider2Controller)controllers.get(stepNumber.get())).validate();
+//                stepNumber.getAndIncrement();
+                break;
+            case 2:
+                if (state == 1)
+                {
+                    ((SignUpProvider3Controller)controllers.get(stepNumber.get())).validate();
+                } else {
+                    ((SignUpProvider4Controller)controllers.get(stepNumber.get())).validate();
+                }
+//                stepNumber.getAndIncrement();
+                break;
+            case 3:
+                ((SignUpProvider4Controller)controllers.get(stepNumber.get())).validate();
+//                stepNumber.getAndIncrement();
+                break;
+        }
+    }
+
 
 //    private List<MFXStepperToggle> createSteps() throws IOException {
 //        LinkedList<MFXStepperToggle> steps = new LinkedList<>();

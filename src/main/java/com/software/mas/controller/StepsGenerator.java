@@ -2,6 +2,7 @@ package com.software.mas.controller;
 
 import com.software.mas.Loader;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
@@ -116,6 +117,8 @@ public abstract class StepsGenerator {
     }
     public List<MFXStepperToggle> createSteps() throws IOException, URISyntaxException {
         LinkedList<MFXStepperToggle> steps = new LinkedList<>();
+        MFXStepperToggle test = new MFXStepperToggle();
+
         List<Rectangle> stepsIcons = getIcons();
 
         int index = 0;
@@ -134,9 +137,19 @@ public abstract class StepsGenerator {
         System.out.println("Number of Steps: " + steps.size());
         return steps;
     }
+    private List<Object> controllers = new LinkedList<>();
     private Parent createStep(String fileName) throws IOException {
-        return Loader.parentLoader( stepsFileName +"/" + fileName);
+        FXMLLoader loader = Loader.getLoader(stepsFileName+ "/" + fileName);
+        Parent loaded = loader.load();
+        controllers.add(loader.getController());
+        return loaded;
     }
+
+    protected List<Object> getControllers()
+    {
+        return controllers;
+    }
+
 
 
     abstract public void addFileName(File i, LinkedList<String> returnedFiles);

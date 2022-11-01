@@ -18,11 +18,17 @@ public class SignUpCustomerStepper extends StepsGenerator implements Initializab
     @FXML
     private MFXStepper signUpStepper;
 
+    private int state;
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
     /*
-     * This is made static, so it can be passed to the super constructor, as you can't reference non-static references
-       before calling the super constructor, this makes sense because the super constructor is called well before the
-       *  "this" constructor (before the class object is made), so there isn't anything to pass.
-    */
+         * This is made static, so it can be passed to the super constructor, as you can't reference non-static references
+           before calling the super constructor, this makes sense because the super constructor is called well before the
+           *  "this" constructor (before the class object is made), so there isn't anything to pass.
+        */
     private static String stepsFileName = "/com/software/mas/UI/signup/provider-steps";
     private static String iconsFileName = "/com/software/mas/IMG/signup/steps-icons";
     static private String[] stepsNames = {
