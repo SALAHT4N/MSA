@@ -25,8 +25,15 @@
             <artifactId>javafx-fxml</artifactId>
             <version>19-ea+7</version>
         </dependency>
+        <!-- STATIC ANALYSIS LIBRARIES ============================================================================= -->
+        <dependency>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.1.2184</version>
+        </dependency>
 
-        <!-- UI LIBRARIES ============================================================================= -->
+
+        <!-- STATIC ANALYSIS LIBRARIES ============================================================================= -->
         <!-- UI LIBRARIES ============================================================================= -->
 
 
@@ -155,7 +162,14 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.7.0.1746</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
