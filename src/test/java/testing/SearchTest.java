@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.sql.SQLException;
 import java.util.Queue;
 
 public class SearchTest {
@@ -18,7 +19,7 @@ public class SearchTest {
         home = new HomeModel();
     }
     @When("^i search for \"([^\"]*)\", and located in \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$")
-    public void i_search_for_and_located_in(String street, String city, String country, String tags) {
+    public void i_search_for_and_located_in(String street, String city, String country, String tags) throws SQLException {
         //Getting data from the database
         data = home.searchFor(street,city,country,tags,false);
 

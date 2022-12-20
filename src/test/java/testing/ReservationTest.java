@@ -49,7 +49,7 @@ public class ReservationTest {
 
 
             if(Objects.equals(expectedService, e.serviceId()) && e.startAt().equals(time1) && e.endAt().equals(time2) ){
-                Assert.assertEquals(1,1);
+                Assert.assertTrue(true);
                 return;
             }
         }
