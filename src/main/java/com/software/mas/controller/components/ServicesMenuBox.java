@@ -79,7 +79,7 @@ public class ServicesMenuBox /*extends ClearStyles*/ implements Initializable {
     }
     private HBox getSelectedItem()
     {
-        HBox returned = null;
+        HBox returned = new HBox();
         for (HBox service: availableServices )
         {
             if ("selected".equals(service.getStyleClass().get(0)))
@@ -91,7 +91,7 @@ public class ServicesMenuBox /*extends ClearStyles*/ implements Initializable {
     }
     public String getSelectedService()
     {
-        return ((Text)(getSelectedItem().getChildren().get(0))).getText(); // Simply to get the selected service name.
+        return((Text)(getSelectedItem().getChildren().get(0))).getText(); // Simply to get the selected service name.
     }
 
     @FXML

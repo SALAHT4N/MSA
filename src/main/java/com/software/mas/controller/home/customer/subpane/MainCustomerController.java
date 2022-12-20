@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Queue;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -66,7 +67,7 @@ public class MainCustomerController implements Initializable {
     }
 
     @FXML
-    private void search() throws IOException {
+    private void search() throws IOException, SQLException {
 
         String tags = searchField.getText();
         String street = comboStreet.getSelectedItem() == null ?"":comboStreet.getSelectedItem().toLowerCase();

@@ -5,12 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.effect.ColorAdjust;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+import java.awt.*;
 import java.io.IOException;
 
 abstract public class NavbarController <T>{
@@ -53,11 +53,12 @@ abstract public class NavbarController <T>{
 
     protected static ImageView getImageViewOfIcon (Pane iconPressed){
         //Finding what image has selected/pressed
-        for(Object temp : iconPressed.getChildren()){
-            if(temp instanceof ImageView)
-                return (ImageView) temp;
+        ImageView temp = null;
+        for(Object i : iconPressed.getChildren()){
+            if(i instanceof ImageView)
+                temp = (ImageView) i;
         }
-        return null;
+        return temp;
     }
     protected static String getFXMLViewName(String fullURL){
         String []tokens =fullURL.split("/") ;
@@ -75,8 +76,6 @@ abstract public class NavbarController <T>{
 
         //Check if this icon is pressed or not
 
-        if(!(img.getEffect() == null))
-            return;
 
 
         if(img != null){
@@ -105,11 +104,10 @@ abstract public class NavbarController <T>{
          */
 
 
-
-//            clearIconBackground(cont); //removing the gray-active background(OLD CODE).
-//            ((Pane)event.getSource()).setStyle("-fx-background-color: rgba(0,0,0,0.15)");
-
         }
+//
+//        else if(!(img.getEffect() == null))
+//            return;
     }
 
     protected abstract void setRoute(String FXMLViewName) throws IOException;

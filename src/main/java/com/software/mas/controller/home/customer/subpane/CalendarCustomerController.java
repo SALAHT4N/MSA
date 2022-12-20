@@ -61,8 +61,13 @@ public class CalendarCustomerController implements Initializable {
 
       List<BooksData> data = booksModel.getUserReservedAppointments(App.current_user.getKey());
         data.forEach(e->{
-            HomeCard serviceData = serviceModel.getServiceDataWithoutBookmark(e.serviceId());
-           String street= StringHelper.capitalize(serviceData.street());
+            HomeCard serviceData = null;
+            try {
+                serviceData = serviceModel.getServiceDataWithoutBookmark(e.serviceId());
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            String street= StringHelper.capitalize(serviceData.street());
            String city= StringHelper.capitalize(serviceData.city());
            String country= StringHelper.capitalize( serviceData.country());
 

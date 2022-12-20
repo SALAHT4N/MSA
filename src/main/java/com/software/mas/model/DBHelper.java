@@ -6,15 +6,34 @@ import okhttp3.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class DBHelper {
 
-    private final static String ip="jdbc:mysql://localhost:3306/mas", username ="root", password ="";
+    private final static String ip="jdbc:mysql://localhost:3306/mas", username ="root";
     private final static String req = "http://localhost:3000/serverside/upload_photo.jsp";
     public static Connection connect() throws SQLException {
+        Scanner pass = new Scanner(InputStream.nullInputStream());
+        String password = new String ("");
+        try {
+           pass = new Scanner(new File ("pass.txt"));
+
+            if (pass.hasNext())
+            {
+                password = pass.nextLine();
+            }
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        finally {
+            pass.close();
+        }
         return DriverManager.getConnection(ip,username,password);
     }
     private static final OkHttpClient client = new OkHttpClient();
